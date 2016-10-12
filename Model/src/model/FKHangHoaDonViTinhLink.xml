@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FKHangHoaDonViTinhLink"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  EntityAssociation="model.FkHangHoaDonViTinhAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.FKHangHoaDonViTinhLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="DonViTinhView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.DonViTinhView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="DonViTinhView"/>
+      <Attr Name="_entityAccessor" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.DonViTinhView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="HangHoaView"
+    Cardinality="-1"
+    Owner="model.HangHoaView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="HangHoaView"/>
+      <Attr Name="_entityAccessor" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.HangHoaView.DonViTinhId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

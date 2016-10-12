@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkHangHoaQuiCachAssoc"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="QuiCach"
+    Cardinality="1"
+    Source="true"
+    Owner="model.QuiCach"
+    ViewObject="model.QuiCachView"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="QuiCach"/>
+      <Attr Name="_foreignKey" Value="model.QuiCach.SysC0010017"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.QuiCach.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="HangHoa"
+    Cardinality="-1"
+    Owner="model.HangHoa"
+    ViewObject="model.HangHoaView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="HangHoa"/>
+      <Attr Name="_foreignKey" Value="model.HangHoa.fk_HangHoa2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.HangHoa.QuiCachId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>
