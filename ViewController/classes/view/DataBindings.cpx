@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.20.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/TestHangHoa.jspx" usageId="view_TestHangHoaPageDef"/>
+    <page path="/DanhMucLoaiHang.jspx" usageId="view_DanhMucLoaiHangPageDef"/>
+    <page path="/DanhMucHangHoa.jspx" usageId="view_DanhMucHangHoaPageDef"/>
+    <page path="/DanhucDonViBanHang.jspx" usageId="view_DanhucDonViBanHangPageDef"/>
+    <page path="/ChungTuMuaHang.jspx" usageId="view_ChungTuMuaHangPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_TestHangHoaPageDef" path="view.pageDefs.TestHangHoaPageDef"/>
+    <page id="view_DanhMucLoaiHangPageDef" path="view.pageDefs.DanhMucLoaiHangPageDef"/>
+    <page id="view_DanhMucHangHoaPageDef" path="view.pageDefs.DanhMucHangHoaPageDef"/>
+    <page id="view_DanhucDonViBanHangPageDef" path="view.pageDefs.DanhucDonViBanHangPageDef"/>
+    <page id="view_ChungTuMuaHangPageDef" path="view.pageDefs.ChungTuMuaHangPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

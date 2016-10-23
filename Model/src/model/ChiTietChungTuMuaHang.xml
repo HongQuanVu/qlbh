@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ChiTietChungTuMuaHang"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="CHI_TIET_CHUNG_TU_MUA_HANG"
+  AliasName="ChiTietChungTuMuaHang"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"
+    PrimaryKey="true"
+    IsQueriable="false">
+    
+    <TransientExpression
+      Name="ExpressionScript"
+      CodeSourceName="ChiTietChungTuMuaHangRow"/>
+    </Attribute>
+  <Attribute
+    Name="ChungTuMuaHangId"
+    ColumnName="CHUNG_TU_MUA_HANG_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"/>
+  <Attribute
+    Name="HangHoaId"
+    ColumnName="HANG_HOA_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    IsQueriable="false">
+    
+    </Attribute>
+  <Attribute
+    Name="SoLuong"
+    ColumnName="SO_LUONG"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"/>
+  <Attribute
+    Name="DonViTinhId"
+    ColumnName="DON_VI_TINH_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"/>
+  <Attribute
+    Name="DonGia"
+    ColumnName="DON_GIA"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"/>
+  <Attribute
+    Name="ThueVat"
+    ColumnName="THUE_VAT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"/>
+  <Attribute
+    Name="GiaSauVat"
+    ColumnName="GIA_SAU_VAT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="GhiChu"
+    Precision="300"
+    ColumnName="GHI_CHU"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <DISPLAYHEIGHT
+          Value="2"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    Precision="100"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedAt"
+    ColumnName="CREATED_AT"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="100"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedAt"
+    ColumnName="MODIFIED_AT"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"/>
+  <AccessorAttribute
+    Name="ChungTuMuaHang"
+    Association="model.ChiTietCtMhFk2Assoc"
+    AssociationEnd="model.ChiTietCtMhFk2Assoc.ChungTuMuaHang"
+    AssociationOtherEnd="model.ChiTietCtMhFk2Assoc.ChiTietChungTuMuaHang"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SysC0011119"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0011119"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ChiTietChungTuMuaHang.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ChiTietCtMhFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C0011078"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CHI_TIET_CT_MH_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ChiTietChungTuMuaHang.HangHoaId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ChiTietCtMhFk2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C0011090"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CHI_TIET_CT_MH_FK2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ChiTietChungTuMuaHang.ChungTuMuaHangId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ChiTietCtMhFk3">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C0011058"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CHI_TIET_CT_MH_FK3"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ChiTietChungTuMuaHang.DonViTinhId"/>
+    </AttrArray>
+  </Key>
+</Entity>

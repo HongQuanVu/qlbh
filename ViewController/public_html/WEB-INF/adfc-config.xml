@@ -12,4 +12,34 @@
     <managed-bean-scope>backingBean</managed-bean-scope>
     <!--oracle-jdev-comment:managed-bean-jsp-link:1main.jspx-->
   </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>backing_TestHangHoa</managed-bean-name>
+    <managed-bean-class>view.backing.TestHangHoa</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1TestHangHoa.jspx-->
+  </managed-bean>
+  <managed-bean id="__4">
+    <managed-bean-name>backing_DanhMucLoaiHang</managed-bean-name>
+    <managed-bean-class>view.backing.DanhMucLoaiHang</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1DanhMucLoaiHang.jspx-->
+  </managed-bean>
+  <managed-bean id="__5">
+    <managed-bean-name>backing_DanhMucHangHoa</managed-bean-name>
+    <managed-bean-class>view.backing.DanhMucHangHoa</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1DanhMucHangHoa.jspx-->
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name>backing_DanhucDonViBanHang</managed-bean-name>
+    <managed-bean-class>view.backing.DanhucDonViBanHang</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1DanhucDonViBanHang.jspx-->
+  </managed-bean>
+  <managed-bean id="__7">
+    <managed-bean-name>backing_ChungTuMuaHang</managed-bean-name>
+    <managed-bean-class>view.backing.ChungTuMuaHang</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1ChungTuMuaHang.jspx-->
+  </managed-bean>
 </adfc-config>

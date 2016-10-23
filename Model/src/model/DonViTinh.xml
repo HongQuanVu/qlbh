@@ -18,7 +18,8 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="ORDSYS.DON_VI_TINH"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"/>
   <Attribute
     Name="MaDonViTinh"
     Precision="100"

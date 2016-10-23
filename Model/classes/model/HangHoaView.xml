@@ -13,6 +13,94 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="LoaiHangView1"
+    ViewObjectName="model.LoaiHangView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="XuatXuView1"
+    ViewObjectName="model.XuatXuView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DonViTinhView1"
+    ViewObjectName="model.DonViTinhView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="QuiCachView1"
+    ViewObjectName="model.QuiCachView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_LoaiHangId"
+    ListVOName="LoaiHangView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LoaiHangId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TenLoaiHang"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_XuatXuId"
+    ListVOName="XuatXuView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="XuatXuId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TenXuatXu"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DonViTinhId"
+    ListVOName="DonViTinhView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DonViTinhId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TenDonViTinh"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_QuiCachId"
+    ListVOName="QuiCachView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="QuiCachId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TenQuiCach"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="HangHoa"
     Entity="model.HangHoa"/>
@@ -40,25 +128,57 @@
     PrecisionRule="true"
     EntityAttrName="LoaiHangId"
     EntityUsage="HangHoa"
-    AliasName="LOAI_HANG_ID"/>
+    AliasName="LOAI_HANG_ID"
+    LOVName="LOV_LoaiHangId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="XuatXuId"
     PrecisionRule="true"
     EntityAttrName="XuatXuId"
     EntityUsage="HangHoa"
-    AliasName="XUAT_XU_ID"/>
+    AliasName="XUAT_XU_ID"
+    LOVName="LOV_XuatXuId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DonViTinhId"
     PrecisionRule="true"
     EntityAttrName="DonViTinhId"
     EntityUsage="HangHoa"
-    AliasName="DON_VI_TINH_ID"/>
+    AliasName="DON_VI_TINH_ID"
+    LOVName="LOV_DonViTinhId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="QuiCachId"
     PrecisionRule="true"
     EntityAttrName="QuiCachId"
     EntityUsage="HangHoa"
-    AliasName="QUI_CACH_ID"/>
+    AliasName="QUI_CACH_ID"
+    LOVName="LOV_QuiCachId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DonGia"
     PrecisionRule="true"

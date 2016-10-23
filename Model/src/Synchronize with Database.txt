@@ -1,0 +1,8 @@
+The following Synchronization Actions were performed successfully:
+
+Entity :ChungTuMuaHang
+  Attribute :ThueVat
+    Change Column type to NUMBER
+    Change Precision to 0
+  Attribute :Id
+    Change Mandatory to:true

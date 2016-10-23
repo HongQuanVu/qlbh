@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="DanhMucLoaiHangPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="LoaiHangView1" RangeSize="25" DataControl="AppModuleDataControl" id="LoaiHangView1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="LoaiHangView1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="LoaiHangView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LoaiHangView1Iterator" id="MaLoaiHang">
+      <AttrNames>
+        <Item Value="MaLoaiHang"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LoaiHangView1Iterator" id="TenLoaiHang">
+      <AttrNames>
+        <Item Value="TenLoaiHang"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LoaiHangView1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LoaiHangView1Iterator" id="CreatedAt">
+      <AttrNames>
+        <Item Value="CreatedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LoaiHangView1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="LoaiHangView1Iterator" id="ModifiedAt">
+      <AttrNames>
+        <Item Value="ModifiedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="LoaiHangView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="LoaiHangView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="LoaiHangView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="LoaiHangView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="LoaiHangView1Iterator" id="LoaiHangView1">
+      <nodeDefinition DefName="model.LoaiHangView" Name="LoaiHangView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="MaLoaiHang"/>
+          <Item Value="TenLoaiHang"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedAt"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="ModifiedAt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

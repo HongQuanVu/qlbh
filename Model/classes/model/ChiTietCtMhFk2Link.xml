@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ChiTietCtMhFk2Link"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  EntityAssociation="model.ChiTietCtMhFk2Assoc">
+  <ViewLinkDefEnd
+    Name="ChungTuMuaHangView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ChungTuMuaHangView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ChungTuMuaHangView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ChungTuMuaHangView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="ChiTietChungTuMuaHangView"
+    Cardinality="-1"
+    Owner="model.ChiTietChungTuMuaHangView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ChiTietChungTuMuaHangView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ChiTietChungTuMuaHangView.ChungTuMuaHangId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

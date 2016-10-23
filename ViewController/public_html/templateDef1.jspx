@@ -100,12 +100,12 @@
                                     <af:menuBar id="pt_mb1">
                                         <af:menu text="Users" id="pt_m1">                                            
                                         </af:menu>
-                                        <af:menu text="Phong Kinh Doanh " id="pt_m2">
+                                        <af:menu text="Mua H&#224;ng" id="pt_m2">
                                             <af:commandMenuItem text="Don Hang " id="pt_cmi1"/>
                                         </af:menu>
-                                    <af:menu text="Phong Quan Ly San Xuat" id="pt_m3">                                           
+                                    <af:menu text="B&#225;n H&#224;ng" id="pt_m3">                                           
                                         </af:menu>                                        
-                                         <af:menu text="Danh Muc " id="pt_m4">
+                                         <af:menu text="Danh Mục" id="pt_m4">
                                             <af:commandMenuItem text="MauSac " id="pt_cmi2"/>
                                             <af:commandMenuItem text="Size " id="pt_cmi3"/>
                                         </af:menu>
@@ -115,7 +115,7 @@
                             </af:panelGroupLayout>
                         </f:facet>
                         <af:panelBorderLayout id="sepWrp">
-                            <af:spacer inlineStyle="width: 100%; max-width: 100%;" id="pt_s1"/>
+                            <af:spacer inlineStyle="max-width: 100%;" id="pt_s1" styleClass="AFStretchWidth"/>
                             <f:facet name="end">
                                 <af:panelGroupLayout id="statPgl" layout="vertical" styleClass="AFBrandingBarItem">
                                     <af:facetRef facetName="status"/>

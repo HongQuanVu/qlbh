@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="DanhMucLoaiHang.jspx" id="d1" binding="#{backingBeanScope.backing_DanhMucLoaiHang.d1}">
+            <af:messages id="m1" binding="#{backingBeanScope.backing_DanhMucLoaiHang.m1}"/>
+            <af:form id="f1" binding="#{backingBeanScope.backing_DanhMucLoaiHang.f1}">
+                <af:pageTemplate viewId="/templateDef1.jspx" id="pt1">
+                    <f:facet name="center">
+                        <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_DanhMucLoaiHang.pfl1}">
+                            <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}"
+                                          required="#{bindings.Id.hints.mandatory}"
+                                          columns="#{bindings.Id.hints.displayWidth}"
+                                          maximumLength="#{bindings.Id.hints.precision}"
+                                          shortDesc="#{bindings.Id.hints.tooltip}" id="it1"
+                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.it1}">
+                                <f:validator binding="#{bindings.Id.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.MaLoaiHang.inputValue}"
+                                          label="#{bindings.MaLoaiHang.hints.label}"
+                                          required="#{bindings.MaLoaiHang.hints.mandatory}"
+                                          columns="#{bindings.MaLoaiHang.hints.displayWidth}"
+                                          maximumLength="#{bindings.MaLoaiHang.hints.precision}"
+                                          shortDesc="#{bindings.MaLoaiHang.hints.tooltip}" id="it2"
+                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.it2}">
+                                <f:validator binding="#{bindings.MaLoaiHang.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.TenLoaiHang.inputValue}"
+                                          label="#{bindings.TenLoaiHang.hints.label}"
+                                          required="#{bindings.TenLoaiHang.hints.mandatory}"
+                                          columns="#{bindings.TenLoaiHang.hints.displayWidth}"
+                                          maximumLength="#{bindings.TenLoaiHang.hints.precision}"
+                                          shortDesc="#{bindings.TenLoaiHang.hints.tooltip}" id="it3"
+                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.it3}">
+                                <f:validator binding="#{bindings.TenLoaiHang.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.CreatedBy.inputValue}"
+                                          label="#{bindings.CreatedBy.hints.label}"
+                                          required="#{bindings.CreatedBy.hints.mandatory}"
+                                          columns="#{bindings.CreatedBy.hints.displayWidth}"
+                                          maximumLength="#{bindings.CreatedBy.hints.precision}"
+                                          shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it4"
+                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.it4}">
+                                <f:validator binding="#{bindings.CreatedBy.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.CreatedAt.inputValue}"
+                                          label="#{bindings.CreatedAt.hints.label}"
+                                          required="#{bindings.CreatedAt.hints.mandatory}"
+                                          columns="#{bindings.CreatedAt.hints.displayWidth}"
+                                          shortDesc="#{bindings.CreatedAt.hints.tooltip}" id="id1"
+                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.id1}">
+                                <f:validator binding="#{bindings.CreatedAt.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.CreatedAt.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.ModifiedBy.inputValue}"
+                                          label="#{bindings.ModifiedBy.hints.label}"
+                                          required="#{bindings.ModifiedBy.hints.mandatory}"
+                                          columns="#{bindings.ModifiedBy.hints.displayWidth}"
+                                          maximumLength="#{bindings.ModifiedBy.hints.precision}"
+                                          shortDesc="#{bindings.ModifiedBy.hints.tooltip}" id="it5"
+                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.it5}">
+                                <f:validator binding="#{bindings.ModifiedBy.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.ModifiedAt.inputValue}"
+                                          label="#{bindings.ModifiedAt.hints.label}"
+                                          required="#{bindings.ModifiedAt.hints.mandatory}"
+                                          columns="#{bindings.ModifiedAt.hints.displayWidth}"
+                                          shortDesc="#{bindings.ModifiedAt.hints.tooltip}" id="id2"
+                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.id2}">
+                                <f:validator binding="#{bindings.ModifiedAt.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.ModifiedAt.format}"/>
+                            </af:inputDate>
+                          
+                            <f:facet name="footer">
+                                <af:panelGroupLayout layout="vertical" id="pgl1"
+                                                     binding="#{backingBeanScope.backing_DanhMucLoaiHang.pgl1}">
+                                    <af:panelGroupLayout layout="horizontal" id="pgl2"
+                                                         binding="#{backingBeanScope.backing_DanhMucLoaiHang.pgl2}">
+                                        <af:button actionListener="#{bindings.First.execute}" text="First"
+                                                   disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"
+                                                   binding="#{backingBeanScope.backing_DanhMucLoaiHang.b1}"/>
+                                        <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                                   disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+                                                   id="b2" binding="#{backingBeanScope.backing_DanhMucLoaiHang.b2}"/>
+                                        <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                                   disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"
+                                                   binding="#{backingBeanScope.backing_DanhMucLoaiHang.b3}"/>
+                                        <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                                   disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"
+                                                   binding="#{backingBeanScope.backing_DanhMucLoaiHang.b4}"/>
+                                   <af:button text="Submit" id="b5"
+                                               binding="#{backingBeanScope.backing_DanhMucLoaiHang.b5}"/>
+                                    </af:panelGroupLayout>
+                                  
+                                </af:panelGroupLayout>
+                            </f:facet>
+                            
+                              <af:panelGroupLayout layout="vertical" id="pgl3"
+                                                 binding="#{backingBeanScope.backing_DanhMucLoaiHang.pgl3}">
+                                <af:panelHeader text="LoaiHang" id="ph1"
+                                                binding="#{backingBeanScope.backing_DanhMucLoaiHang.ph1}">
+                                    <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                                   binding="#{backingBeanScope.backing_DanhMucLoaiHang.qryId1}">
+                                        <f:facet name="end">
+                                            <af:commandLink text="Advanced" rendered="false" id="cl1"
+                                                            binding="#{backingBeanScope.backing_DanhMucLoaiHang.cl1}"/>
+                                        </f:facet>
+                                    </af:quickQuery>
+                                </af:panelHeader>
+                                <af:table value="#{bindings.LoaiHangView1.collectionModel}" var="row"
+                                          rows="#{bindings.LoaiHangView1.rangeSize}"
+                                          emptyText="#{bindings.LoaiHangView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.LoaiHangView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.LoaiHangView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.LoaiHangView1.rangeSize}"
+                                          partialTriggers="::qryId1 ::b1 ::b2 ::b3 ::b4" id="t1"
+                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.t1}">
+                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.Id.name}" sortable="true"
+                                               headerText="#{bindings.LoaiHangView1.hints.Id.label}" id="c1">
+                                        <af:outputText value="#{row.Id}"
+                                                       shortDesc="#{bindings.LoaiHangView1.hints.Id.tooltip}" id="ot1">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.LoaiHangView1.hints.Id.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.MaLoaiHang.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.LoaiHangView1.hints.MaLoaiHang.label}" id="c2">
+                                        <af:outputText value="#{row.MaLoaiHang}"
+                                                       shortDesc="#{bindings.LoaiHangView1.hints.MaLoaiHang.tooltip}"
+                                                       id="ot2"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.TenLoaiHang.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.LoaiHangView1.hints.TenLoaiHang.label}" id="c3">
+                                        <af:outputText value="#{row.TenLoaiHang}"
+                                                       shortDesc="#{bindings.LoaiHangView1.hints.TenLoaiHang.tooltip}"
+                                                       id="ot3"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.CreatedBy.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.LoaiHangView1.hints.CreatedBy.label}" id="c4">
+                                        <af:outputText value="#{row.CreatedBy}"
+                                                       shortDesc="#{bindings.LoaiHangView1.hints.CreatedBy.tooltip}"
+                                                       id="ot4"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.CreatedAt.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.LoaiHangView1.hints.CreatedAt.label}" id="c5">
+                                        <af:outputText value="#{row.CreatedAt}"
+                                                       shortDesc="#{bindings.LoaiHangView1.hints.CreatedAt.tooltip}"
+                                                       id="ot5">
+                                            <af:convertDateTime pattern="#{bindings.LoaiHangView1.hints.CreatedAt.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.ModifiedBy.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.LoaiHangView1.hints.ModifiedBy.label}" id="c6">
+                                        <af:outputText value="#{row.ModifiedBy}"
+                                                       shortDesc="#{bindings.LoaiHangView1.hints.ModifiedBy.tooltip}"
+                                                       id="ot6"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.ModifiedAt.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.LoaiHangView1.hints.ModifiedAt.label}" id="c7">
+                                        <af:outputText value="#{row.ModifiedAt}"
+                                                       shortDesc="#{bindings.LoaiHangView1.hints.ModifiedAt.tooltip}"
+                                                       id="ot7">
+                                            <af:convertDateTime pattern="#{bindings.LoaiHangView1.hints.ModifiedAt.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                </af:table>
+                            </af:panelGroupLayout>
+                        </af:panelFormLayout>
+                    </f:facet>
+                    <f:facet name="header"/>
+                    <f:facet name="end"/>
+                    <f:facet name="start"/>
+                    <f:facet name="branding"/>
+                    <f:facet name="copyright"/>
+                    <f:facet name="status"/>
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_DanhMucLoaiHang-->
+</jsp:root>

@@ -6,7 +6,9 @@
   Name="AppModule"
   Version="12.2.1.20.47"
   InheritPersonalization="merge"
-  ClearCacheOnRollback="true">
+  ClearCacheOnRollback="true"
+  RequeryOnCommit="true"
+  >
   <ViewUsage
     Name="DonViTinhView1"
     ViewObjectName="model.DonViTinhView"/>
@@ -49,6 +51,27 @@
   <ViewUsage
     Name="HangHoaView_WithFKs"
     ViewObjectName="model.HangHoaView"/>
+  <ViewUsage
+    Name="DonViBanHangView1"
+    ViewObjectName="model.DonViBanHangView"/>
+  <ViewUsage
+    Name="ChiTietChungTuMuaHangView1"
+    ViewObjectName="model.ChiTietChungTuMuaHangView"/>
+  <ViewUsage
+    Name="ChungTuMuaHangView1"
+    ViewObjectName="model.ChungTuMuaHangView"/>
+  <ViewUsage
+    Name="ChiTietChungTuMuaHangView2"
+    ViewObjectName="model.ChiTietChungTuMuaHangView"/>
+  <ViewUsage
+    Name="DonViBanHangViewQuery1"
+    ViewObjectName="model.DonViBanHangViewQuery"/>
+  <ViewUsage
+    Name="DonViTinhViewQuery1"
+    ViewObjectName="model.DonViTinhViewQuery"/>
+  <ViewUsage
+    Name="HinhThucThanhToanViewQuery1"
+    ViewObjectName="model.HinhThucThanhToanViewQuery"/>
   <ViewLinkUsage
     Name="FkHangHoaLoaiHangLink1"
     ViewLinkObjectName="model.FkHangHoaLoaiHangLink"
@@ -72,5 +95,11 @@
     ViewLinkObjectName="model.FkHangHoaQuiCachLink"
     SrcViewUsageName="model.AppModule.QuiCachView2"
     DstViewUsageName="model.AppModule.HangHoaView5"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ChiTietCtMhFk2Link1"
+    ViewLinkObjectName="model.ChiTietCtMhFk2Link"
+    SrcViewUsageName="model.AppModule.ChungTuMuaHangView1"
+    DstViewUsageName="model.AppModule.ChiTietChungTuMuaHangView2"
     Reversed="false"/>
 </AppModule>
