@@ -59,6 +59,9 @@ public class DanhMucHangHoa {
     private RichButton b6;
     private RichButton b7;
     private RichButton b8;
+    private RichSelectOneChoice soc9;
+    private UISelectItems si9;
+    private RichInputText it9;
 
     public void setF1(RichForm f1) {
         this.f1 = f1;
@@ -378,5 +381,29 @@ public class DanhMucHangHoa {
 
     public RichButton getB8() {
         return b8;
+    }
+
+    public void setSoc9(RichSelectOneChoice soc9) {
+        this.soc9 = soc9;
+    }
+
+    public RichSelectOneChoice getSoc9() {
+        return soc9;
+    }
+
+    public void setSi9(UISelectItems si9) {
+        this.si9 = si9;
+    }
+
+    public UISelectItems getSi9() {
+        return si9;
+    }
+
+    public void setIt9(RichInputText it9) {
+        this.it9 = it9;
+    }
+
+    public RichInputText getIt9() {
+        return it9;
     }
 }

@@ -1,0 +1,465 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_ListChungTuMuaHang.ps1}" orientation="vertical"
+                      splitterPosition="202">
+        <f:facet name="first">
+            <af:panelGroupLayout layout="vertical" id="pgl3"
+                                 binding="#{backingBeanScope.backing_ListChungTuMuaHang.pgl3}">
+                <af:panelHeader text="ChungTuMuaHang" id="ph3"
+                                binding="#{backingBeanScope.backing_ListChungTuMuaHang.ph3}">
+                    <af:quickQuery label="Search" searchDesc="Search" id="qq1"
+                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                   binding="#{backingBeanScope.backing_ListChungTuMuaHang.qq1}">
+                        <f:facet name="end">
+                            <af:commandLink text="Advanced" rendered="false" id="cl1"
+                                            binding="#{backingBeanScope.backing_ListChungTuMuaHang.cl1}"/>
+                        </f:facet>
+                    </af:quickQuery>
+                </af:panelHeader>
+                <af:table value="#{bindings.ChungTuMuaHangView11.collectionModel}" var="row"
+                          rows="#{bindings.ChungTuMuaHangView11.rangeSize}"
+                          emptyText="#{bindings.ChungTuMuaHangView11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.ChungTuMuaHangView11.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.ChungTuMuaHangView11.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.ChungTuMuaHangView11.rangeSize}"
+                          id="t3"
+                          binding="#{backingBeanScope.backing_ListChungTuMuaHang.t3}">
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.Id.name}" sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.Id.label}" id="c1">
+                        <af:outputText value="#{row.Id}" shortDesc="#{bindings.ChungTuMuaHangView11.hints.Id.tooltip}"
+                                       id="ot1">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.ChungTuMuaHangView11.hints.Id.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.MaChungTu.name}" sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.MaChungTu.label}" id="c2">
+                        <af:outputText value="#{row.MaChungTu}"
+                                       shortDesc="#{bindings.ChungTuMuaHangView11.hints.MaChungTu.tooltip}" id="ot2"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.TenChungTu.name}" sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.TenChungTu.label}" id="c3">
+                        <af:outputText value="#{row.TenChungTu}"
+                                       shortDesc="#{bindings.ChungTuMuaHangView11.hints.TenChungTu.tooltip}" id="ot3"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.NgayLap.name}" sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.NgayLap.label}" id="c4">
+                        <af:outputText value="#{row.NgayLap}"
+                                       shortDesc="#{bindings.ChungTuMuaHangView11.hints.NgayLap.tooltip}" id="ot4">
+                            <af:convertDateTime pattern="#{bindings.ChungTuMuaHangView11.hints.NgayLap.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.HinhThucThanhToanId.name}"
+                               sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.HinhThucThanhToanId.label}" id="c5">
+                        <af:selectOneChoice value="#{row.bindings.HinhThucThanhToanId.inputValue}"
+                                            label="#{row.bindings.HinhThucThanhToanId.label}"
+                                            required="#{bindings.ChungTuMuaHangView11.hints.HinhThucThanhToanId.mandatory}"
+                                            shortDesc="#{bindings.ChungTuMuaHangView11.hints.HinhThucThanhToanId.tooltip}"
+                                            readOnly="true" id="soc1">
+                            <f:selectItems value="#{row.bindings.HinhThucThanhToanId.items}" id="si1"/>
+                            <f:validator binding="#{row.bindings.HinhThucThanhToanId.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.ThueVat.name}" sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.ThueVat.label}" id="c6">
+                        <af:outputText value="#{row.ThueVat}"
+                                       shortDesc="#{bindings.ChungTuMuaHangView11.hints.ThueVat.tooltip}" id="ot5">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.ChungTuMuaHangView11.hints.ThueVat.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.CongTienHang.name}" sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.CongTienHang.label}" id="c7">
+                        <af:outputText value="#{row.CongTienHang}"
+                                       shortDesc="#{bindings.ChungTuMuaHangView11.hints.CongTienHang.tooltip}" id="ot6">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.ChungTuMuaHangView11.hints.CongTienHang.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.ChietKhau.name}" sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.ChietKhau.label}" id="c8">
+                        <af:outputText value="#{row.ChietKhau}"
+                                       shortDesc="#{bindings.ChungTuMuaHangView11.hints.ChietKhau.tooltip}" id="ot7">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.ChungTuMuaHangView11.hints.ChietKhau.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.TienSauChietKhau.name}"
+                               sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.TienSauChietKhau.label}" id="c9">
+                        <af:outputText value="#{row.TienSauChietKhau}"
+                                       shortDesc="#{bindings.ChungTuMuaHangView11.hints.TienSauChietKhau.tooltip}"
+                                       id="ot8">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.ChungTuMuaHangView11.hints.TienSauChietKhau.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.CreatedBy.name}" sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.CreatedBy.label}" id="c10">
+                        <af:outputText value="#{row.CreatedBy}"
+                                       shortDesc="#{bindings.ChungTuMuaHangView11.hints.CreatedBy.tooltip}" id="ot9"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.CreatedAt.name}" sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.CreatedAt.label}" id="c11">
+                        <af:outputText value="#{row.CreatedAt}"
+                                       shortDesc="#{bindings.ChungTuMuaHangView11.hints.CreatedAt.tooltip}" id="ot10">
+                            <af:convertDateTime pattern="#{bindings.ChungTuMuaHangView11.hints.CreatedAt.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.ModifiedBy.name}" sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.ModifiedBy.label}" id="c12">
+                        <af:outputText value="#{row.ModifiedBy}"
+                                       shortDesc="#{bindings.ChungTuMuaHangView11.hints.ModifiedBy.tooltip}" id="ot11"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.ModifiedAt.name}" sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.ModifiedAt.label}" id="c13">
+                        <af:outputText value="#{row.ModifiedAt}"
+                                       shortDesc="#{bindings.ChungTuMuaHangView11.hints.ModifiedAt.tooltip}" id="ot12">
+                            <af:convertDateTime pattern="#{bindings.ChungTuMuaHangView11.hints.ModifiedAt.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.DonViBanHangId.name}" sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.DonViBanHangId.label}" id="c14">
+                        <af:selectOneChoice value="#{row.bindings.DonViBanHangId.inputValue}"
+                                            label="#{row.bindings.DonViBanHangId.label}"
+                                            required="#{bindings.ChungTuMuaHangView11.hints.DonViBanHangId.mandatory}"
+                                            shortDesc="#{bindings.ChungTuMuaHangView11.hints.DonViBanHangId.tooltip}"
+                                            readOnly="true" id="soc2">
+                            <f:selectItems value="#{row.bindings.DonViBanHangId.items}" id="si2"/>
+                            <f:validator binding="#{row.bindings.DonViBanHangId.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.ChungTuMuaHangView11.hints.CongTienHang2.name}" sortable="true"
+                               headerText="#{bindings.ChungTuMuaHangView11.hints.CongTienHang2.label}" id="c15">
+                        <af:outputText value="#{row.CongTienHang2}"
+                                       shortDesc="#{bindings.ChungTuMuaHangView11.hints.CongTienHang2.tooltip}"
+                                       id="ot13">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.ChungTuMuaHangView11.hints.CongTienHang2.format}"/>
+                        </af:outputText>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="second">
+         <af:panelHeader text="Thong tin Chung Tu Mua Hang" id="ph2"
+                                binding="#{backingBeanScope.backing_ListChungTuMuaHang.ph2}">
+                <af:panelSplitter id="ps2" binding="#{backingBeanScope.backing_ListChungTuMuaHang.ps2}"
+                                  splitterPosition="563">
+                    <f:facet name="first">
+                     <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_ListChungTuMuaHang.pfl1}" maxColumns="2"
+                                rows="5">
+               
+                    <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}"
+                                  required="#{bindings.Id.hints.mandatory}" readOnly="true"
+                                  columns="#{bindings.Id.hints.displayWidth}"
+                                  maximumLength="#{bindings.Id.hints.precision}"
+                                  shortDesc="#{bindings.Id.hints.tooltip}" id="it1"
+                                  binding="#{backingBeanScope.backing_ListChungTuMuaHang.it1}">
+                        <f:validator binding="#{bindings.Id.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                    </af:inputText>
+                
+                <af:inputText value="#{bindings.MaChungTu.inputValue}" label="#{bindings.MaChungTu.hints.label}"
+                              required="#{bindings.MaChungTu.hints.mandatory}" readOnly="true"
+                              columns="#{bindings.MaChungTu.hints.displayWidth}"
+                              maximumLength="#{bindings.MaChungTu.hints.precision}"
+                              shortDesc="#{bindings.MaChungTu.hints.tooltip}" id="it2"
+                              binding="#{backingBeanScope.backing_ListChungTuMuaHang.it2}">
+                    <f:validator binding="#{bindings.MaChungTu.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.TenChungTu.inputValue}" label="#{bindings.TenChungTu.hints.label}"
+                              required="#{bindings.TenChungTu.hints.mandatory}" readOnly="true"
+                              columns="#{bindings.TenChungTu.hints.displayWidth}"
+                              maximumLength="#{bindings.TenChungTu.hints.precision}"
+                              shortDesc="#{bindings.TenChungTu.hints.tooltip}" id="it3"
+                              binding="#{backingBeanScope.backing_ListChungTuMuaHang.it3}">
+                    <f:validator binding="#{bindings.TenChungTu.validator}"/>
+                </af:inputText>
+                <af:inputDate value="#{bindings.NgayLap.inputValue}" readOnly="true"
+                              label="#{bindings.NgayLap.hints.label}" required="#{bindings.NgayLap.hints.mandatory}"
+                              columns="#{bindings.NgayLap.hints.displayWidth}"
+                              shortDesc="#{bindings.NgayLap.hints.tooltip}" id="id1"
+                              binding="#{backingBeanScope.backing_ListChungTuMuaHang.id1}">
+                    <f:validator binding="#{bindings.NgayLap.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.NgayLap.format}"/>
+                </af:inputDate>
+                <af:selectOneChoice value="#{bindings.HinhThucThanhToanId.inputValue}"
+                                    label="#{bindings.HinhThucThanhToanId.label}"
+                                    required="#{bindings.HinhThucThanhToanId.hints.mandatory}"
+                                    shortDesc="#{bindings.HinhThucThanhToanId.hints.tooltip}" readOnly="true" id="soc3"
+                                    binding="#{backingBeanScope.backing_ListChungTuMuaHang.soc3}">
+                    <f:selectItems value="#{bindings.HinhThucThanhToanId.items}" id="si3"
+                                   binding="#{backingBeanScope.backing_ListChungTuMuaHang.si3}"/>
+                    <f:validator binding="#{bindings.HinhThucThanhToanId.validator}"/>
+                </af:selectOneChoice>
+                <af:inputText value="#{bindings.ThueVat.inputValue}" label="#{bindings.ThueVat.hints.label}"
+                              required="#{bindings.ThueVat.hints.mandatory}" readOnly="true"
+                              columns="#{bindings.ThueVat.hints.displayWidth}"
+                              maximumLength="#{bindings.ThueVat.hints.precision}"
+                              shortDesc="#{bindings.ThueVat.hints.tooltip}" id="it4"
+                              binding="#{backingBeanScope.backing_ListChungTuMuaHang.it4}">
+                    <f:validator binding="#{bindings.ThueVat.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.ThueVat.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.CongTienHang.inputValue}" label="#{bindings.CongTienHang.hints.label}"
+                              required="#{bindings.CongTienHang.hints.mandatory}" readOnly="true"
+                              columns="#{bindings.CongTienHang.hints.displayWidth}"
+                              maximumLength="#{bindings.CongTienHang.hints.precision}"
+                              shortDesc="#{bindings.CongTienHang.hints.tooltip}" id="it5"
+                              binding="#{backingBeanScope.backing_ListChungTuMuaHang.it5}">
+                    <f:validator binding="#{bindings.CongTienHang.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.CongTienHang.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.ChietKhau.inputValue}" label="#{bindings.ChietKhau.hints.label}"
+                              required="#{bindings.ChietKhau.hints.mandatory}" readOnly="true"
+                              columns="#{bindings.ChietKhau.hints.displayWidth}"
+                              maximumLength="#{bindings.ChietKhau.hints.precision}"
+                              shortDesc="#{bindings.ChietKhau.hints.tooltip}" id="it6"
+                              binding="#{backingBeanScope.backing_ListChungTuMuaHang.it6}">
+                    <f:validator binding="#{bindings.ChietKhau.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.ChietKhau.format}"/>
+                </af:inputText>
+               
+                <af:inputText value="#{bindings.TienSauChietKhau.inputValue}"
+                              label="#{bindings.TienSauChietKhau.hints.label}"
+                              required="#{bindings.TienSauChietKhau.hints.mandatory}" readOnly="true"
+                              columns="#{bindings.TienSauChietKhau.hints.displayWidth}"
+                              maximumLength="#{bindings.TienSauChietKhau.hints.precision}"
+                              shortDesc="#{bindings.TienSauChietKhau.hints.tooltip}" id="it7"
+                              binding="#{backingBeanScope.backing_ListChungTuMuaHang.it7}">
+                    <f:validator binding="#{bindings.TienSauChietKhau.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.TienSauChietKhau.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.CreatedBy.inputValue}" label="#{bindings.CreatedBy.hints.label}"
+                              required="#{bindings.CreatedBy.hints.mandatory}" readOnly="true"
+                              columns="#{bindings.CreatedBy.hints.displayWidth}"
+                              maximumLength="#{bindings.CreatedBy.hints.precision}"
+                              shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it8"
+                              binding="#{backingBeanScope.backing_ListChungTuMuaHang.it8}">
+                    <f:validator binding="#{bindings.CreatedBy.validator}"/>
+                </af:inputText>
+                <af:inputDate value="#{bindings.CreatedAt.inputValue}" readOnly="true"
+                              label="#{bindings.CreatedAt.hints.label}" required="#{bindings.CreatedAt.hints.mandatory}"
+                              columns="#{bindings.CreatedAt.hints.displayWidth}"
+                              shortDesc="#{bindings.CreatedAt.hints.tooltip}" id="id2"
+                              binding="#{backingBeanScope.backing_ListChungTuMuaHang.id2}">
+                    <f:validator binding="#{bindings.CreatedAt.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.CreatedAt.format}"/>
+                </af:inputDate>
+                <af:inputText value="#{bindings.ModifiedBy.inputValue}" label="#{bindings.ModifiedBy.hints.label}"
+                              required="#{bindings.ModifiedBy.hints.mandatory}" readOnly="true"
+                              columns="#{bindings.ModifiedBy.hints.displayWidth}"
+                              maximumLength="#{bindings.ModifiedBy.hints.precision}"
+                              shortDesc="#{bindings.ModifiedBy.hints.tooltip}" id="it9"
+                              binding="#{backingBeanScope.backing_ListChungTuMuaHang.it9}">
+                    <f:validator binding="#{bindings.ModifiedBy.validator}"/>
+                </af:inputText>
+                <af:inputDate value="#{bindings.ModifiedAt.inputValue}" readOnly="true"
+                              label="#{bindings.ModifiedAt.hints.label}"
+                              required="#{bindings.ModifiedAt.hints.mandatory}"
+                              columns="#{bindings.ModifiedAt.hints.displayWidth}"
+                              shortDesc="#{bindings.ModifiedAt.hints.tooltip}" id="id3"
+                              binding="#{backingBeanScope.backing_ListChungTuMuaHang.id3}">
+                    <f:validator binding="#{bindings.ModifiedAt.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.ModifiedAt.format}"/>
+                </af:inputDate>
+                <af:selectOneChoice value="#{bindings.DonViBanHangId.inputValue}"
+                                    label="#{bindings.DonViBanHangId.label}"
+                                    required="#{bindings.DonViBanHangId.hints.mandatory}"
+                                    shortDesc="#{bindings.DonViBanHangId.hints.tooltip}" readOnly="true" id="soc4"
+                                    binding="#{backingBeanScope.backing_ListChungTuMuaHang.soc4}">
+                    <f:selectItems value="#{bindings.DonViBanHangId.items}" id="si4"
+                                   binding="#{backingBeanScope.backing_ListChungTuMuaHang.si4}"/>
+                    <f:validator binding="#{bindings.DonViBanHangId.validator}"/>
+                </af:selectOneChoice>
+                <af:inputText value="#{bindings.CongTienHang2.inputValue}" label="#{bindings.CongTienHang2.hints.label}"
+                              required="#{bindings.CongTienHang2.hints.mandatory}" readOnly="true"
+                              columns="#{bindings.CongTienHang2.hints.displayWidth}"
+                              maximumLength="#{bindings.CongTienHang2.hints.precision}"
+                              shortDesc="#{bindings.CongTienHang2.hints.tooltip}" id="it10"
+                              binding="#{backingBeanScope.backing_ListChungTuMuaHang.it10}">
+                    <f:validator binding="#{bindings.CongTienHang2.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.CongTienHang2.format}"/>
+                </af:inputText>
+                <f:facet name="footer">
+                    <af:panelGroupLayout layout="horizontal" id="pgl2"
+                                         binding="#{backingBeanScope.backing_ListChungTuMuaHang.pgl2}"/>
+                </f:facet>
+                 
+            </af:panelFormLayout>
+                    </f:facet>
+                    <f:facet name="second">
+                        <af:panelHeader text="Chi Tiet Hang Hoa" id="ph4"
+                                        binding="#{backingBeanScope.backing_ListChungTuMuaHang.ph4}">
+                            <f:facet name="context"/>
+                            <f:facet name="toolbar"/>
+                            <f:facet name="menuBar"/>
+                            <f:facet name="legend"/>
+                            <f:facet name="info"/>
+                            <af:panelCollection id="pc1" binding="#{backingBeanScope.backing_ListChungTuMuaHang.pc1}">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar"/>
+                                <f:facet name="statusbar"/>
+                                <af:table value="#{bindings.ChiTietChungTuMuaHangView2.collectionModel}" var="row"
+                                          rows="#{bindings.ChiTietChungTuMuaHangView2.rangeSize}"
+                                          emptyText="#{bindings.ChiTietChungTuMuaHangView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.ChiTietChungTuMuaHangView2.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.ChiTietChungTuMuaHangView2.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.ChiTietChungTuMuaHangView2.rangeSize}" id="t2"
+                                          binding="#{backingBeanScope.backing_ListChungTuMuaHang.t2}">
+                                    <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.Id.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.Id.label}"
+                                               id="c16">
+                                        <af:outputText value="#{row.Id}"
+                                                       shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.Id.tooltip}"
+                                                       id="ot14">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.Id.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.ChungTuMuaHangId.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.ChungTuMuaHangId.label}"
+                                               id="c17">
+                                        <af:outputText value="#{row.ChungTuMuaHangId}"
+                                                       shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.ChungTuMuaHangId.tooltip}"
+                                                       id="ot15">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.ChungTuMuaHangId.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.HangHoaId.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.HangHoaId.label}"
+                                               id="c18">
+                                        <af:selectOneChoice value="#{row.bindings.HangHoaId.inputValue}"
+                                                            label="#{row.bindings.HangHoaId.label}"
+                                                            required="#{bindings.ChiTietChungTuMuaHangView2.hints.HangHoaId.mandatory}"
+                                                            shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.HangHoaId.tooltip}"
+                                                            readOnly="true" id="soc5">
+                                            <f:selectItems value="#{row.bindings.HangHoaId.items}" id="si5"/>
+                                            <f:validator binding="#{row.bindings.HangHoaId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.SoLuong.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.SoLuong.label}"
+                                               id="c19">
+                                        <af:outputText value="#{row.SoLuong}"
+                                                       shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.SoLuong.tooltip}"
+                                                       id="ot16">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.SoLuong.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.DonViTinhId.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.DonViTinhId.label}"
+                                               id="c20">
+                                        <af:selectOneChoice value="#{row.bindings.DonViTinhId.inputValue}"
+                                                            label="#{row.bindings.DonViTinhId.label}"
+                                                            required="#{bindings.ChiTietChungTuMuaHangView2.hints.DonViTinhId.mandatory}"
+                                                            shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.DonViTinhId.tooltip}"
+                                                            readOnly="true" id="soc6">
+                                            <f:selectItems value="#{row.bindings.DonViTinhId.items}" id="si6"/>
+                                            <f:validator binding="#{row.bindings.DonViTinhId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.DonGia.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.DonGia.label}"
+                                               id="c21">
+                                        <af:outputText value="#{row.DonGia}"
+                                                       shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.DonGia.tooltip}"
+                                                       id="ot17">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.DonGia.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.ThueVat.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.ThueVat.label}"
+                                               id="c22">
+                                        <af:outputText value="#{row.ThueVat}"
+                                                       shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.ThueVat.tooltip}"
+                                                       id="ot18">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.ThueVat.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.GiaSauVat.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.GiaSauVat.label}"
+                                               id="c23">
+                                        <af:outputText value="#{row.GiaSauVat}"
+                                                       shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.GiaSauVat.tooltip}"
+                                                       id="ot19">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.GiaSauVat.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.GhiChu.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.GhiChu.label}"
+                                               id="c24">
+                                        <af:outputText value="#{row.GhiChu}"
+                                                       shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.GhiChu.tooltip}"
+                                                       id="ot20"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.CreatedBy.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.CreatedBy.label}"
+                                               id="c25">
+                                        <af:outputText value="#{row.CreatedBy}"
+                                                       shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.CreatedBy.tooltip}"
+                                                       id="ot21"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.CreatedAt.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.CreatedAt.label}"
+                                               id="c26">
+                                        <af:outputText value="#{row.CreatedAt}"
+                                                       shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.CreatedAt.tooltip}"
+                                                       id="ot22">
+                                            <af:convertDateTime pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.CreatedAt.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.ModifiedBy.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.ModifiedBy.label}"
+                                               id="c27">
+                                        <af:outputText value="#{row.ModifiedBy}"
+                                                       shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.ModifiedBy.tooltip}"
+                                                       id="ot23"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.ModifiedAt.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.ModifiedAt.label}"
+                                               id="c28">
+                                        <af:outputText value="#{row.ModifiedAt}"
+                                                       shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.ModifiedAt.tooltip}"
+                                                       id="ot24">
+                                            <af:convertDateTime pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.ModifiedAt.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                </af:table>
+                            </af:panelCollection>
+                        </af:panelHeader>
+                    </f:facet>
+                </af:panelSplitter>
+               
+        </af:panelHeader>
+            
+        </f:facet>
+    </af:panelSplitter>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_ListChungTuMuaHang-->
+</ui:composition>

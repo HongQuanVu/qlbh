@@ -72,6 +72,48 @@
   <ViewUsage
     Name="HinhThucThanhToanViewQuery1"
     ViewObjectName="model.HinhThucThanhToanViewQuery"/>
+  <ViewUsage
+    Name="PhieuChiView1"
+    ViewObjectName="model.PhieuChiView"/>
+  <ViewUsage
+    Name="PhieuChiView2"
+    ViewObjectName="model.PhieuChiView"/>
+  <ViewUsage
+    Name="TrangThaiPhieuChiView1"
+    ViewObjectName="model.TrangThaiPhieuChiView"/>
+  <ViewUsage
+    Name="ChiTietHoaDonBanHangView1"
+    ViewObjectName="model.ChiTietHoaDonBanHangView"/>
+  <ViewUsage
+    Name="HoaDonBanHangView1"
+    ViewObjectName="model.HoaDonBanHangView"/>
+  <ViewUsage
+    Name="KhachHangView1"
+    ViewObjectName="model.KhachHangView"/>
+  <ViewUsage
+    Name="PhieuThuView1"
+    ViewObjectName="model.PhieuThuView"/>
+  <ViewUsage
+    Name="TrangThaiHoaDonBanHangView1"
+    ViewObjectName="model.TrangThaiHoaDonBanHangView"/>
+  <ViewUsage
+    Name="TrangThaiPhieuThuView1"
+    ViewObjectName="model.TrangThaiPhieuThuView"/>
+  <ViewUsage
+    Name="HoaDonBanHangView2"
+    ViewObjectName="model.HoaDonBanHangView"/>
+  <ViewUsage
+    Name="HoaDonBanHangView3"
+    ViewObjectName="model.HoaDonBanHangView"/>
+  <ViewUsage
+    Name="ChiTietHoaDonBanHangView2"
+    ViewObjectName="model.ChiTietHoaDonBanHangView"/>
+  <ViewUsage
+    Name="PhieuThuView2"
+    ViewObjectName="model.PhieuThuView"/>
+  <ViewUsage
+    Name="PhieuThuView3"
+    ViewObjectName="model.PhieuThuView"/>
   <ViewLinkUsage
     Name="FkHangHoaLoaiHangLink1"
     ViewLinkObjectName="model.FkHangHoaLoaiHangLink"
@@ -101,5 +143,41 @@
     ViewLinkObjectName="model.ChiTietCtMhFk2Link"
     SrcViewUsageName="model.AppModule.ChungTuMuaHangView1"
     DstViewUsageName="model.AppModule.ChiTietChungTuMuaHangView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkChungTuMuaHangPhieuChiLink1"
+    ViewLinkObjectName="model.FkChungTuMuaHangPhieuChiLink"
+    SrcViewUsageName="model.AppModule.ChungTuMuaHangView1"
+    DstViewUsageName="model.AppModule.PhieuChiView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkHoaDonBanHangTrangThaiLink1"
+    ViewLinkObjectName="model.FkHoaDonBanHangTrangThaiLink"
+    SrcViewUsageName="model.AppModule.TrangThaiHoaDonBanHangView1"
+    DstViewUsageName="model.AppModule.HoaDonBanHangView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="HoaDonBanHangFk2Link1"
+    ViewLinkObjectName="model.HoaDonBanHangFk2Link"
+    SrcViewUsageName="model.AppModule.KhachHangView1"
+    DstViewUsageName="model.AppModule.HoaDonBanHangView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ChiTietCtBhFk2Link1"
+    ViewLinkObjectName="model.ChiTietCtBhFk2Link"
+    SrcViewUsageName="model.AppModule.HoaDonBanHangView1"
+    DstViewUsageName="model.AppModule.ChiTietHoaDonBanHangView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkPhieuThuChungTuMuaHangLink1"
+    ViewLinkObjectName="model.FkPhieuThuChungTuMuaHangLink"
+    SrcViewUsageName="model.AppModule.HoaDonBanHangView1"
+    DstViewUsageName="model.AppModule.PhieuThuView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkPhieuThuTrangThaiLink1"
+    ViewLinkObjectName="model.FkPhieuThuTrangThaiLink"
+    SrcViewUsageName="model.AppModule.TrangThaiPhieuThuView1"
+    DstViewUsageName="model.AppModule.PhieuThuView3"
     Reversed="false"/>
 </AppModule>

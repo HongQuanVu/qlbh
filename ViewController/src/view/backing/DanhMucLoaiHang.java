@@ -37,6 +37,8 @@ public class DanhMucLoaiHang {
     private RichQuickQuery qryId1;
     private RichCommandLink cl1;
     private RichTable t1;
+    private RichButton b6;
+    private RichButton b7;
 
     public void setF1(RichForm f1) {
         this.f1 = f1;
@@ -220,5 +222,21 @@ public class DanhMucLoaiHang {
 
     public RichTable getT1() {
         return t1;
+    }
+
+    public void setB6(RichButton b6) {
+        this.b6 = b6;
+    }
+
+    public RichButton getB6() {
+        return b6;
+    }
+
+    public void setB7(RichButton b7) {
+        this.b7 = b7;
+    }
+
+    public RichButton getB7() {
+        return b7;
     }
 }

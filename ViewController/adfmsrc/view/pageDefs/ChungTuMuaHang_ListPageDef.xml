@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="ChungTuMuaHang_ListPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ChungTuMuaHangView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ChungTuMuaHangView1Iterator" ChangeEventPolicy="ppr"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ChungTuMuaHangView1Iterator" id="ImplicitViewCriteriaQuery"/>
+    <iterator Binds="ChiTietChungTuMuaHangView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ChiTietChungTuMuaHangView2Iterator" ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ChungTuMuaHangView1Iterator" id="ChungTuMuaHangView1">
+      <nodeDefinition DefName="model.ChungTuMuaHangView" Name="ChungTuMuaHangView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="MaChungTu"/>
+          <Item Value="TenChungTu"/>
+          <Item Value="NgayLap"/>
+          <Item Value="HinhThucThanhToanId"/>
+          <Item Value="ThueVat"/>
+          <Item Value="CongTienHang"/>
+          <Item Value="ChietKhau"/>
+          <Item Value="TienSauChietKhau"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedAt"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="ModifiedAt"/>
+          <Item Value="DonViBanHangId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ChiTietChungTuMuaHangView2Iterator" id="ChiTietChungTuMuaHangView2">
+      <nodeDefinition DefName="model.ChiTietChungTuMuaHangView" Name="ChiTietChungTuMuaHangView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="ChungTuMuaHangId"/>
+          <Item Value="HangHoaId"/>
+          <Item Value="SoLuong"/>
+          <Item Value="DonViTinhId"/>
+          <Item Value="DonGia"/>
+          <Item Value="ThueVat"/>
+          <Item Value="GiaSauVat"/>
+          <Item Value="GhiChu"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedAt"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="ModifiedAt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView2Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView2Iterator" id="ChungTuMuaHangId">
+      <AttrNames>
+        <Item Value="ChungTuMuaHangId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ChiTietChungTuMuaHangView2Iterator" StaticList="false" Uses="LOV_HangHoaId" id="HangHoaId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView2Iterator" id="SoLuong">
+      <AttrNames>
+        <Item Value="SoLuong"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ChiTietChungTuMuaHangView2Iterator" StaticList="false" Uses="LOV_DonViTinhId" id="DonViTinhId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView2Iterator" id="DonGia">
+      <AttrNames>
+        <Item Value="DonGia"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView2Iterator" id="ThueVat">
+      <AttrNames>
+        <Item Value="ThueVat"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView2Iterator" id="GiaSauVat">
+      <AttrNames>
+        <Item Value="GiaSauVat"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView2Iterator" id="GhiChu">
+      <AttrNames>
+        <Item Value="GhiChu"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView2Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView2Iterator" id="CreatedAt">
+      <AttrNames>
+        <Item Value="CreatedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView2Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView2Iterator" id="ModifiedAt">
+      <AttrNames>
+        <Item Value="ModifiedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ChiTietChungTuMuaHangView2Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ChiTietChungTuMuaHangView2Iterator" id="Previous" RequiresUpdateModel="true"
+            Action="previous"/>
+    <action IterBinding="ChiTietChungTuMuaHangView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ChiTietChungTuMuaHangView2Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="ChiTietChungTuMuaHangView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="CongTienHang2">
+      <AttrNames>
+        <Item Value="CongTienHang2"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

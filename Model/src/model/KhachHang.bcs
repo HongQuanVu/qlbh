@@ -1,0 +1,12 @@
+//Groovy Scripts for model.KhachHang
+
+package model
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="Id")
+def Id_ExpressionScript_Expression()
+{
+(new oracle.jbo.server.SequenceImpl("SEQ_KHACH_HANG_ID", object.getDBTransaction())).getSequenceNumber()
+}
+

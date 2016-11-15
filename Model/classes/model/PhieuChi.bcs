@@ -1,0 +1,12 @@
+//Groovy Scripts for model.PhieuChi
+
+package model
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="Id")
+def Id_ExpressionScript_Expression()
+{
+(new oracle.jbo.server.SequenceImpl("SEQ_PHIEU_CHI_ID", object.getDBTransaction())).getSequenceNumber()
+}
+

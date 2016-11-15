@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.pfl1}" maxColumns="2"
+                        rows="5">
+        <af:panelLabelAndMessage label="#{bindings.Id.hints.label}" id="plam1"
+                                 binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.plam1}">
+            <af:outputText value="#{bindings.Id.inputValue}" shortDesc="#{bindings.Id.hints.tooltip}" id="ot1"
+                           binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.ot1}">
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+            </af:outputText>
+        </af:panelLabelAndMessage>
+        <af:inputText value="#{bindings.MaChungTu.inputValue}" label="#{bindings.MaChungTu.hints.label}"
+                      required="#{bindings.MaChungTu.hints.mandatory}"
+                      columns="#{bindings.MaChungTu.hints.displayWidth}"
+                      maximumLength="#{bindings.MaChungTu.hints.precision}"
+                      shortDesc="#{bindings.MaChungTu.hints.tooltip}" id="it1"
+                      binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.it1}">
+            <f:validator binding="#{bindings.MaChungTu.validator}"/>
+        </af:inputText>
+        <af:selectOneChoice value="#{bindings.DonViBanHangId.inputValue}" label="#{bindings.DonViBanHangId.label}"
+                            required="#{bindings.DonViBanHangId.hints.mandatory}"
+                            shortDesc="#{bindings.DonViBanHangId.hints.tooltip}" id="soc1"
+                            binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.soc1}">
+            <f:selectItems value="#{bindings.DonViBanHangId.items}" id="si1"
+                           binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.si1}"/>
+            <f:validator binding="#{bindings.DonViBanHangId.validator}"/>
+        </af:selectOneChoice>
+        <af:inputText value="#{bindings.TenChungTu.inputValue}" label="#{bindings.TenChungTu.hints.label}"
+                      required="#{bindings.TenChungTu.hints.mandatory}"
+                      columns="#{bindings.TenChungTu.hints.displayWidth}"
+                      maximumLength="#{bindings.TenChungTu.hints.precision}"
+                      shortDesc="#{bindings.TenChungTu.hints.tooltip}" id="it2"
+                      binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.it2}">
+            <f:validator binding="#{bindings.TenChungTu.validator}"/>
+        </af:inputText>
+        <af:inputDate value="#{bindings.NgayLap.inputValue}" label="#{bindings.NgayLap.hints.label}"
+                      required="#{bindings.NgayLap.hints.mandatory}" columns="#{bindings.NgayLap.hints.displayWidth}"
+                      shortDesc="#{bindings.NgayLap.hints.tooltip}" id="id1"
+                      binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.id1}">
+            <f:validator binding="#{bindings.NgayLap.validator}"/>
+            <af:convertDateTime pattern="#{bindings.NgayLap.format}"/>
+        </af:inputDate>
+        <af:selectOneChoice value="#{bindings.HinhThucThanhToanId.inputValue}"
+                            label="#{bindings.HinhThucThanhToanId.label}"
+                            required="#{bindings.HinhThucThanhToanId.hints.mandatory}"
+                            shortDesc="#{bindings.HinhThucThanhToanId.hints.tooltip}" id="soc2"
+                            binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.soc2}">
+            <f:selectItems value="#{bindings.HinhThucThanhToanId.items}" id="si2"
+                           binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.si2}"/>
+            <f:validator binding="#{bindings.HinhThucThanhToanId.validator}"/>
+        </af:selectOneChoice>
+        <af:inputText value="#{bindings.ThueVat.inputValue}" label="#{bindings.ThueVat.hints.label}"
+                      required="#{bindings.ThueVat.hints.mandatory}" columns="#{bindings.ThueVat.hints.displayWidth}"
+                      maximumLength="#{bindings.ThueVat.hints.precision}" shortDesc="#{bindings.ThueVat.hints.tooltip}"
+                      id="it3" binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.it3}">
+            <f:validator binding="#{bindings.ThueVat.validator}"/>
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.ThueVat.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.CongTienHang.inputValue}" label="#{bindings.CongTienHang.hints.label}"
+                      required="#{bindings.CongTienHang.hints.mandatory}"
+                      columns="#{bindings.CongTienHang.hints.displayWidth}"
+                      maximumLength="#{bindings.CongTienHang.hints.precision}"
+                      shortDesc="#{bindings.CongTienHang.hints.tooltip}" id="it4"
+                      binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.it4}">
+            <f:validator binding="#{bindings.CongTienHang.validator}"/>
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.CongTienHang.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.ChietKhau.inputValue}" label="#{bindings.ChietKhau.hints.label}"
+                      required="#{bindings.ChietKhau.hints.mandatory}"
+                      columns="#{bindings.ChietKhau.hints.displayWidth}"
+                      maximumLength="#{bindings.ChietKhau.hints.precision}"
+                      shortDesc="#{bindings.ChietKhau.hints.tooltip}" id="it5"
+                      binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.it5}">
+            <f:validator binding="#{bindings.ChietKhau.validator}"/>
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.ChietKhau.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.TienSauChietKhau.inputValue}" label="#{bindings.TienSauChietKhau.hints.label}"
+                      required="#{bindings.TienSauChietKhau.hints.mandatory}"
+                      columns="#{bindings.TienSauChietKhau.hints.displayWidth}"
+                      maximumLength="#{bindings.TienSauChietKhau.hints.precision}"
+                      shortDesc="#{bindings.TienSauChietKhau.hints.tooltip}" id="it6"
+                      binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.it6}">
+            <f:validator binding="#{bindings.TienSauChietKhau.validator}"/>
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.TienSauChietKhau.format}"/>
+        </af:inputText>
+        <af:panelLabelAndMessage label="#{bindings.CreatedBy.hints.label}" id="plam2"
+                                 binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.plam2}">
+            <af:outputText value="#{bindings.CreatedBy.inputValue}" shortDesc="#{bindings.CreatedBy.hints.tooltip}"
+                           id="ot2" binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.ot2}"/>
+        </af:panelLabelAndMessage>
+        <af:panelLabelAndMessage label="#{bindings.CreatedAt.hints.label}" id="plam3"
+                                 binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.plam3}">
+            <af:outputText value="#{bindings.CreatedAt.inputValue}" shortDesc="#{bindings.CreatedAt.hints.tooltip}"
+                           id="ot3" binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.ot3}">
+                <af:convertDateTime pattern="#{bindings.CreatedAt.format}"/>
+            </af:outputText>
+        </af:panelLabelAndMessage>
+        <af:panelLabelAndMessage label="#{bindings.ModifiedBy.hints.label}" id="plam4"
+                                 binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.plam4}">
+            <af:outputFormatted value="#{bindings.ModifiedBy.inputValue}" id="of1"
+                                binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.of1}"/>
+        </af:panelLabelAndMessage>
+        <af:panelLabelAndMessage label="#{bindings.ModifiedAt.hints.label}" id="plam5"
+                                 binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.plam5}">
+            <af:outputText value="#{bindings.ModifiedAt.inputValue}" shortDesc="#{bindings.ModifiedAt.hints.tooltip}"
+                           id="ot4" binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.ot4}">
+                <af:convertDateTime pattern="#{bindings.ModifiedAt.format}"/>
+            </af:outputText>
+        </af:panelLabelAndMessage>
+        <af:panelLabelAndMessage label="#{bindings.CongTienHang2.hints.label}" id="plam6"
+                                 binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.plam6}">
+            <af:outputText value="#{bindings.CongTienHang2.inputValue}"
+                           shortDesc="#{bindings.CongTienHang2.hints.tooltip}" id="ot5"
+                           binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.ot5}">
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.CongTienHang2.format}"/>
+            </af:outputText>
+        </af:panelLabelAndMessage>
+        <f:facet name="footer">
+            <af:panelGroupLayout layout="vertical" id="pgl1"
+                                 binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.pgl1}">
+                <af:panelGroupLayout layout="horizontal" id="pgl2"
+                                     binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.pgl2}">
+                    <af:button actionListener="#{bindings.First.execute}" text="First"
+                               disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"
+                               binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.b1}"/>
+                    <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                               disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"
+                               binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.b2}"/>
+                    <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                               disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"
+                               binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.b3}"/>
+                    <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                               disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"
+                               binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.b4}"/>
+                  <af:button text="Submit" id="b5" binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.b5}"/>
+                <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                           disabled="#{!bindings.Commit.enabled}" id="b6"
+                           binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.b6}"/>
+                <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
+                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b7"
+                           binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.b7}">
+                    <af:resetActionListener/>
+                </af:button>
+                <af:button text="Go Back" id="b8" binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.b8}"
+                           action="ViewList"/>
+                </af:panelGroupLayout>
+                
+            </af:panelGroupLayout>
+        </f:facet>
+    </af:panelFormLayout>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_ChugTuMuaHang_Edit-->
+</ui:composition>

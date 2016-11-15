@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="MHCTPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ChungTuMuaHangView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ChungTuMuaHangView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="MaChungTu">
+      <AttrNames>
+        <Item Value="MaChungTu"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="TenChungTu">
+      <AttrNames>
+        <Item Value="TenChungTu"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="NgayLap">
+      <AttrNames>
+        <Item Value="NgayLap"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ChungTuMuaHangView1Iterator" StaticList="false" Uses="LOV_HinhThucThanhToanId"
+          id="HinhThucThanhToanId" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="ThueVat">
+      <AttrNames>
+        <Item Value="ThueVat"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="CongTienHang">
+      <AttrNames>
+        <Item Value="CongTienHang"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="ChietKhau">
+      <AttrNames>
+        <Item Value="ChietKhau"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="TienSauChietKhau">
+      <AttrNames>
+        <Item Value="TienSauChietKhau"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="CreatedAt">
+      <AttrNames>
+        <Item Value="CreatedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="ModifiedAt">
+      <AttrNames>
+        <Item Value="ModifiedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ChungTuMuaHangView1Iterator" StaticList="false" Uses="LOV_DonViBanHangId" id="DonViBanHangId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="CongTienHang2">
+      <AttrNames>
+        <Item Value="CongTienHang2"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ChungTuMuaHangView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ChungTuMuaHangView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ChungTuMuaHangView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ChungTuMuaHangView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>

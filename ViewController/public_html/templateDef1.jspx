@@ -98,16 +98,40 @@
                                 <af:panelGroupLayout id="titlePgl" layout="vertical" styleClass="AFBrandingBarTitle">
                                     <af:facetRef facetName="header"/>
                                     <af:menuBar id="pt_mb1">
-                                        <af:menu text="Users" id="pt_m1">                                            
+                                        <af:menu text="Nguoi dung " id="pt_m1">                                            
+                                        </af:menu>
+                                         <af:menu text="H&#224;ng Ho&#225;" id="pt_m5">
+                                            <af:commandMenuItem text="Danh Mục H&#224;ng Ho&#225;" id="pt_cmi4"
+                                                                action="danhmuchanghoa"/>
+                                            <af:commandMenuItem text="Thiết Lập Gi&#225;" id="pt_cmi6"/>
+                                            <af:commandMenuItem text="Kiểm Kho" id="pt_cmi5"/>
                                         </af:menu>
                                         <af:menu text="Mua H&#224;ng" id="pt_m2">
-                                            <af:commandMenuItem text="Don Hang " id="pt_cmi1"/>
+                                            <af:commandMenuItem text="Chứng từ mua h&#224;ng" id="pt_cmi1"
+                                                                action="chungtumuahang"/>
+                                            <af:commandMenuItem text="Trả h&#224;ng đ&#227; mua" id="pt_cmi7"/>
                                         </af:menu>
-                                    <af:menu text="B&#225;n H&#224;ng" id="pt_m3">                                           
-                                        </af:menu>                                        
-                                         <af:menu text="Danh Mục" id="pt_m4">
-                                            <af:commandMenuItem text="MauSac " id="pt_cmi2"/>
-                                            <af:commandMenuItem text="Size " id="pt_cmi3"/>
+                                     
+                                    <af:menu text="B&#225;n H&#224;ng" id="pt_m3">
+                                            
+                                            <af:commandMenuItem text="Hoa Don Ban Hang " id="pt_cmi9"/>
+                                            <af:commandMenuItem text="Nhap hang tra ve " id="pt_cmi8"/>
+                                        </af:menu>
+                                        <af:menu text="So Qui" id="pt_m6">
+                                            <af:commandMenuItem text="Phieu Thu" id="pt_cmi10"/>
+                                            <af:commandMenuItem text="Phieu Chi" id="pt_cmi11"/>
+                                            <af:commandMenuItem text="So Qui Tien Mat" id="pt_cmi12"/>
+                                        </af:menu>
+                                        <af:menu text= "Doi Tac " id="pt_m7">
+                                            <af:commandMenuItem text="Nha Cung Cap " id="pt_cmi13"
+                                                                action="danhmucnhacungcap"/>
+                                            <af:commandMenuItem text="Khach Hang" id="pt_cmi14"/>
+                                        </af:menu>
+                                        
+                                        <af:menu text="Danh Mục" id="pt_m4">
+                                            <af:commandMenuItem text="Danh Muc Loai Hang  " id="pt_cmi2"
+                                                                action="danhmucloaihang"/>
+                                            <af:commandMenuItem text="Danh Muc Qui Cach  " id="pt_cmi3"/>
                                         </af:menu>
                                     
                                     </af:menuBar>

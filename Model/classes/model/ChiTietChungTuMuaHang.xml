@@ -30,7 +30,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"/>
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"
+    IsNotNull="true"/>
   <Attribute
     Name="HangHoaId"
     ColumnName="HANG_HOA_ID"
@@ -74,9 +75,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"
-    RetrievedOnInsert="true"
-    RetrievedOnUpdate="true"/>
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"/>
   <Attribute
     Name="GhiChu"
     Precision="300"
@@ -135,6 +134,27 @@
     Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="CHI_TIET_CHUNG_TU_MUA_HANG"/>
+  <Attribute
+    Name="QuiDoi"
+    ColumnName="QUI_DOI"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"/>
+  <Attribute
+    Name="DonViTinhQuiDoiId"
+    ColumnName="DON_VI_TINH_QUI_DOI_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"/>
+  <Attribute
+    Name="SoLuongSauQuiDoi"
+    ColumnName="SO_LUONG_SAU_QUI_DOI"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CHI_TIET_CHUNG_TU_MUA_HANG"/>
   <AccessorAttribute
     Name="ChungTuMuaHang"
     Association="model.ChiTietCtMhFk2Assoc"
@@ -142,6 +162,18 @@
     AssociationOtherEnd="model.ChiTietCtMhFk2Assoc.ChiTietChungTuMuaHang"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <Key
+    Name="ChiTietChungTuMuaHangChungTuMuaHangIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"CHUNG_TU_MUA_HANG_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CHI_TIET_CHUNG_TU_MUA_HANG_CHU"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ChiTietChungTuMuaHang.ChungTuMuaHangId"/>
+    </AttrArray>
+  </Key>
   <Key
     Name="SysC0011119"
     PrimaryKey="true">

@@ -21,11 +21,14 @@
     Name="DonViTinhView1"
     ViewObjectName="model.DonViTinhView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DonViTinhView2"
+    ViewObjectName="model.DonViTinhView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_HangHoaId"
     ListVOName="HangHoaView1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="HangHoaId"/>
@@ -47,6 +50,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="DonViTinhId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TenDonViTinh"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DonViTinhQuiDoiId"
+    ListVOName="DonViTinhView2"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DonViTinhQuiDoiId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -160,4 +181,30 @@
     EntityAttrName="ModifiedAt"
     EntityUsage="ChiTietChungTuMuaHang"
     AliasName="MODIFIED_AT"/>
+  <ViewAttribute
+    Name="DonViTinhQuiDoiId"
+    PrecisionRule="true"
+    EntityAttrName="DonViTinhQuiDoiId"
+    EntityUsage="ChiTietChungTuMuaHang"
+    AliasName="DON_VI_TINH_QUI_DOI_ID"
+    LOVName="LOV_DonViTinhQuiDoiId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="QuiDoi"
+    PrecisionRule="true"
+    EntityAttrName="QuiDoi"
+    EntityUsage="ChiTietChungTuMuaHang"
+    AliasName="QUI_DOI"/>
+  <ViewAttribute
+    Name="SoLuongSauQuiDoi"
+    PrecisionRule="true"
+    EntityAttrName="SoLuongSauQuiDoi"
+    EntityUsage="ChiTietChungTuMuaHang"
+    AliasName="SO_LUONG_SAU_QUI_DOI"/>
 </ViewObject>

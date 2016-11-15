@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkPhieuChiChungTuMuaHangAssoc"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="ChungTuMuaHang"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ChungTuMuaHang"
+    ViewObject="model.ChungTuMuaHangView"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="ChungTuMuaHang"/>
+      <Attr Name="_foreignKey" Value="model.ChungTuMuaHang.SysC0011090"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ChungTuMuaHang.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="PhieuChi"
+    Cardinality="-1"
+    Owner="model.PhieuChi"
+    ViewObject="model.PhieuChiView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="PhieuChi"/>
+      <Attr Name="_foreignKey" Value="model.PhieuChi.fk_PhieuChi"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.PhieuChi.ChungTuMuaHangId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

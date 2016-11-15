@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="qlbh" id="Project_1cd33c44" html="y" template="Default" database="Oracle" >
+	<schema name="ORDSYS" schemaname="ORDSYS" >
+		<table name="CHI_TIET_CHUNG_TU_MUA_HANG" >
+			<column name="ID" type="number" jt="2" mandatory="y" />
+			<column name="CHUNG_TU_MUA_HANG_ID" type="number" jt="2" />
+			<column name="HANG_HOA_ID" type="number" jt="2" />
+			<column name="SO_LUONG" type="number" jt="2" />
+			<column name="DON_VI_TINH_ID" type="number" jt="2" />
+			<column name="DON_GIA" type="number" jt="2" />
+			<column name="THUE_VAT" type="number" jt="2" >
+				<defo>null</defo>
+			</column>
+			<column name="GIA_SAU_VAT" type="number" jt="2" />
+			<column name="GHI_CHU" type="varchar2" length="300" decimal="0" jt="12" />
+			<column name="CREATED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="CREATED_AT" type="date" length="7" decimal="0" jt="91" >
+				<defo>SYSDATE</defo>
+			</column>
+			<column name="MODIFIED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
+			<index name="SYS_C0011119" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<fk name="CHI_TIET_CT_MH_FK2" to_schema="ORDSYS" to_table="CHUNG_TU_MUA_HANG" update_action="cascade" >
+				<fk_column name="CHUNG_TU_MUA_HANG_ID" pk="ID" />
+			</fk>
+			<fk name="CHI_TIET_CT_MH_FK3" to_schema="ORDSYS" to_table="DON_VI_TINH" update_action="cascade" >
+				<fk_column name="DON_VI_TINH_ID" pk="ID" />
+			</fk>
+			<fk name="CHI_TIET_CT_MH_FK1" to_schema="ORDSYS" to_table="HANG_HOA" update_action="cascade" >
+				<fk_column name="HANG_HOA_ID" pk="ID" />
+			</fk>
+		</table>
+		<table name="CHUNG_TU_MUA_HANG" >
+			<column name="ID" type="number" jt="2" mandatory="y" />
+			<column name="MA_CHUNG_TU" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="TEN_CHUNG_TU" type="varchar2" length="300" decimal="0" jt="12" />
+			<column name="NGAY_LAP" type="date" length="7" decimal="0" jt="91" />
+			<column name="HINH_THUC_THANH_TOAN_ID" type="number" jt="2" />
+			<column name="THUE_VAT" type="number" jt="2" >
+				<defo>0</defo>
+			</column>
+			<column name="CONG_TIEN_HANG" type="number" jt="2" />
+			<column name="CHIET_KHAU" type="number" jt="2" >
+				<defo>0</defo>
+			</column>
+			<column name="TIEN_SAU_CHIET_KHAU" type="number" jt="2" />
+			<column name="CREATED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="CREATED_AT" type="date" length="7" decimal="0" jt="91" >
+				<defo>SYSDATE</defo>
+			</column>
+			<column name="MODIFIED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
+			<column name="DON_VI_BAN_HANG_ID" type="number" jt="2" />
+			<column name="TRANG_THAI_ID" type="number" length="38" decimal="0" jt="2" />
+			<index name="IDX_CHUNG_TU_MUA_HANG" unique="NORMAL" >
+				<column name="TRANG_THAI_ID" />
+			</index>
+			<index name="SYS_C0011090" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<fk name="CHUNG_TU_MUA_HANG_FK2" to_schema="ORDSYS" to_table="DON_VI_BAN_HANG" update_action="cascade" >
+				<fk_column name="DON_VI_BAN_HANG_ID" pk="ID" />
+			</fk>
+			<fk name="CHUNG_TU_MUA_HANG_FK1" to_schema="ORDSYS" to_table="HINH_THUC_THANH_TOAN" update_action="cascade" >
+				<fk_column name="HINH_THUC_THANH_TOAN_ID" pk="ID" />
+			</fk>
+			<fk name="FK_CHUNG_TU_MUA_HANG" to_schema="ORDSYS" to_table="TRANG_THAI_CHUNG_TU_MUA_HANG" update_action="cascade" >
+				<fk_column name="TRANG_THAI_ID" pk="ID" />
+			</fk>
+		</table>
+		<table name="DON_VI_BAN_HANG" >
+			<column name="ID" type="number" jt="2" mandatory="y" />
+			<column name="TEN_DON_VI" type="varchar2" length="300" decimal="0" jt="12" mandatory="y" />
+			<column name="MA_SO_THUE" type="varchar2" length="50" decimal="0" jt="12" />
+			<column name="DIA_CHI" type="varchar2" length="500" decimal="0" jt="12" />
+			<column name="DIEN_THOAI" type="varchar2" length="20" decimal="0" jt="12" />
+			<column name="SO_FAX" type="varchar2" length="50" decimal="0" jt="12" />
+			<column name="WEB_SITE" type="varchar2" length="300" decimal="0" jt="12" />
+			<column name="SO_TAI_KHOAN" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="CHI_NHANH_NGAN_HANG" type="varchar2" length="200" decimal="0" jt="12" />
+			<column name="TEN_NGAN_HANG" type="varchar2" length="200" decimal="0" jt="12" />
+			<column name="GHI_CHU" type="varchar2" length="500" decimal="0" jt="12" />
+			<column name="CREATED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="CREATED_AT" type="date" length="7" decimal="0" jt="91" />
+			<column name="MODIFIED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
+			<index name="SYS_C0011086" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+		</table>
+		<table name="DON_VI_TINH" >
+			<column name="ID" type="number" jt="2" mandatory="y" />
+			<column name="MA_DON_VI_TINH" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="TEN_DON_VI_TINH" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="CREATED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="CREATED_AT" type="date" length="7" decimal="0" jt="91" >
+				<defo>sysdate</defo>
+			</column>
+			<column name="MODIFIED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
+			<index name="SYS_C0011058" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+		</table>
+		<table name="HANG_HOA" >
+			<column name="ID" type="number" jt="2" mandatory="y" />
+			<column name="MA_HANG" type="varchar2" length="500" decimal="0" jt="12" />
+			<column name="TEN_HANG" type="varchar2" length="500" decimal="0" jt="12" />
+			<column name="LOAI_HANG_ID" type="number" jt="2" />
+			<column name="XUAT_XU_ID" type="number" jt="2" />
+			<column name="DON_VI_TINH_ID" type="number" jt="2" />
+			<column name="QUI_CACH_ID" type="number" jt="2" />
+			<column name="DON_GIA" type="number" jt="2" />
+			<column name="GIA_BAN" type="number" jt="2" />
+			<column name="GHI_CHU" type="varchar2" length="1000" decimal="0" jt="12" />
+			<column name="CREATED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="CREATED_AT" type="date" length="7" decimal="0" jt="91" />
+			<column name="MODIFIED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
+			<column name="DON_VI_QUI_DOI_ID" type="number" jt="2" />
+			<column name="SO_LUONG_QUI_DOI" type="integer" jt="4" />
+			<index name="IDX_HANG_HOA" unique="NORMAL" >
+				<column name="QUI_CACH_ID" />
+			</index>
+			<index name="SYS_C0011078" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<index name="IDX_HANG_HOA_0" unique="NORMAL" >
+				<column name="DON_VI_QUI_DOI_ID" />
+			</index>
+			<fk name="FK_HANG_HOA_DON_VI_TINH" to_schema="ORDSYS" to_table="DON_VI_TINH" update_action="cascade" >
+				<fk_column name="DON_VI_TINH_ID" pk="ID" />
+			</fk>
+			<fk name="FK_HANG_HOA_LOAI_HANG" to_schema="ORDSYS" to_table="LOAI_HANG" update_action="cascade" >
+				<fk_column name="LOAI_HANG_ID" pk="ID" />
+			</fk>
+			<fk name="FK_HANG_HOA_QUI_CACH" to_schema="ORDSYS" to_table="QUI_CACH" update_action="cascade" >
+				<fk_column name="QUI_CACH_ID" pk="ID" />
+			</fk>
+			<fk name="FK_HANG_HOA_XUAT_XU" to_schema="ORDSYS" to_table="XUAT_XU" update_action="cascade" >
+				<fk_column name="XUAT_XU_ID" pk="ID" />
+			</fk>
+			<fk name="FK_HANG_HOA_DON_VI_QUI_DOI" to_schema="ORDSYS" to_table="DON_VI_TINH" >
+				<fk_column name="DON_VI_QUI_DOI_ID" pk="ID" />
+			</fk>
+		</table>
+		<table name="HINH_THUC_THANH_TOAN" >
+			<column name="ID" type="number" jt="2" mandatory="y" />
+			<column name="TEN_HINH_THUC_THANH_TOAN" type="varchar2" length="100" decimal="0" jt="12" />
+			<index name="SYS_C0011087" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+		</table>
+		<table name="LOAI_HANG" >
+			<column name="ID" type="number" jt="2" mandatory="y" />
+			<column name="MA_LOAI_HANG" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="TEN_LOAI_HANG" type="varchar2" length="200" decimal="0" jt="12" />
+			<column name="CREATED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="CREATED_AT" type="date" length="7" decimal="0" jt="91" >
+				<defo>sysdate</defo>
+			</column>
+			<column name="MODIFIED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
+			<index name="SYS_C0011056" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+		</table>
+		<table name="PHIEU_CHI" >
+			<column name="ID" type="number" length="38" decimal="0" jt="2" mandatory="y" />
+			<column name="MA_PHIEU_CHI" type="varchar2" length="20" decimal="0" jt="12" mandatory="y" />
+			<column name="NGAY_LAP" type="timestamp" length="6" decimal="6" jt="93" />
+			<column name="GIA_TRI_PHIEU" type="number" jt="2" mandatory="y" />
+			<column name="DA_CHI_TRUOC" type="number" jt="2" />
+			<column name="TIEN_CHI" type="number" jt="2" />
+			<column name="CHUNG_TU_MUA_HANG_ID" type="number" jt="2" />
+			<column name="TRANG_THAI_PHIEU_CHI_ID" type="number" jt="2" />
+			<column name="HINH_THUC_THANH_TOAN_ID" type="number" jt="2" />
+			<column name="CREATED_AT" type="date" length="7" decimal="0" jt="91" />
+			<column name="CREATED_BY" type="varchar2" length="20" decimal="0" jt="12" />
+			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
+			<column name="MODIFIED_BY" type="varchar2" length="20" decimal="0" jt="12" />
+			<index name="IDX_PHIEU_CHI" unique="NORMAL" >
+				<column name="CHUNG_TU_MUA_HANG_ID" />
+			</index>
+			<index name="IDX_PHIEU_CHI_0" unique="NORMAL" >
+				<column name="TRANG_THAI_PHIEU_CHI_ID" />
+			</index>
+			<index name="IDX_PHIEU_CHI_1" unique="NORMAL" >
+				<column name="HINH_THUC_THANH_TOAN_ID" />
+			</index>
+			<index name="PK_PHIEU_CHI" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<fk name="FK_PHIEU_CHI_CHUNG_TU_MUA_HANG" to_schema="ORDSYS" to_table="CHUNG_TU_MUA_HANG" update_action="cascade" >
+				<fk_column name="CHUNG_TU_MUA_HANG_ID" pk="ID" />
+			</fk>
+			<fk name="FK_PHIEU_CHI_HTTT_ID" to_schema="ORDSYS" to_table="HINH_THUC_THANH_TOAN" update_action="cascade" >
+				<fk_column name="HINH_THUC_THANH_TOAN_ID" pk="ID" />
+			</fk>
+			<fk name="FK_PHIEU_CHI" to_schema="ORDSYS" to_table="TRANG_THAI_PHIEU_CHI" update_action="cascade" >
+				<fk_column name="TRANG_THAI_PHIEU_CHI_ID" pk="ID" />
+			</fk>
+		</table>
+		<table name="PS_TXN" >
+			<column name="ID" type="number" length="20" decimal="0" jt="2" mandatory="y" />
+			<column name="PARENTID" type="number" length="20" decimal="0" jt="2" />
+			<column name="COLLID" type="number" length="10" decimal="0" jt="2" mandatory="y" />
+			<column name="CONTENT" type="blob" length="4000" decimal="0" jt="2004" />
+			<column name="CREATION_DATE" type="date" length="7" decimal="0" jt="91" >
+				<defo>sysdate</defo>
+			</column>
+			<index name="PS_TXN_IDX" unique="NORMAL" >
+				<column name="COLLID" />
+				<column name="ID" />
+			</index>
+		</table>
+		<table name="QUI_CACH" >
+			<column name="ID" type="number" jt="2" mandatory="y" />
+			<column name="MA_QUI_CACH" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="TEN_QUI_CACH" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="CREATED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="CREATED_AT" type="date" length="7" decimal="0" jt="91" >
+				<defo>sysdate</defo>
+			</column>
+			<column name="MODIFIED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
+			<index name="SYS_C0011066" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+		</table>
+		<table name="TRANG_THAI_CHUNG_TU_MUA_HANG" >
+			<column name="ID" type="number" length="38" decimal="0" jt="2" mandatory="y" />
+			<column name="TEN_TRANG_THAI" type="varchar2" length="30" decimal="0" jt="12" />
+			<index name="PK_TRANG_THAI_CTMH" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+		</table>
+		<table name="TRANG_THAI_PHIEU_CHI" >
+			<column name="ID" type="number" jt="2" mandatory="y" />
+			<column name="TEN_TRANG_THAI_PHIEU_CHI" type="varchar2" length="20" decimal="0" jt="12" />
+			<index name="PK_TRANG_THAI_PHIEU_CHI" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+		</table>
+		<table name="XUAT_XU" >
+			<column name="ID" type="number" jt="2" mandatory="y" />
+			<column name="MA_XUAT_XU" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="TEN_XUAT_XU" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="CREATED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="CREATED_AT" type="date" length="7" decimal="0" jt="91" >
+				<defo>sysdate</defo>
+			</column>
+			<column name="MODIFIED_BY" type="varchar2" length="100" decimal="0" jt="12" />
+			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
+			<index name="SYS_C0011057" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+		</table>
+		<sequence name="PS_TXN_SEQ" start="12101" />
+		<sequence name="SEQ_CHITIET_CT_MUA_HANG_ID" start="201" />
+		<sequence name="SEQ_CTMH_ID" start="101" />
+		<sequence name="SEQ_CT_CHUNG_TU_MH" start="61" />
+		<sequence name="SEQ_DON_VI_BAN_HANG_ID" start="21" />
+		<sequence name="SEQ_DON_VI_MUA_HANG_ID" start="1" />
+		<sequence name="SEQ_HANG_HOA_ID" start="41" />
+		<sequence name="SEQ_HINH_THUC_THANH_TOAN_ID" start="1" />
+		<sequence name="SEQ_LOAI_HANG_ID" start="1" />
+		<sequence name="SEQ_PHIEU_CHI_ID" start="41" />
+	</schema>
+	<connector name="qlbh" database="Oracle" driver_class="oracle.jdbc.OracleDriver" driver_jar="ojdbc7-12.1.0.1.jar" driver_desc="Connect via SID" host="192.168.1.223" port="1521" instance="orcl" user="ordsys" passwd="b3Jkc3lz" />
+	<layout name="Default Layout" id="Layout_302131e3" show_relation="columns" >
+		<entity schema="ORDSYS" name="CHI_TIET_CHUNG_TU_MUA_HANG" color="bfd4f5" x="672" y="48" />
+		<entity schema="ORDSYS" name="CHUNG_TU_MUA_HANG" color="c8f5bf" x="48" y="48" />
+		<entity schema="ORDSYS" name="DON_VI_BAN_HANG" color="c8f5bf" x="336" y="48" />
+		<entity schema="ORDSYS" name="DON_VI_TINH" color="bfd4f5" x="944" y="48" />
+		<entity schema="ORDSYS" name="HINH_THUC_THANH_TOAN" color="f5ddbf" x="336" y="640" />
+		<entity schema="ORDSYS" name="LOAI_HANG" color="bfbff5" x="672" y="976" />
+		<entity schema="ORDSYS" name="PHIEU_CHI" color="f5ddbf" x="48" y="640" />
+		<entity schema="ORDSYS" name="PS_TXN" color="c8f5bf" x="48" y="400" />
+		<entity schema="ORDSYS" name="QUI_CACH" color="bfbff5" x="880" y="976" />
+		<entity schema="ORDSYS" name="TRANG_THAI_CHUNG_TU_MUA_HANG" color="c8f5bf" x="336" y="400" />
+		<entity schema="ORDSYS" name="TRANG_THAI_PHIEU_CHI" color="f5ddbf" x="336" y="960" />
+		<entity schema="ORDSYS" name="XUAT_XU" color="bfbff5" x="640" y="416" />
+		<entity schema="ORDSYS" name="HANG_HOA" color="bfbff5" x="672" y="640" />
+	</layout>
+	<layout name="Sample Layout with Groups" id="Layout_2bb8ac39" show_relation="columns" >
+		<entity schema="ORDSYS" name="CHI_TIET_CHUNG_TU_MUA_HANG" color="bfd4f5" x="672" y="192" />
+		<entity schema="ORDSYS" name="CHUNG_TU_MUA_HANG" color="c8f5bf" x="48" y="192" />
+		<entity schema="ORDSYS" name="DON_VI_BAN_HANG" color="c8f5bf" x="336" y="192" />
+		<entity schema="ORDSYS" name="DON_VI_TINH" color="bfd4f5" x="944" y="192" />
+		<entity schema="ORDSYS" name="HANG_HOA" color="bfbff5" x="672" y="784" />
+		<entity schema="ORDSYS" name="HINH_THUC_THANH_TOAN" color="f5ddbf" x="336" y="784" />
+		<entity schema="ORDSYS" name="LOAI_HANG" color="bfbff5" x="672" y="1120" />
+		<entity schema="ORDSYS" name="PHIEU_CHI" color="f5ddbf" x="48" y="784" />
+		<entity schema="ORDSYS" name="PS_TXN" color="c8f5bf" x="48" y="544" />
+		<entity schema="ORDSYS" name="QUI_CACH" color="bfbff5" x="880" y="1120" />
+		<entity schema="ORDSYS" name="TRANG_THAI_CHUNG_TU_MUA_HANG" color="c8f5bf" x="336" y="544" />
+		<entity schema="ORDSYS" name="TRANG_THAI_PHIEU_CHI" color="f5ddbf" x="336" y="1104" />
+		<entity schema="ORDSYS" name="XUAT_XU" color="bfbff5" x="880" y="784" />
+		<callout x="48" y="80" pointer="NO" >
+			<comment><![CDATA[In DbSchema you may create multiple layouts with the same or different tables.
+Layouts will be saved to project file. 
+Double-click any column, foreign key or table headers to edit.]]></comment>
+		</callout>
+		<group name="CHUNG_TU_MUA_HANG" color="eef7ec" >
+			<entity schema="ORDSYS" name="CHUNG_TU_MUA_HANG" />
+			<entity schema="ORDSYS" name="DON_VI_BAN_HANG" />
+			<entity schema="ORDSYS" name="TRANG_THAI_CHUNG_TU_MUA_HANG" />
+			<entity schema="ORDSYS" name="PS_TXN" />
+		</group>
+		<group name="CHI_TIET_CHUNG_TU_MUA_HANG" color="ecf0f7" >
+			<entity schema="ORDSYS" name="CHI_TIET_CHUNG_TU_MUA_HANG" />
+			<entity schema="ORDSYS" name="DON_VI_TINH" />
+		</group>
+		<group name="HANG_HOA" color="ececf7" >
+			<entity schema="ORDSYS" name="HANG_HOA" />
+			<entity schema="ORDSYS" name="XUAT_XU" />
+			<entity schema="ORDSYS" name="QUI_CACH" />
+			<entity schema="ORDSYS" name="LOAI_HANG" />
+		</group>
+		<group name="PHIEU_CHI" color="f7f3ec" >
+			<entity schema="ORDSYS" name="PHIEU_CHI" />
+			<entity schema="ORDSYS" name="HINH_THUC_THANH_TOAN" />
+			<entity schema="ORDSYS" name="TRANG_THAI_PHIEU_CHI" />
+		</group>
+	</layout>
+	<layout name="Sample Layout with Relational Data Browse" id="Layout_1df21220" show_relation="columns" >
+		<entity schema="ORDSYS" name="CHI_TIET_CHUNG_TU_MUA_HANG" color="bfd4f5" x="672" y="160" />
+		<entity schema="ORDSYS" name="CHUNG_TU_MUA_HANG" color="c8f5bf" x="48" y="160" />
+		<entity schema="ORDSYS" name="DON_VI_BAN_HANG" color="c8f5bf" x="336" y="160" />
+		<entity schema="ORDSYS" name="DON_VI_TINH" color="bfd4f5" x="944" y="160" />
+		<entity schema="ORDSYS" name="HANG_HOA" color="bfbff5" x="672" y="752" />
+		<entity schema="ORDSYS" name="HINH_THUC_THANH_TOAN" color="f5ddbf" x="336" y="752" />
+		<entity schema="ORDSYS" name="LOAI_HANG" color="bfbff5" x="672" y="1088" />
+		<entity schema="ORDSYS" name="PHIEU_CHI" color="f5ddbf" x="48" y="752" />
+		<entity schema="ORDSYS" name="PS_TXN" color="c8f5bf" x="48" y="512" />
+		<entity schema="ORDSYS" name="QUI_CACH" color="bfbff5" x="880" y="1088" />
+		<entity schema="ORDSYS" name="TRANG_THAI_CHUNG_TU_MUA_HANG" color="c8f5bf" x="336" y="512" />
+		<entity schema="ORDSYS" name="TRANG_THAI_PHIEU_CHI" color="f5ddbf" x="336" y="1072" />
+		<entity schema="ORDSYS" name="XUAT_XU" color="bfbff5" x="880" y="752" />
+		<callout x="48" y="48" pointer="NO" >
+			<comment><![CDATA[Below is a Relational Data Browse for exploring and editing data from multiple tables at a time.
+Tables should be bind by foreign keys - if they are not you can create VIRTUAL foreign keys in the layout. 
+Virtual foreign keys will be saved to project file.
+ 
+Descend into children tables by pressing the foreign key arrow icon near title.
+Right-click column headers in browse tables to set filters.]]></comment>
+		</callout>
+		<browser id="Browse_2fc4e3ef" name="Sample Relational Data Browse" >
+			<browse_table schema="ORDSYS" entity="CHUNG_TU_MUA_HANG" x="10" y="10" width="400" height="300" >
+				<browse_table schema="ORDSYS" entity="DON_VI_BAN_HANG" fk="CHUNG_TU_MUA_HANG_FK2" x="420" y="10" width="400" height="300" record_view="y" />
+			</browse_table>
+		</browser>
+	</layout>
+</project>

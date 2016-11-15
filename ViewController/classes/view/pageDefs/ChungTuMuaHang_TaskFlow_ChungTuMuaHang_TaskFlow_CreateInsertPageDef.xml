@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47"
+                id="ChungTuMuaHang_TaskFlow_ChungTuMuaHang_TaskFlow_CreateInsertPageDef" Package="view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="ChungTuMuaHangView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ChungTuMuaHangView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="ChungTuMuaHangView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

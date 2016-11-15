@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkHangHoaDonViQuiDoiLink"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  EntityAssociation="model.FkHangHoaDonViQuiDoiAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.FkHangHoaDonViQuiDoiLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="HangHoaQuiDoiView1"
+    Cardinality="1"
+    Source="true"
+    Owner="model.HangHoaView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="HangHoaQuiDoiView1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="DonViQuiDoiView"
+    Cardinality="-1"
+    Owner="model.DonViTinhView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="DonViQuiDoiView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.DonViTinhView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkPhieuChiTrangThaiPhieuChiLink"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  EntityAssociation="model.FkPhieuChiTrangThaiPhieuChiAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.FkPhieuChiTrangThaiPhieuChiLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="PhieuChiView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.PhieuChiView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="PhieuChiView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.PhieuChiView.TrangThaiPhieuChiId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TrangThaiPhieuChiView"
+    Cardinality="-1"
+    Owner="model.TrangThaiPhieuChiView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TrangThaiPhieuChiView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.TrangThaiPhieuChiView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

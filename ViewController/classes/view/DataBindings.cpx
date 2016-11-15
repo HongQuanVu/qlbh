@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.20.47" id="DataBindings"
              SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
   <pageMap>
-    <page path="/TestHangHoa.jspx" usageId="view_TestHangHoaPageDef"/>
     <page path="/DanhMucLoaiHang.jspx" usageId="view_DanhMucLoaiHangPageDef"/>
     <page path="/DanhMucHangHoa.jspx" usageId="view_DanhMucHangHoaPageDef"/>
     <page path="/DanhucDonViBanHang.jspx" usageId="view_DanhucDonViBanHangPageDef"/>
     <page path="/ChungTuMuaHang.jspx" usageId="view_ChungTuMuaHangPageDef"/>
+    <page path="/ChungTuMuaHang_List.jsff" usageId="view_ChungTuMuaHang_ListPageDef"/>
+
+    <page path="/ChungTuMuaHang_Edit.jsff" usageId="view_ChungTuMuaHang_EditPageDef"/>
+
+   
+    <page path="/ListChungTuMuaHang.jsff" usageId="view_ListChungTuMuaHangPageDef"/>
+    <page path="/ChugTuMuaHang_Edit.jsff" usageId="view_ChugTuMuaHang_EditPageDef"/>
+    <page path="/DanhMucQuiCach.jspx" usageId="view_DanhMucQuiCachPageDef"/>
+    <page path="/DanhMucDonViTinh.jspx" usageId="view_DanhMucDonViTinhPageDef"/>
+    <page path="/DanhSachHoaDonBanHang.jspx" usageId="view_DanhSachHoaDonBanHangPageDef"/>
+    <page path="/DanhMucKhachHang.jspx" usageId="view_DanhMucKhachHangPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
-    <page id="view_TestHangHoaPageDef" path="view.pageDefs.TestHangHoaPageDef"/>
     <page id="view_DanhMucLoaiHangPageDef" path="view.pageDefs.DanhMucLoaiHangPageDef"/>
     <page id="view_DanhMucHangHoaPageDef" path="view.pageDefs.DanhMucHangHoaPageDef"/>
     <page id="view_DanhucDonViBanHangPageDef" path="view.pageDefs.DanhucDonViBanHangPageDef"/>
     <page id="view_ChungTuMuaHangPageDef" path="view.pageDefs.ChungTuMuaHangPageDef"/>
+    <page id="view_ChungTuMuaHang_ListPageDef" path="view.pageDefs.ChungTuMuaHang_ListPageDef"/>
+     <page id="view_ChungTuMuaHang_EditPageDef" path="view.pageDefs.ChungTuMuaHang_EditPageDef"/>
+    
+    <page id="view_MHCTPageDef" path="view.pageDefs.MHCTPageDef"/>
+
+    <page id="view_ListChungTuMuaHangPageDef" path="view.pageDefs.ListChungTuMuaHangPageDef"/>
+    <page id="view_ChugTuMuaHang_EditPageDef" path="view.pageDefs.ChugTuMuaHang_EditPageDef"/>
+    <page id="view_DanhMucQuiCachPageDef" path="view.pageDefs.DanhMucQuiCachPageDef"/>
+    <page id="view_DanhMucDonViTinhPageDef" path="view.pageDefs.DanhMucDonViTinhPageDef"/>
+    <page id="view_DanhSachHoaDonBanHangPageDef" path="view.pageDefs.DanhSachHoaDonBanHangPageDef"/>
+    <page id="view_DanhMucKhachHangPageDef" path="view.pageDefs.DanhMucKhachHangPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"

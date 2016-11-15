@@ -21,7 +21,6 @@
     IsUpdateable="while_insert">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="HangHoaRow"/>
   </Attribute>
   <Attribute
@@ -172,6 +171,20 @@
     Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="ORDSYS.HANG_HOA"/>
+  <Attribute
+    Name="DonViQuiDoiId"
+    ColumnName="DON_VI_QUI_DOI_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="ORDSYS.HANG_HOA"/>
+  <Attribute
+    Name="SoLuongQuiDoi"
+    ColumnName="SO_LUONG_QUI_DOI"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="ORDSYS.HANG_HOA"/>
   <AccessorAttribute
     Name="LoaiHang"
     Association="model.FkHangHoaLoaiHangAssoc"
@@ -200,6 +213,13 @@
     AssociationOtherEnd="model.FkHangHoaQuiCachAssoc.HangHoa"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="DonViTinh1"
+    Association="model.FkHangHoaDonViQuiDoiAssoc"
+    AssociationEnd="model.FkHangHoaDonViQuiDoiAssoc.DonViTinh1"
+    AssociationOtherEnd="model.FkHangHoaDonViQuiDoiAssoc.HangHoa1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ViewLinkAccessor
     Name="XuatXuView"
     ViewLink="model.FkHangHoaXuatXuLink"

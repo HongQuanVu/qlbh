@@ -1,0 +1,12 @@
+//Groovy Scripts for model.DonViTinh
+
+package model
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="Id")
+def Id_ExpressionScript_Expression()
+{
+(new oracle.jbo.server.SequenceImpl("SEQ_DON_VI_TINH_ID", object.getDBTransaction())).getSequenceNumber()
+}
+

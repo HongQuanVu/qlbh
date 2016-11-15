@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="DanhMucDonViTinhPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DonViTinhView1" RangeSize="25" DataControl="AppModuleDataControl" id="DonViTinhView1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="DonViTinhView1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DonViTinhView1Iterator" id="DonViTinhView1">
+      <nodeDefinition DefName="model.DonViTinhView" Name="DonViTinhView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="MaDonViTinh"/>
+          <Item Value="TenDonViTinh"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedAt"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="ModifiedAt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="DonViTinhView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DonViTinhView1Iterator" id="MaDonViTinh">
+      <AttrNames>
+        <Item Value="MaDonViTinh"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DonViTinhView1Iterator" id="TenDonViTinh">
+      <AttrNames>
+        <Item Value="TenDonViTinh"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DonViTinhView1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DonViTinhView1Iterator" id="CreatedAt">
+      <AttrNames>
+        <Item Value="CreatedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DonViTinhView1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DonViTinhView1Iterator" id="ModifiedAt">
+      <AttrNames>
+        <Item Value="ModifiedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="DonViTinhView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="DonViTinhView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="DonViTinhView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="DonViTinhView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="DonViTinhView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

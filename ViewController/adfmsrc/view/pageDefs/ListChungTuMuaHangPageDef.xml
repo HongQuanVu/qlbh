@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="ListChungTuMuaHangPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ChungTuMuaHangView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ChungTuMuaHangView1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ChungTuMuaHangView1Iterator" id="ImplicitViewCriteriaQuery"/>
+    <iterator Binds="ChiTietChungTuMuaHangView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ChiTietChungTuMuaHangView2Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ChungTuMuaHangView1Iterator" id="ChungTuMuaHangView1">
+      <nodeDefinition DefName="model.ChungTuMuaHangView" Name="ChungTuMuaHangView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="MaChungTu"/>
+          <Item Value="TenChungTu"/>
+          <Item Value="NgayLap"/>
+          <Item Value="HinhThucThanhToanId"/>
+          <Item Value="ThueVat"/>
+          <Item Value="CongTienHang"/>
+          <Item Value="ChietKhau"/>
+          <Item Value="TienSauChietKhau"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedAt"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="ModifiedAt"/>
+          <Item Value="DonViBanHangId"/>
+          <Item Value="CongTienHang2"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="MaChungTu">
+      <AttrNames>
+        <Item Value="MaChungTu"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="TenChungTu">
+      <AttrNames>
+        <Item Value="TenChungTu"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="NgayLap">
+      <AttrNames>
+        <Item Value="NgayLap"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ChungTuMuaHangView1Iterator" StaticList="false" Uses="LOV_HinhThucThanhToanId"
+          id="HinhThucThanhToanId" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="ThueVat">
+      <AttrNames>
+        <Item Value="ThueVat"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="CongTienHang">
+      <AttrNames>
+        <Item Value="CongTienHang"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="ChietKhau">
+      <AttrNames>
+        <Item Value="ChietKhau"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="TienSauChietKhau">
+      <AttrNames>
+        <Item Value="TienSauChietKhau"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="CreatedAt">
+      <AttrNames>
+        <Item Value="CreatedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="ModifiedAt">
+      <AttrNames>
+        <Item Value="ModifiedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ChungTuMuaHangView1Iterator" StaticList="false" Uses="LOV_DonViBanHangId" id="DonViBanHangId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="CongTienHang2">
+      <AttrNames>
+        <Item Value="CongTienHang2"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="ChiTietChungTuMuaHangView2Iterator" id="ChiTietChungTuMuaHangView2">
+      <nodeDefinition DefName="model.ChiTietChungTuMuaHangView" Name="ChiTietChungTuMuaHangView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="ChungTuMuaHangId"/>
+          <Item Value="HangHoaId"/>
+          <Item Value="SoLuong"/>
+          <Item Value="DonViTinhId"/>
+          <Item Value="DonGia"/>
+          <Item Value="ThueVat"/>
+          <Item Value="GiaSauVat"/>
+          <Item Value="GhiChu"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedAt"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="ModifiedAt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ChungTuMuaHangView1Iterator" id="ChungTuMuaHangView11">
+      <nodeDefinition DefName="model.ChungTuMuaHangView" Name="ChungTuMuaHangView110">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="MaChungTu"/>
+          <Item Value="TenChungTu"/>
+          <Item Value="NgayLap"/>
+          <Item Value="HinhThucThanhToanId"/>
+          <Item Value="ThueVat"/>
+          <Item Value="CongTienHang"/>
+          <Item Value="ChietKhau"/>
+          <Item Value="TienSauChietKhau"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedAt"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="ModifiedAt"/>
+          <Item Value="DonViBanHangId"/>
+          <Item Value="CongTienHang2"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

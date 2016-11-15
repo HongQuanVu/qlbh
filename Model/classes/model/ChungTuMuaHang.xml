@@ -60,6 +60,13 @@
     </Properties>
   </Attribute>
   <Attribute
+    Name="DonViBanHangId"
+    ColumnName="DON_VI_BAN_HANG_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="CHUNG_TU_MUA_HANG"/>
+  <Attribute
     Name="NgayLap"
     ColumnName="NGAY_LAP"
     SQLType="DATE"
@@ -86,9 +93,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="CHUNG_TU_MUA_HANG"
-    RetrievedOnInsert="true"
-    RetrievedOnUpdate="true"/>
+    TableName="CHUNG_TU_MUA_HANG"/>
   <Attribute
     Name="ChietKhau"
     ColumnName="CHIET_KHAU"
@@ -102,9 +107,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="CHUNG_TU_MUA_HANG"
-    RetrievedOnInsert="true"
-    RetrievedOnUpdate="true"/>
+    TableName="CHUNG_TU_MUA_HANG"/>
   <Attribute
     Name="CreatedBy"
     Precision="100"
@@ -143,18 +146,19 @@
     Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="CHUNG_TU_MUA_HANG"/>
-  <Attribute
-    Name="DonViBanHangId"
-    ColumnName="DON_VI_BAN_HANG_ID"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="CHUNG_TU_MUA_HANG"/>
+  
   <AccessorAttribute
     Name="ChiTietChungTuMuaHang"
     Association="model.ChiTietCtMhFk2Assoc"
     AssociationEnd="model.ChiTietCtMhFk2Assoc.ChiTietChungTuMuaHang"
     AssociationOtherEnd="model.ChiTietCtMhFk2Assoc.ChungTuMuaHang"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PhieuChi"
+    Association="model.FkPhieuChiChungTuMuaHangAssoc"
+    AssociationEnd="model.FkPhieuChiChungTuMuaHangAssoc.PhieuChi"
+    AssociationOtherEnd="model.FkPhieuChiChungTuMuaHangAssoc.ChungTuMuaHang"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

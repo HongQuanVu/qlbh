@@ -22,7 +22,8 @@
     PrecisionRule="true"
     EntityAttrName="Id"
     EntityUsage="DonViTinh"
-    AliasName="ID"/>
+    AliasName="ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="MaDonViTinh"
     PrecisionRule="true"
@@ -63,5 +64,11 @@
     Name="HangHoaView"
     ViewLink="model.FKHangHoaDonViTinhLink"
     Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="HangHoaQuiDoiView1"
+    ViewLink="model.FkHangHoaDonViQuiDoiLink"
+    Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
     IsUpdateable="false"/>
 </ViewObject>

@@ -19,7 +19,13 @@
     ColumnType="NUMBER"
     TableName="ORDSYS.DON_VI_TINH"
     PrimaryKey="true"
-    IsUpdateable="while_insert"/>
+    IsUpdateable="while_insert"
+    RetrievedOnInsert="true">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="DonViTinhRow"/>
+  </Attribute>
   <Attribute
     Name="MaDonViTinh"
     Precision="100"
@@ -89,6 +95,13 @@
     AssociationOtherEnd="model.FkHangHoaDonViTinhAssoc.DonViTinh"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="HangHoa1"
+    Association="model.FkHangHoaDonViQuiDoiAssoc"
+    AssociationEnd="model.FkHangHoaDonViQuiDoiAssoc.HangHoa1"
+    AssociationOtherEnd="model.FkHangHoaDonViQuiDoiAssoc.DonViTinh1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <ViewLinkAccessor
     Name="HangHoaView"
     ViewLink="model.FKHangHoaDonViTinhLink"

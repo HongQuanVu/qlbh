@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View11">
+      <property
+         name="activityId">ChungTuMuaHang_List</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">352.20996</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ChungTuMuaHang_List&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">-110.76172</property>
+      <property
+         name="page">/ChungTuMuaHang_List.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule12">
+      <property
+         name="activityId">*</property>
+      <property
+         name="x">119.0</property>
+      <property
+         name="y">-101.13281</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase14"
+      from="WildcardControlFlowRule12"
+      to="View11">
+      <property
+         name="fromOutcome">refresh</property>
+      <property
+         name="sdm:polyPoints">R50,155.0,-100.69922,311.20996,-110.828125,L50</property>
+   </ControlFlowCase>
+</SDM>

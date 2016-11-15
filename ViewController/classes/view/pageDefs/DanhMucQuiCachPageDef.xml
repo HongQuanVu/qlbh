@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="DanhMucQuiCachPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="QuiCachView1" RangeSize="25" DataControl="AppModuleDataControl" id="QuiCachView1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="QuiCachView1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="QuiCachView1Iterator" id="QuiCachView1">
+      <nodeDefinition DefName="model.QuiCachView" Name="QuiCachView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="MaQuiCach"/>
+          <Item Value="TenQuiCach"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedAt"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="ModifiedAt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="QuiCachView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="QuiCachView1Iterator" id="MaQuiCach">
+      <AttrNames>
+        <Item Value="MaQuiCach"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="QuiCachView1Iterator" id="TenQuiCach">
+      <AttrNames>
+        <Item Value="TenQuiCach"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="QuiCachView1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="QuiCachView1Iterator" id="CreatedAt">
+      <AttrNames>
+        <Item Value="CreatedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="QuiCachView1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="QuiCachView1Iterator" id="ModifiedAt">
+      <AttrNames>
+        <Item Value="ModifiedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="QuiCachView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="QuiCachView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="QuiCachView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="QuiCachView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="QuiCachView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="QuiCachView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

@@ -88,6 +88,20 @@
     EntityAttrName="TenChungTu"
     EntityUsage="ChungTuMuaHang"
     AliasName="TEN_CHUNG_TU"/>
+    <ViewAttribute
+    Name="DonViBanHangId"
+    PrecisionRule="true"
+    EntityAttrName="DonViBanHangId"
+    EntityUsage="ChungTuMuaHang"
+    AliasName="DON_VI_BAN_HANG_ID"
+    LOVName="LOV_DonViBanHangId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="NgayLap"
     PrecisionRule="true"
@@ -156,23 +170,45 @@
     EntityAttrName="ModifiedAt"
     EntityUsage="ChungTuMuaHang"
     AliasName="MODIFIED_AT"/>
+  
   <ViewAttribute
-    Name="DonViBanHangId"
+    Name="CongTienHang2"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
     PrecisionRule="true"
-    EntityAttrName="DonViBanHangId"
-    EntityUsage="ChungTuMuaHang"
-    AliasName="DON_VI_BAN_HANG_ID"
-    LOVName="LOV_DonViBanHangId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
-      </SchemaBasedProperties>
-    </Properties>
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="ChungTuMuaHangViewRow"/>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TienDaTraNCC"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="ChungTuMuaHangViewRow"/>
   </ViewAttribute>
   <ViewLinkAccessor
     Name="ChiTietChungTuMuaHangView"
     ViewLink="model.ChiTietCtMhFk2Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PhieuChiView"
+    ViewLink="model.FkChungTuMuaHangPhieuChiLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

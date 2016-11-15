@@ -12,8 +12,8 @@
                         
                         <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_DanhucDonViBanHang.ps1}"
                                           orientation="vertical" splitterPosition="230">
-                            <f:facet name="first">
-                            <af:panelHeader text="Chi Tiet Don Vi Ban Hang" id="ph1"
+                            <f:facet name="second">
+                            <af:panelHeader text="Chi Tiet Nha Cung Cap" id="ph1"
                                         binding="#{backingBeanScope.backing_DanhucDonViBanHang.ph1}">
                             <f:facet name="context"/>
                             <f:facet name="toolbar"/>
@@ -204,10 +204,10 @@
                             </af:panelFormLayout>
                         </af:panelHeader>
                             </f:facet>
-                            <f:facet name="second">
+                            <f:facet name="first">
                                 <af:panelGroupLayout layout="vertical" id="pgl3"
                                                      binding="#{backingBeanScope.backing_DanhucDonViBanHang.pgl3}">
-                                    <af:panelHeader text="Danh Sach Don Vi Ban Hang" id="ph3"
+                                    <af:panelHeader text="Danh Sach Nha Cung Cap" id="ph3"
                                                     binding="#{backingBeanScope.backing_DanhucDonViBanHang.ph3}">
                                         <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
                                                        value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"

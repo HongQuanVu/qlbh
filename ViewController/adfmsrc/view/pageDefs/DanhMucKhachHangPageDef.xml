@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="DanhMucKhachHangPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="KhachHangView1" RangeSize="25" DataControl="AppModuleDataControl" id="KhachHangView1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="KhachHangView1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="KhachHangView1Iterator" id="KhachHangView1">
+      <nodeDefinition DefName="model.KhachHangView" Name="KhachHangView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="TenKhachHang"/>
+          <Item Value="MaSoThue"/>
+          <Item Value="DiaChi"/>
+          <Item Value="DienThoai"/>
+          <Item Value="SoFax"/>
+          <Item Value="WebSite"/>
+          <Item Value="SoTaiKhoan"/>
+          <Item Value="ChiNhanhNganHang"/>
+          <Item Value="TenNganHang"/>
+          <Item Value="GhiChu"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedAt"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="ModifiedAt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="TenKhachHang">
+      <AttrNames>
+        <Item Value="TenKhachHang"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="MaSoThue">
+      <AttrNames>
+        <Item Value="MaSoThue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="DiaChi">
+      <AttrNames>
+        <Item Value="DiaChi"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="DienThoai">
+      <AttrNames>
+        <Item Value="DienThoai"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="SoFax">
+      <AttrNames>
+        <Item Value="SoFax"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="WebSite">
+      <AttrNames>
+        <Item Value="WebSite"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="SoTaiKhoan">
+      <AttrNames>
+        <Item Value="SoTaiKhoan"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="ChiNhanhNganHang">
+      <AttrNames>
+        <Item Value="ChiNhanhNganHang"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="TenNganHang">
+      <AttrNames>
+        <Item Value="TenNganHang"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="GhiChu">
+      <AttrNames>
+        <Item Value="GhiChu"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="CreatedAt">
+      <AttrNames>
+        <Item Value="CreatedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="ModifiedAt">
+      <AttrNames>
+        <Item Value="ModifiedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="KhachHangView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="KhachHangView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="KhachHangView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="KhachHangView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="KhachHangView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="KhachHangView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

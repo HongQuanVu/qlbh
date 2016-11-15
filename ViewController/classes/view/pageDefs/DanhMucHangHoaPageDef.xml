@@ -94,5 +94,12 @@
     <action IterBinding="HangHoaView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <list IterBinding="HangHoaView1Iterator" StaticList="false" Uses="LOV_DonViQuiDoiId" id="DonViQuiDoiId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="HangHoaView1Iterator" id="SoLuongQuiDoi">
+      <AttrNames>
+        <Item Value="SoLuongQuiDoi"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

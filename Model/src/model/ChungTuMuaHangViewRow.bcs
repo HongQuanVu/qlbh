@@ -1,0 +1,19 @@
+//Groovy Scripts for model.ChungTuMuaHangView
+
+package model
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="CongTienHang2")
+def CongTienHang2_ExpressionScript_Expression()
+{
+PhieuChiView.sum("TienChi")
+}
+
+
+@TransientValueExpression(attributeName="TienDaTraNCC")
+def TienDaTraNCC_ExpressionScript_Expression()
+{
+PhieuChiView.sum("TienChi")
+}
+

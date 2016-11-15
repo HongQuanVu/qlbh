@@ -10,8 +10,9 @@
                   Binds="ChungTuMuaHangView1Iterator" id="ImplicitViewCriteriaQuery"/>
     <iterator Binds="ChiTietChungTuMuaHangView2" RangeSize="25" DataControl="AppModuleDataControl"
               id="ChiTietChungTuMuaHangView2Iterator"/>
-    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  Binds="ChiTietChungTuMuaHangView2Iterator" id="ImplicitViewCriteriaQuery1"/>
+    <iterator Binds="PhieuChiView2" RangeSize="25" DataControl="AppModuleDataControl" id="PhieuChiView2Iterator"/>
+    <iterator Binds="ChiTietChungTuMuaHangView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ChiTietChungTuMuaHangView1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="ChungTuMuaHangView1Iterator" id="ChungTuMuaHangView1">
@@ -98,10 +99,6 @@
         <Item Value="ModifiedAt"/>
       </AttrNames>
     </attributeValues>
-    <action IterBinding="ChungTuMuaHangView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="ChungTuMuaHangView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="ChungTuMuaHangView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="ChungTuMuaHangView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="ChungTuMuaHangView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
     <action IterBinding="ChungTuMuaHangView1Iterator" id="Delete" RequiresUpdateModel="false"
@@ -124,6 +121,9 @@
           <Item Value="CreatedAt"/>
           <Item Value="ModifiedBy"/>
           <Item Value="ModifiedAt"/>
+          <Item Value="DonViTinhQuiDoiId"/>
+          <Item Value="QuiDoi"/>
+          <Item Value="SoLuongSauQuiDoi"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -181,14 +181,108 @@
         <Item Value="ModifiedAt"/>
       </AttrNames>
     </attributeValues>
-    <action IterBinding="ChiTietChungTuMuaHangView2Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="ChiTietChungTuMuaHangView2Iterator" id="Previous1" RequiresUpdateModel="true"
-            Action="previous"/>
-    <action IterBinding="ChiTietChungTuMuaHangView2Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="ChiTietChungTuMuaHangView2Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
     <action IterBinding="ChiTietChungTuMuaHangView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
             Action="createInsertRow"/>
     <action IterBinding="ChiTietChungTuMuaHangView2Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <tree IterBinding="PhieuChiView2Iterator" id="PhieuChiView2">
+      <nodeDefinition DefName="model.PhieuChiView" Name="PhieuChiView20">
+        <AttrNames>
+          <Item Value="MaPhieuChi"/>
+          <Item Value="NgayLap"/>
+          <Item Value="GiaTriPhieu"/>
+          <Item Value="DaChiTruoc"/>
+          <Item Value="TienChi"/>
+          <Item Value="TrangThaiPhieuChiId"/>
+          <Item Value="HinhThucThanhToanId"/>
+          <Item Value="CreatedAt"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="ModifiedAt"/>
+          <Item Value="ModifiedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="PhieuChiView2Iterator" id="MaPhieuChi">
+      <AttrNames>
+        <Item Value="MaPhieuChi"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PhieuChiView2Iterator" id="GiaTriPhieu">
+      <AttrNames>
+        <Item Value="GiaTriPhieu"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PhieuChiView2Iterator" id="DaChiTruoc">
+      <AttrNames>
+        <Item Value="DaChiTruoc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PhieuChiView2Iterator" id="TienChi">
+      <AttrNames>
+        <Item Value="TienChi"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PhieuChiView2Iterator" StaticList="false" Uses="LOV_TrangThaiPhieuChiId"
+          id="TrangThaiPhieuChiId" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="PhieuChiView2Iterator" id="CreateInsert2" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="PhieuChiView2Iterator" id="Id2">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PhieuChiView2Iterator" id="NgayLap1">
+      <AttrNames>
+        <Item Value="NgayLap"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PhieuChiView2Iterator" id="ChungTuMuaHangId">
+      <AttrNames>
+        <Item Value="ChungTuMuaHangId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="PhieuChiView2Iterator" StaticList="false" Uses="LOV_HinhThucThanhToanId"
+          id="HinhThucThanhToanId1" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="PhieuChiView2Iterator" id="CreatedAt2">
+      <AttrNames>
+        <Item Value="CreatedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PhieuChiView2Iterator" id="CreatedBy2">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PhieuChiView2Iterator" id="ModifiedAt2">
+      <AttrNames>
+        <Item Value="ModifiedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PhieuChiView2Iterator" id="ModifiedBy2">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="PhieuChiView2Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="PhieuChiView2Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="PhieuChiView2Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="PhieuChiView2Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="PhieuChiView2Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="TienDaTraNCC">
+      <AttrNames>
+        <Item Value="TienDaTraNCC"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ChiTietChungTuMuaHangView1Iterator" StaticList="false" Uses="LOV_DonViTinhQuiDoiId"
+          id="DonViTinhQuiDoiId" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView1Iterator" id="QuiDoi">
+      <AttrNames>
+        <Item Value="QuiDoi"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView1Iterator" id="SoLuongSauQuiDoi">
+      <AttrNames>
+        <Item Value="SoLuongSauQuiDoi"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

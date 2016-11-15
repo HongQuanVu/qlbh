@@ -34,6 +34,13 @@
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
   </Attribute>
+  <AccessorAttribute
+    Name="PhieuChi"
+    Association="model.FkPhieuChiHinhThucThanhToanAssoc"
+    AssociationEnd="model.FkPhieuChiHinhThucThanhToanAssoc.PhieuChi"
+    AssociationOtherEnd="model.FkPhieuChiHinhThucThanhToanAssoc.HinhThucThanhToan"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="SysC0011087"
     PrimaryKey="true">

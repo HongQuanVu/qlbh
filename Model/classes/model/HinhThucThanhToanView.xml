@@ -30,4 +30,10 @@
     EntityAttrName="TenHinhThucThanhToan"
     EntityUsage="HinhThucThanhToan"
     AliasName="TEN_HINH_THUC_THANH_TOAN"/>
+  <ViewLinkAccessor
+    Name="PhieuChiView"
+    ViewLink="model.FkPhieuChiHInhThucTHanhToanLink"
+    Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

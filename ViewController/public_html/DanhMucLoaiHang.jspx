@@ -14,7 +14,7 @@
                                           columns="#{bindings.Id.hints.displayWidth}"
                                           maximumLength="#{bindings.Id.hints.precision}"
                                           shortDesc="#{bindings.Id.hints.tooltip}" id="it1"
-                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.it1}">
+                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.it1}" readOnly="true">
                                 <f:validator binding="#{bindings.Id.validator}"/>
                                 <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
                             </af:inputText>
@@ -42,7 +42,7 @@
                                           columns="#{bindings.CreatedBy.hints.displayWidth}"
                                           maximumLength="#{bindings.CreatedBy.hints.precision}"
                                           shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it4"
-                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.it4}">
+                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.it4}" readOnly="true">
                                 <f:validator binding="#{bindings.CreatedBy.validator}"/>
                             </af:inputText>
                             <af:inputDate value="#{bindings.CreatedAt.inputValue}"
@@ -50,7 +50,7 @@
                                           required="#{bindings.CreatedAt.hints.mandatory}"
                                           columns="#{bindings.CreatedAt.hints.displayWidth}"
                                           shortDesc="#{bindings.CreatedAt.hints.tooltip}" id="id1"
-                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.id1}">
+                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.id1}" readOnly="true">
                                 <f:validator binding="#{bindings.CreatedAt.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.CreatedAt.format}"/>
                             </af:inputDate>
@@ -60,7 +60,7 @@
                                           columns="#{bindings.ModifiedBy.hints.displayWidth}"
                                           maximumLength="#{bindings.ModifiedBy.hints.precision}"
                                           shortDesc="#{bindings.ModifiedBy.hints.tooltip}" id="it5"
-                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.it5}">
+                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.it5}" readOnly="true">
                                 <f:validator binding="#{bindings.ModifiedBy.validator}"/>
                             </af:inputText>
                             <af:inputDate value="#{bindings.ModifiedAt.inputValue}"
@@ -68,7 +68,7 @@
                                           required="#{bindings.ModifiedAt.hints.mandatory}"
                                           columns="#{bindings.ModifiedAt.hints.displayWidth}"
                                           shortDesc="#{bindings.ModifiedAt.hints.tooltip}" id="id2"
-                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.id2}">
+                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.id2}" readOnly="true">
                                 <f:validator binding="#{bindings.ModifiedAt.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.ModifiedAt.format}"/>
                             </af:inputDate>
@@ -92,8 +92,16 @@
                                                    binding="#{backingBeanScope.backing_DanhMucLoaiHang.b4}"/>
                                    <af:button text="Submit" id="b5"
                                                binding="#{backingBeanScope.backing_DanhMucLoaiHang.b5}"/>
+                                    <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                                               disabled="#{!bindings.Commit.enabled}" id="b6"
+                                               binding="#{backingBeanScope.backing_DanhMucLoaiHang.b6}"/>
+                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
+                                               disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b7"
+                                               binding="#{backingBeanScope.backing_DanhMucLoaiHang.b7}">
+                                        <af:resetActionListener/>
+                                    </af:button>
                                     </af:panelGroupLayout>
-                                  
+                                    
                                 </af:panelGroupLayout>
                             </f:facet>
                             

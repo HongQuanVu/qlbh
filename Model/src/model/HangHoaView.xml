@@ -29,6 +29,10 @@
     Name="QuiCachView1"
     ViewObjectName="model.QuiCachView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DonViTinhQuiDoiView1"
+    ViewObjectName="model.DonViTinhView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_LoaiHangId"
     ListVOName="LoaiHangView1"
@@ -101,6 +105,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_DonViQuiDoiId"
+    ListVOName="DonViTinhQuiDoiView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DonViQuiDoiId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TenDonViTinh"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="HangHoa"
     Entity="model.HangHoa"/>
@@ -110,7 +132,8 @@
     PrecisionRule="true"
     EntityAttrName="Id"
     EntityUsage="HangHoa"
-    AliasName="ID"/>
+    AliasName="ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="MaHang"
     PrecisionRule="true"
@@ -165,6 +188,26 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="DonViQuiDoiId"
+    PrecisionRule="true"
+    EntityAttrName="DonViQuiDoiId"
+    EntityUsage="HangHoa"
+    AliasName="DON_VI_QUI_DOI_ID"
+    LOVName="LOV_DonViQuiDoiId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SoLuongQuiDoi"
+    PrecisionRule="true"
+    EntityAttrName="SoLuongQuiDoi"
+    EntityUsage="HangHoa"
+    AliasName="SO_LUONG_QUI_DOI"/>
   <ViewAttribute
     Name="QuiCachId"
     PrecisionRule="true"
@@ -221,6 +264,69 @@
     EntityAttrName="ModifiedAt"
     EntityUsage="HangHoa"
     AliasName="MODIFIED_AT"/>
+  <ViewCriteria
+    Name="LOV_HangHoaView_Hide_Sell_Price_Criteria"
+    ViewObjectName="model.HangHoaView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="HangHoaViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="MaHang"
+        ViewAttribute="MaHang"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="TenHang"
+        ViewAttribute="TenHang"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="DonViTinhView"
+        ViewAttribute="DonViTinhView"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="DonViTinhViewNestedCriteria"
+          ViewObjectName="model.DonViTinhView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="DonViTinhViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="TenDonViTinh"
+              ViewAttribute="TenDonViTinh"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="XuatXuView"
     ViewLink="model.FkHangHoaXuatXuLink"
@@ -244,5 +350,10 @@
     ViewLink="model.FkHangHoaQuiCachLink"
     Type="oracle.jbo.server.ViewRowImpl"
     Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="DonViQuiDoiView"
+    ViewLink="model.FkHangHoaDonViQuiDoiLink"
+    Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>
