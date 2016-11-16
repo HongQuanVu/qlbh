@@ -8,6 +8,8 @@
               id="HoaDonBanHangView1Iterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="HoaDonBanHangView1Iterator" id="ImplicitViewCriteriaQuery"/>
+    <iterator Binds="ChiTietHoaDonBanHangView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ChiTietHoaDonBanHangView2Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="HoaDonBanHangView1Iterator" id="HoaDonBanHangView1">
@@ -111,5 +113,89 @@
         <Item Value="KhachHangId"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="ChiTietHoaDonBanHangView2Iterator" id="ChiTietHoaDonBanHangView2">
+      <nodeDefinition DefName="model.ChiTietHoaDonBanHangView" Name="ChiTietHoaDonBanHangView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="TenHangHoa"/>
+          <Item Value="SoLuong"/>
+          <Item Value="DonViTinhId"/>
+          <Item Value="DonGia"/>
+          <Item Value="ThueVat"/>
+          <Item Value="GiaSauVat"/>
+          <Item Value="DonViTinhQuiDoiId"/>
+          <Item Value="QuiDoi"/>
+          <Item Value="SoLuongSauQuiDoi"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <listOfValues IterBinding="ChiTietHoaDonBanHangView2Iterator" StaticList="false" Uses="LOV_TenHangHoa"
+                  id="TenHangHoa"/>
+    <attributeValues IterBinding="ChiTietHoaDonBanHangView2Iterator" id="Id1">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietHoaDonBanHangView2Iterator" id="HoaDonBanHangId">
+      <AttrNames>
+        <Item Value="HoaDonBanHangId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietHoaDonBanHangView2Iterator" id="HangHoaId">
+      <AttrNames>
+        <Item Value="HangHoaId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietHoaDonBanHangView2Iterator" id="SoLuong">
+      <AttrNames>
+        <Item Value="SoLuong"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ChiTietHoaDonBanHangView2Iterator" StaticList="false" Uses="LOV_DonViTinhId" id="DonViTinhId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ChiTietHoaDonBanHangView2Iterator" id="DonGia">
+      <AttrNames>
+        <Item Value="DonGia"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietHoaDonBanHangView2Iterator" id="ThueVat1">
+      <AttrNames>
+        <Item Value="ThueVat"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietHoaDonBanHangView2Iterator" id="GiaSauVat">
+      <AttrNames>
+        <Item Value="GiaSauVat"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietHoaDonBanHangView2Iterator" id="CreatedBy1">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietHoaDonBanHangView2Iterator" id="CreatedAt1">
+      <AttrNames>
+        <Item Value="CreatedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietHoaDonBanHangView2Iterator" id="ModifiedBy1">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietHoaDonBanHangView2Iterator" id="ModifiedAt1">
+      <AttrNames>
+        <Item Value="ModifiedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ChiTietHoaDonBanHangView2Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ChiTietHoaDonBanHangView2Iterator" id="Previous1" RequiresUpdateModel="true"
+            Action="previous"/>
+    <action IterBinding="ChiTietHoaDonBanHangView2Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ChiTietHoaDonBanHangView2Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="ChiTietHoaDonBanHangView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ChiTietHoaDonBanHangView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

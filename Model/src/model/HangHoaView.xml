@@ -327,6 +327,62 @@
       </ViewCriteriaItem>
     </ViewCriteriaRow>
   </ViewCriteria>
+  <ViewCriteria
+    Name="HangHoaViewHideBuyPriceCriteria"
+    ViewObjectName="model.HangHoaView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="HangHoaViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="MaHang"
+        ViewAttribute="MaHang"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="TenHang"
+        ViewAttribute="TenHang"
+        Operator="CONTAINS"
+        Conjunction="OR"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="DonViTinhId"
+        ViewAttribute="DonViTinhId"
+        Operator="="
+        Conjunction="OR"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="GiaBan"
+        ViewAttribute="GiaBan"
+        Operator="BETWEEN"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="XuatXuView"
     ViewLink="model.FkHangHoaXuatXuLink"

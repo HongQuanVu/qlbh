@@ -186,7 +186,6 @@
                                                            disabled="#{!bindings.Last.enabled}" partialSubmit="true"
                                                            id="b4"
                                                            binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b4}"/>
-                                            </af:panelGroupLayout>
                                             <af:button text="Submit" id="b5"
                                                        binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b5}"/>
                                             <af:button actionListener="#{bindings.CreateInsert.execute}"
@@ -205,11 +204,345 @@
                                                        binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b9}">
                                                 <af:resetActionListener/>
                                             </af:button>
+                                            </af:panelGroupLayout>
+                                           
                                         </af:panelGroupLayout>
                                     </f:facet>
                                 </af:panelFormLayout>
                             </f:facet>
-                            <f:facet name="second"/>
+                            <f:facet name="second">
+                                <af:panelGroupLayout id="pgl4"
+                                                     binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.pgl4}">
+                                    <af:panelSplitter id="ps3"
+                                                      binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.ps3}"
+                                                      splitterPosition="213">
+                                        <f:facet name="first">
+                                            <af:table value="#{bindings.ChiTietHoaDonBanHangView2.collectionModel}"
+                                                      var="row" rows="#{bindings.ChiTietHoaDonBanHangView2.rangeSize}"
+                                                      emptyText="#{bindings.ChiTietHoaDonBanHangView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                      rowBandingInterval="0"
+                                                      selectedRowKeys="#{bindings.ChiTietHoaDonBanHangView2.collectionModel.selectedRow}"
+                                                      selectionListener="#{bindings.ChiTietHoaDonBanHangView2.collectionModel.makeCurrent}"
+                                                      rowSelection="single"
+                                                      fetchSize="#{bindings.ChiTietHoaDonBanHangView2.rangeSize}"
+                                                      id="t1"
+                                                      binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.t1}"
+                                                      partialTriggers="::b10 ::b11 ::b12 ::b13 ::b15 ::b16">
+                                                <af:column sortProperty="#{bindings.ChiTietHoaDonBanHangView2.hints.Id.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.ChiTietHoaDonBanHangView2.hints.Id.label}"
+                                                           id="c1">
+                                                    <af:inputText value="#{row.bindings.Id.inputValue}"
+                                                                  label="#{bindings.ChiTietHoaDonBanHangView2.hints.Id.label}"
+                                                                  required="#{bindings.ChiTietHoaDonBanHangView2.hints.Id.mandatory}"
+                                                                  columns="#{bindings.ChiTietHoaDonBanHangView2.hints.Id.displayWidth}"
+                                                                  maximumLength="#{bindings.ChiTietHoaDonBanHangView2.hints.Id.precision}"
+                                                                  shortDesc="#{bindings.ChiTietHoaDonBanHangView2.hints.Id.tooltip}"
+                                                                  id="it8">
+                                                        <f:validator binding="#{row.bindings.Id.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.ChiTietHoaDonBanHangView2.hints.Id.format}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.ChiTietHoaDonBanHangView2.hints.TenHangHoa.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.ChiTietHoaDonBanHangView2.hints.TenHangHoa.label}"
+                                                           id="c2">
+                                                    <af:outputText value="#{row.TenHangHoa}"
+                                                                   shortDesc="#{bindings.ChiTietHoaDonBanHangView2.hints.TenHangHoa.tooltip}"
+                                                                   id="ot17"/>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.ChiTietHoaDonBanHangView2.hints.SoLuong.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.ChiTietHoaDonBanHangView2.hints.SoLuong.label}"
+                                                           id="c3">
+                                                    <af:outputText value="#{row.SoLuong}"
+                                                                   shortDesc="#{bindings.ChiTietHoaDonBanHangView2.hints.SoLuong.tooltip}"
+                                                                   id="ot22">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.ChiTietHoaDonBanHangView2.hints.SoLuong.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.ChiTietHoaDonBanHangView2.hints.DonViTinhId.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.ChiTietHoaDonBanHangView2.hints.DonViTinhId.label}"
+                                                           id="c4">
+                                                    <af:selectOneChoice value="#{row.bindings.DonViTinhId.inputValue}"
+                                                                        label="#{row.bindings.DonViTinhId.label}"
+                                                                        required="#{bindings.ChiTietHoaDonBanHangView2.hints.DonViTinhId.mandatory}"
+                                                                        shortDesc="#{bindings.ChiTietHoaDonBanHangView2.hints.DonViTinhId.tooltip}"
+                                                                        readOnly="true" id="soc3">
+                                                        <f:selectItems value="#{row.bindings.DonViTinhId.items}"
+                                                                       id="si3"/>
+                                                        <f:validator binding="#{row.bindings.DonViTinhId.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.ChiTietHoaDonBanHangView2.hints.DonGia.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.ChiTietHoaDonBanHangView2.hints.DonGia.label}"
+                                                           id="c5">
+                                                    <af:outputText value="#{row.DonGia}"
+                                                                   shortDesc="#{bindings.ChiTietHoaDonBanHangView2.hints.DonGia.tooltip}"
+                                                                   id="ot23">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.ChiTietHoaDonBanHangView2.hints.DonGia.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.ChiTietHoaDonBanHangView2.hints.ThueVat.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.ChiTietHoaDonBanHangView2.hints.ThueVat.label}"
+                                                           id="c6">
+                                                    <af:outputText value="#{row.ThueVat}"
+                                                                   shortDesc="#{bindings.ChiTietHoaDonBanHangView2.hints.ThueVat.tooltip}"
+                                                                   id="ot24">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.ChiTietHoaDonBanHangView2.hints.ThueVat.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.ChiTietHoaDonBanHangView2.hints.GiaSauVat.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.ChiTietHoaDonBanHangView2.hints.GiaSauVat.label}"
+                                                           id="c7">
+                                                    <af:outputText value="#{row.GiaSauVat}"
+                                                                   shortDesc="#{bindings.ChiTietHoaDonBanHangView2.hints.GiaSauVat.tooltip}"
+                                                                   id="ot25">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.ChiTietHoaDonBanHangView2.hints.GiaSauVat.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.ChiTietHoaDonBanHangView2.hints.DonViTinhQuiDoiId.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.ChiTietHoaDonBanHangView2.hints.DonViTinhQuiDoiId.label}"
+                                                           id="c8">
+                                                    <af:selectOneChoice value="#{row.bindings.DonViTinhQuiDoiId.inputValue}"
+                                                                        label="#{row.bindings.DonViTinhQuiDoiId.label}"
+                                                                        required="#{bindings.ChiTietHoaDonBanHangView2.hints.DonViTinhQuiDoiId.mandatory}"
+                                                                        shortDesc="#{bindings.ChiTietHoaDonBanHangView2.hints.DonViTinhQuiDoiId.tooltip}"
+                                                                        readOnly="true" id="soc4">
+                                                        <f:selectItems value="#{row.bindings.DonViTinhQuiDoiId.items}"
+                                                                       id="si4"/>
+                                                        <f:validator binding="#{row.bindings.DonViTinhQuiDoiId.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.ChiTietHoaDonBanHangView2.hints.QuiDoi.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.ChiTietHoaDonBanHangView2.hints.QuiDoi.label}"
+                                                           id="c9">
+                                                    <af:outputText value="#{row.QuiDoi}"
+                                                                   shortDesc="#{bindings.ChiTietHoaDonBanHangView2.hints.QuiDoi.tooltip}"
+                                                                   id="ot26">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.ChiTietHoaDonBanHangView2.hints.QuiDoi.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                                <af:column sortProperty="#{bindings.ChiTietHoaDonBanHangView2.hints.SoLuongSauQuiDoi.name}"
+                                                           sortable="true"
+                                                           headerText="#{bindings.ChiTietHoaDonBanHangView2.hints.SoLuongSauQuiDoi.label}"
+                                                           id="c10">
+                                                    <af:outputText value="#{row.SoLuongSauQuiDoi}"
+                                                                   shortDesc="#{bindings.ChiTietHoaDonBanHangView2.hints.SoLuongSauQuiDoi.tooltip}"
+                                                                   id="ot27">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.ChiTietHoaDonBanHangView2.hints.SoLuongSauQuiDoi.format}"/>
+                                                    </af:outputText>
+                                                </af:column>
+                                            </af:table>
+                                        </f:facet>
+                                        <f:facet name="second">
+                                            <af:panelFormLayout id="pfl2"
+                                                                binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.pfl2}"
+                                                                rows="5" maxColumns="2">
+                                                <af:panelLabelAndMessage label="#{bindings.Id1.hints.label}" id="plam2"
+                                                                         binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.plam2}">
+                                                    <af:outputText value="#{bindings.Id1.inputValue}"
+                                                                   shortDesc="#{bindings.Id1.hints.tooltip}" id="ot28"
+                                                                   binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.ot28}">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.Id1.format}"/>
+                                                    </af:outputText>
+                                                </af:panelLabelAndMessage>
+                                                <af:panelLabelAndMessage label="#{bindings.HoaDonBanHangId.hints.label}"
+                                                                         id="plam7"
+                                                                         binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.plam7}">
+                                                    <af:outputText value="#{bindings.HoaDonBanHangId.inputValue}"
+                                                                   shortDesc="#{bindings.HoaDonBanHangId.hints.tooltip}"
+                                                                   id="ot29"
+                                                                   binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.ot29}">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.HoaDonBanHangId.format}"/>
+                                                    </af:outputText>
+                                                </af:panelLabelAndMessage>
+                                                <af:panelLabelAndMessage label="#{bindings.HangHoaId.hints.label}"
+                                                                         partialTriggers="tenHangHoaId" id="plam8"
+                                                                         binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.plam8}">
+                                                    <af:outputText value="#{bindings.HangHoaId.inputValue}"
+                                                                   partialTriggers="tenHangHoaId"
+                                                                   shortDesc="#{bindings.HangHoaId.hints.tooltip}"
+                                                                   id="ot30"
+                                                                   binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.ot30}">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.HangHoaId.format}"/>
+                                                    </af:outputText>
+                                                </af:panelLabelAndMessage>
+                                                <af:inputListOfValues id="tenHangHoaId"
+                                                                      popupTitle="Search and Select: #{bindings.TenHangHoa.hints.label}"
+                                                                      value="#{bindings.TenHangHoa.inputValue}"
+                                                                      label="#{bindings.TenHangHoa.hints.label}"
+                                                                      model="#{bindings.TenHangHoa.listOfValuesModel}"
+                                                                      required="#{bindings.TenHangHoa.hints.mandatory}"
+                                                                      columns="#{bindings.TenHangHoa.hints.displayWidth}"
+                                                                      shortDesc="#{bindings.TenHangHoa.hints.tooltip}"
+                                                                      binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.tenHangHoaId}">
+                                                    <f:validator binding="#{bindings.TenHangHoa.validator}"/>
+                                                </af:inputListOfValues>
+                                                <af:inputText value="#{bindings.SoLuong.inputValue}"
+                                                              label="#{bindings.SoLuong.hints.label}"
+                                                              required="#{bindings.SoLuong.hints.mandatory}"
+                                                              columns="#{bindings.SoLuong.hints.displayWidth}"
+                                                              maximumLength="#{bindings.SoLuong.hints.precision}"
+                                                              shortDesc="#{bindings.SoLuong.hints.tooltip}" id="it9"
+                                                              binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.it9}">
+                                                    <f:validator binding="#{bindings.SoLuong.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.SoLuong.format}"/>
+                                                </af:inputText>
+                                                <af:selectOneChoice value="#{bindings.DonViTinhId.inputValue}"
+                                                                    label="#{bindings.DonViTinhId.label}"
+                                                                    required="#{bindings.DonViTinhId.hints.mandatory}"
+                                                                    shortDesc="#{bindings.DonViTinhId.hints.tooltip}"
+                                                                    id="soc5"
+                                                                    binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.soc5}">
+                                                    <f:selectItems value="#{bindings.DonViTinhId.items}" id="si5"
+                                                                   binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.si5}"/>
+                                                    <f:validator binding="#{bindings.DonViTinhId.validator}"/>
+                                                </af:selectOneChoice>
+                                                <af:inputText value="#{bindings.DonGia.inputValue}"
+                                                              label="#{bindings.DonGia.hints.label}"
+                                                              required="#{bindings.DonGia.hints.mandatory}"
+                                                              columns="#{bindings.DonGia.hints.displayWidth}"
+                                                              maximumLength="#{bindings.DonGia.hints.precision}"
+                                                              shortDesc="#{bindings.DonGia.hints.tooltip}" id="it10"
+                                                              binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.it10}">
+                                                    <f:validator binding="#{bindings.DonGia.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.DonGia.format}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.ThueVat1.inputValue}"
+                                                              label="#{bindings.ThueVat1.hints.label}"
+                                                              required="#{bindings.ThueVat1.hints.mandatory}"
+                                                              columns="#{bindings.ThueVat1.hints.displayWidth}"
+                                                              maximumLength="#{bindings.ThueVat1.hints.precision}"
+                                                              shortDesc="#{bindings.ThueVat1.hints.tooltip}" id="it11"
+                                                              binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.it11}">
+                                                    <f:validator binding="#{bindings.ThueVat1.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.ThueVat1.format}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.GiaSauVat.inputValue}"
+                                                              label="#{bindings.GiaSauVat.hints.label}"
+                                                              required="#{bindings.GiaSauVat.hints.mandatory}"
+                                                              columns="#{bindings.GiaSauVat.hints.displayWidth}"
+                                                              maximumLength="#{bindings.GiaSauVat.hints.precision}"
+                                                              shortDesc="#{bindings.GiaSauVat.hints.tooltip}" id="it12"
+                                                              binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.it12}">
+                                                    <f:validator binding="#{bindings.GiaSauVat.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.GiaSauVat.format}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.CreatedBy1.inputValue}"
+                                                              label="#{bindings.CreatedBy1.hints.label}"
+                                                              required="#{bindings.CreatedBy1.hints.mandatory}"
+                                                              columns="#{bindings.CreatedBy1.hints.displayWidth}"
+                                                              maximumLength="#{bindings.CreatedBy1.hints.precision}"
+                                                              shortDesc="#{bindings.CreatedBy1.hints.tooltip}"
+                                                              id="it13"
+                                                              binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.it13}">
+                                                    <f:validator binding="#{bindings.CreatedBy1.validator}"/>
+                                                </af:inputText>
+                                                <af:inputDate value="#{bindings.CreatedAt1.inputValue}"
+                                                              label="#{bindings.CreatedAt1.hints.label}"
+                                                              required="#{bindings.CreatedAt1.hints.mandatory}"
+                                                              columns="#{bindings.CreatedAt1.hints.displayWidth}"
+                                                              shortDesc="#{bindings.CreatedAt1.hints.tooltip}" id="id2"
+                                                              binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.id2}">
+                                                    <f:validator binding="#{bindings.CreatedAt1.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.CreatedAt1.format}"/>
+                                                </af:inputDate>
+                                                <af:inputText value="#{bindings.ModifiedBy1.inputValue}"
+                                                              label="#{bindings.ModifiedBy1.hints.label}"
+                                                              required="#{bindings.ModifiedBy1.hints.mandatory}"
+                                                              columns="#{bindings.ModifiedBy1.hints.displayWidth}"
+                                                              maximumLength="#{bindings.ModifiedBy1.hints.precision}"
+                                                              shortDesc="#{bindings.ModifiedBy1.hints.tooltip}"
+                                                              id="it14"
+                                                              binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.it14}">
+                                                    <f:validator binding="#{bindings.ModifiedBy1.validator}"/>
+                                                </af:inputText>
+                                                <af:inputDate value="#{bindings.ModifiedAt1.inputValue}"
+                                                              label="#{bindings.ModifiedAt1.hints.label}"
+                                                              required="#{bindings.ModifiedAt1.hints.mandatory}"
+                                                              columns="#{bindings.ModifiedAt1.hints.displayWidth}"
+                                                              shortDesc="#{bindings.ModifiedAt1.hints.tooltip}"
+                                                              id="id3"
+                                                              binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.id3}">
+                                                    <f:validator binding="#{bindings.ModifiedAt1.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.ModifiedAt1.format}"/>
+                                                </af:inputDate>
+                                                <f:facet name="footer">
+                                                    <af:panelGroupLayout layout="vertical" id="pgl5"
+                                                                         binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.pgl5}">
+                                                        <af:panelGroupLayout layout="horizontal" id="pgl6"
+                                                                             binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.pgl6}">
+                                                            <af:button actionListener="#{bindings.First1.execute}"
+                                                                       text="First1"
+                                                                       disabled="#{!bindings.First1.enabled}"
+                                                                       partialSubmit="true" id="b10"
+                                                                       binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b10}"/>
+                                                            <af:button actionListener="#{bindings.Previous1.execute}"
+                                                                       text="Previous1"
+                                                                       disabled="#{!bindings.Previous1.enabled}"
+                                                                       partialSubmit="true" id="b11"
+                                                                       binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b11}"/>
+                                                            <af:button actionListener="#{bindings.Next1.execute}"
+                                                                       text="Next1"
+                                                                       disabled="#{!bindings.Next1.enabled}"
+                                                                       partialSubmit="true" id="b12"
+                                                                       binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b12}"/>
+                                                            <af:button actionListener="#{bindings.Last1.execute}"
+                                                                       text="Last1"
+                                                                       disabled="#{!bindings.Last1.enabled}"
+                                                                       partialSubmit="true" id="b13"
+                                                                       binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b13}"/>
+                                                        </af:panelGroupLayout>
+                                                        <af:button text="Submit" id="b14"
+                                                                   binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b14}"/>
+                                                        <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                                                                   text="CreateInsert1"
+                                                                   disabled="#{!bindings.CreateInsert1.enabled}"
+                                                                   id="b15"
+                                                                   binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b15}"/>
+                                                        <af:button actionListener="#{bindings.Delete1.execute}"
+                                                                   text="Delete1"
+                                                                   disabled="#{!bindings.Delete1.enabled}" id="b16"
+                                                                   binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b16}"/>
+                                                        <af:button actionListener="#{bindings.Commit.execute}"
+                                                                   text="Commit" disabled="#{!bindings.Commit.enabled}"
+                                                                   id="b17"
+                                                                   binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b17}"/>
+                                                    <af:button actionListener="#{bindings.Rollback.execute}"
+                                                               text="Rollback" disabled="#{!bindings.Rollback.enabled}"
+                                                               immediate="true" id="b18"
+                                                               binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b18}">
+                                                        <af:resetActionListener/>
+                                                    </af:button>
+                                                    </af:panelGroupLayout>
+                                                   
+                                                </f:facet>
+                                            </af:panelFormLayout>
+                                        </f:facet>
+                                    </af:panelSplitter>
+                                </af:panelGroupLayout>
+                            </f:facet>
                         </af:panelSplitter>
                     </f:facet>
                     <f:facet name="header"/>

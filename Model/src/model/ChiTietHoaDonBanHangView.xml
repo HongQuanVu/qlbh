@@ -13,6 +13,82 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="HangHoaView1"
+    ViewObjectName="model.HangHoaView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DonViTinhView1"
+    ViewObjectName="model.DonViTinhView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DonViTinhQuiDoiView1"
+    ViewObjectName="model.DonViTinhView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_TenHangHoa"
+    ListVOName="HangHoaView1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TenHangHoa"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="HangHoaId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TenHang"/>
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="MaHang"/>
+      <Item Value="TenHang"/>
+      <Item Value="GiaBan"/>
+      <Item Value="DonViTinhId"/>
+      <Item Value="QuiCachId"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="HangHoaViewHideBuyPriceCriteria"
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DonViTinhId"
+    ListVOName="DonViTinhView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DonViTinhId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TenDonViTinh"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DonViTinhQuiDoiId"
+    ListVOName="DonViTinhQuiDoiView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DonViTinhQuiDoiId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TenDonViTinh"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="ChiTietHoaDonBanHang"
     Entity="model.ChiTietHoaDonBanHang"/>
@@ -46,7 +122,15 @@
     PrecisionRule="true"
     EntityAttrName="DonViTinhId"
     EntityUsage="ChiTietHoaDonBanHang"
-    AliasName="DON_VI_TINH_ID"/>
+    AliasName="DON_VI_TINH_ID"
+    LOVName="LOV_DonViTinhId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DonGia"
     PrecisionRule="true"
@@ -70,7 +154,15 @@
     PrecisionRule="true"
     EntityAttrName="DonViTinhQuiDoiId"
     EntityUsage="ChiTietHoaDonBanHang"
-    AliasName="DON_VI_TINH_QUI_DOI_ID"/>
+    AliasName="DON_VI_TINH_QUI_DOI_ID"
+    LOVName="LOV_DonViTinhQuiDoiId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="QuiDoi"
     PrecisionRule="true"
@@ -113,4 +205,23 @@
     EntityAttrName="ModifiedAt"
     EntityUsage="ChiTietHoaDonBanHang"
     AliasName="MODIFIED_AT"/>
+  <ViewAttribute
+    Name="TenHangHoa"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_TenHangHoa">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
 </ViewObject>

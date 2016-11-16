@@ -7,7 +7,7 @@
   Version="12.2.1.20.47"
   InheritPersonalization="merge"
   DBObjectType="table"
-  DBObjectName="ORDSYS.XUAT_XU"
+  DBObjectName="XUAT_XU"
   AliasName="XuatXu"
   BindingStyle="OracleName">
   <Attribute
@@ -17,7 +17,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="ORDSYS.XUAT_XU"
+    TableName="XUAT_XU"
     PrimaryKey="true"/>
   <Attribute
     Name="MaXuatXu"
@@ -26,7 +26,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ORDSYS.XUAT_XU">
+    TableName="XUAT_XU">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -38,7 +38,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ORDSYS.XUAT_XU">
+    TableName="XUAT_XU">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -50,7 +50,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ORDSYS.XUAT_XU">
+    TableName="XUAT_XU">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -61,7 +61,7 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ORDSYS.XUAT_XU"/>
+    TableName="XUAT_XU"/>
   <Attribute
     Name="ModifiedBy"
     Precision="100"
@@ -69,7 +69,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ORDSYS.XUAT_XU">
+    TableName="XUAT_XU">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -80,7 +80,7 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ORDSYS.XUAT_XU"/>
+    TableName="XUAT_XU"/>
   <AccessorAttribute
     Name="HangHoa"
     Association="model.FkHangHoaXuatXuAssoc"

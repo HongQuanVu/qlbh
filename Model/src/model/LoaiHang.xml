@@ -7,7 +7,7 @@
   Version="12.2.1.20.47"
   InheritPersonalization="merge"
   DBObjectType="table"
-  DBObjectName="ORDSYS.LOAI_HANG"
+  DBObjectName="LOAI_HANG"
   AliasName="LoaiHang"
   BindingStyle="OracleName">
   <Attribute
@@ -17,7 +17,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="ORDSYS.LOAI_HANG"
+    TableName="LOAI_HANG"
     PrimaryKey="true"/>
   <Attribute
     Name="MaLoaiHang"
@@ -26,7 +26,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ORDSYS.LOAI_HANG">
+    TableName="LOAI_HANG">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -38,7 +38,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ORDSYS.LOAI_HANG">
+    TableName="LOAI_HANG">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="200"/>
     </DesignTime>
@@ -50,7 +50,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ORDSYS.LOAI_HANG">
+    TableName="LOAI_HANG">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -61,7 +61,7 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ORDSYS.LOAI_HANG"/>
+    TableName="LOAI_HANG"/>
   <Attribute
     Name="ModifiedBy"
     Precision="100"
@@ -69,7 +69,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ORDSYS.LOAI_HANG">
+    TableName="LOAI_HANG">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -80,7 +80,7 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ORDSYS.LOAI_HANG"/>
+    TableName="LOAI_HANG"/>
   <AccessorAttribute
     Name="HangHoa"
     Association="model.FkHangHoaLoaiHangAssoc"

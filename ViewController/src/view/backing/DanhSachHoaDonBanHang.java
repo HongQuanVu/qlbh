@@ -70,6 +70,38 @@ public class DanhSachHoaDonBanHang {
     private RichButton b8;
     private RichButton b9;
     private RichInputText it7;
+    private RichPanelSplitter ps3;
+    private RichPanelGroupLayout pgl4;
+    private RichTable t1;
+    private RichPanelFormLayout pfl2;
+    private RichPanelLabelAndMessage plam2;
+    private RichOutputText ot28;
+    private RichPanelLabelAndMessage plam7;
+    private RichOutputText ot29;
+    private RichPanelLabelAndMessage plam8;
+    private RichOutputText ot30;
+    private RichInputListOfValues tenHangHoaId;
+    private RichInputText it9;
+    private RichSelectOneChoice soc5;
+    private UISelectItems si5;
+    private RichInputText it10;
+    private RichInputText it11;
+    private RichInputText it12;
+    private RichInputText it13;
+    private RichInputDate id2;
+    private RichInputText it14;
+    private RichInputDate id3;
+    private RichPanelGroupLayout pgl5;
+    private RichPanelGroupLayout pgl6;
+    private RichButton b10;
+    private RichButton b11;
+    private RichButton b12;
+    private RichButton b13;
+    private RichButton b14;
+    private RichButton b15;
+    private RichButton b16;
+    private RichButton b17;
+    private RichButton b18;
 
     public void setF1(RichForm f1) {
         this.f1 = f1;
@@ -446,5 +478,262 @@ public class DanhSachHoaDonBanHang {
 
     public RichInputText getIt7() {
         return it7;
+    }
+
+    public void setPs3(RichPanelSplitter ps3) {
+        this.ps3 = ps3;
+    }
+
+    public RichPanelSplitter getPs3() {
+        return ps3;
+    }
+
+
+    public void setPgl4(RichPanelGroupLayout pgl4) {
+        this.pgl4 = pgl4;
+    }
+
+    public RichPanelGroupLayout getPgl4() {
+        return pgl4;
+    }
+
+    public void setT1(RichTable t1) {
+        this.t1 = t1;
+    }
+
+    public RichTable getT1() {
+        return t1;
+    }
+
+    public void setPfl2(RichPanelFormLayout pfl2) {
+        this.pfl2 = pfl2;
+    }
+
+    public RichPanelFormLayout getPfl2() {
+        return pfl2;
+    }
+
+    public void setPlam2(RichPanelLabelAndMessage plam2) {
+        this.plam2 = plam2;
+    }
+
+    public RichPanelLabelAndMessage getPlam2() {
+        return plam2;
+    }
+
+    public void setOt28(RichOutputText ot28) {
+        this.ot28 = ot28;
+    }
+
+    public RichOutputText getOt28() {
+        return ot28;
+    }
+
+    public void setPlam7(RichPanelLabelAndMessage plam7) {
+        this.plam7 = plam7;
+    }
+
+    public RichPanelLabelAndMessage getPlam7() {
+        return plam7;
+    }
+
+    public void setOt29(RichOutputText ot29) {
+        this.ot29 = ot29;
+    }
+
+    public RichOutputText getOt29() {
+        return ot29;
+    }
+
+    public void setPlam8(RichPanelLabelAndMessage plam8) {
+        this.plam8 = plam8;
+    }
+
+    public RichPanelLabelAndMessage getPlam8() {
+        return plam8;
+    }
+
+    public void setOt30(RichOutputText ot30) {
+        this.ot30 = ot30;
+    }
+
+    public RichOutputText getOt30() {
+        return ot30;
+    }
+
+    public void setTenHangHoaId(RichInputListOfValues tenHangHoaId) {
+        this.tenHangHoaId = tenHangHoaId;
+    }
+
+    public RichInputListOfValues getTenHangHoaId() {
+        return tenHangHoaId;
+    }
+
+    public void setIt9(RichInputText it9) {
+        this.it9 = it9;
+    }
+
+    public RichInputText getIt9() {
+        return it9;
+    }
+
+    public void setSoc5(RichSelectOneChoice soc5) {
+        this.soc5 = soc5;
+    }
+
+    public RichSelectOneChoice getSoc5() {
+        return soc5;
+    }
+
+    public void setSi5(UISelectItems si5) {
+        this.si5 = si5;
+    }
+
+    public UISelectItems getSi5() {
+        return si5;
+    }
+
+    public void setIt10(RichInputText it10) {
+        this.it10 = it10;
+    }
+
+    public RichInputText getIt10() {
+        return it10;
+    }
+
+    public void setIt11(RichInputText it11) {
+        this.it11 = it11;
+    }
+
+    public RichInputText getIt11() {
+        return it11;
+    }
+
+    public void setIt12(RichInputText it12) {
+        this.it12 = it12;
+    }
+
+    public RichInputText getIt12() {
+        return it12;
+    }
+
+    public void setIt13(RichInputText it13) {
+        this.it13 = it13;
+    }
+
+    public RichInputText getIt13() {
+        return it13;
+    }
+
+    public void setId2(RichInputDate id2) {
+        this.id2 = id2;
+    }
+
+    public RichInputDate getId2() {
+        return id2;
+    }
+
+    public void setIt14(RichInputText it14) {
+        this.it14 = it14;
+    }
+
+    public RichInputText getIt14() {
+        return it14;
+    }
+
+    public void setId3(RichInputDate id3) {
+        this.id3 = id3;
+    }
+
+    public RichInputDate getId3() {
+        return id3;
+    }
+
+    public void setPgl5(RichPanelGroupLayout pgl5) {
+        this.pgl5 = pgl5;
+    }
+
+    public RichPanelGroupLayout getPgl5() {
+        return pgl5;
+    }
+
+    public void setPgl6(RichPanelGroupLayout pgl6) {
+        this.pgl6 = pgl6;
+    }
+
+    public RichPanelGroupLayout getPgl6() {
+        return pgl6;
+    }
+
+    public void setB10(RichButton b10) {
+        this.b10 = b10;
+    }
+
+    public RichButton getB10() {
+        return b10;
+    }
+
+    public void setB11(RichButton b11) {
+        this.b11 = b11;
+    }
+
+    public RichButton getB11() {
+        return b11;
+    }
+
+    public void setB12(RichButton b12) {
+        this.b12 = b12;
+    }
+
+    public RichButton getB12() {
+        return b12;
+    }
+
+    public void setB13(RichButton b13) {
+        this.b13 = b13;
+    }
+
+    public RichButton getB13() {
+        return b13;
+    }
+
+    public void setB14(RichButton b14) {
+        this.b14 = b14;
+    }
+
+    public RichButton getB14() {
+        return b14;
+    }
+
+    public void setB15(RichButton b15) {
+        this.b15 = b15;
+    }
+
+    public RichButton getB15() {
+        return b15;
+    }
+
+    public void setB16(RichButton b16) {
+        this.b16 = b16;
+    }
+
+    public RichButton getB16() {
+        return b16;
+    }
+
+    public void setB17(RichButton b17) {
+        this.b17 = b17;
+    }
+
+    public RichButton getB17() {
+        return b17;
+    }
+
+    public void setB18(RichButton b18) {
+        this.b18 = b18;
+    }
+
+    public RichButton getB18() {
+        return b18;
     }
 }

@@ -7,7 +7,7 @@
   Version="12.2.1.20.47"
   InheritPersonalization="merge"
   DBObjectType="table"
-  DBObjectName="ORDSYS.HANG_HOA"
+  DBObjectName="HANG_HOA"
   AliasName="HangHoa"
   BindingStyle="OracleName">
   <Attribute
@@ -16,7 +16,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="ORDSYS.HANG_HOA"
+    TableName="HANG_HOA"
     PrimaryKey="true"
     IsUpdateable="while_insert">
     <TransientExpression
@@ -30,7 +30,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ORDSYS.HANG_HOA">
+    TableName="HANG_HOA">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="500"/>
     </DesignTime>
@@ -48,7 +48,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ORDSYS.HANG_HOA">
+    TableName="HANG_HOA">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="500"/>
     </DesignTime>
@@ -65,42 +65,42 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="ORDSYS.HANG_HOA"/>
+    TableName="HANG_HOA"/>
   <Attribute
     Name="XuatXuId"
     ColumnName="XUAT_XU_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="ORDSYS.HANG_HOA"/>
+    TableName="HANG_HOA"/>
   <Attribute
     Name="DonViTinhId"
     ColumnName="DON_VI_TINH_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="ORDSYS.HANG_HOA"/>
+    TableName="HANG_HOA"/>
   <Attribute
     Name="QuiCachId"
     ColumnName="QUI_CACH_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="ORDSYS.HANG_HOA"/>
+    TableName="HANG_HOA"/>
   <Attribute
     Name="DonGia"
     ColumnName="DON_GIA"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="ORDSYS.HANG_HOA"/>
+    TableName="HANG_HOA"/>
   <Attribute
     Name="GiaBan"
     ColumnName="GIA_BAN"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="ORDSYS.HANG_HOA"/>
+    TableName="HANG_HOA"/>
   <Attribute
     Name="GhiChu"
     Precision="1000"
@@ -108,7 +108,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ORDSYS.HANG_HOA">
+    TableName="HANG_HOA">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1000"/>
     </DesignTime>
@@ -128,7 +128,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ORDSYS.HANG_HOA">
+    TableName="HANG_HOA">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -145,7 +145,7 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ORDSYS.HANG_HOA"/>
+    TableName="HANG_HOA"/>
   <Attribute
     Name="ModifiedBy"
     Precision="100"
@@ -153,7 +153,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="ORDSYS.HANG_HOA">
+    TableName="HANG_HOA">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -170,21 +170,21 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="ORDSYS.HANG_HOA"/>
+    TableName="HANG_HOA"/>
   <Attribute
     Name="DonViQuiDoiId"
     ColumnName="DON_VI_QUI_DOI_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="ORDSYS.HANG_HOA"/>
+    TableName="HANG_HOA"/>
   <Attribute
     Name="SoLuongQuiDoi"
     ColumnName="SO_LUONG_QUI_DOI"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="ORDSYS.HANG_HOA"/>
+    TableName="HANG_HOA"/>
   <AccessorAttribute
     Name="LoaiHang"
     Association="model.FkHangHoaLoaiHangAssoc"
