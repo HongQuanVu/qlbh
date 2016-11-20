@@ -9,7 +9,89 @@
                 <af:pageTemplate viewId="/templateDef1.jspx" id="pt1">
                     <f:facet name="center">
                         <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_DanhMucLoaiHang.pfl1}">
-                            <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}"
+                           
+                            
+                              <af:panelGroupLayout layout="vertical" id="pgl3"
+                                                 binding="#{backingBeanScope.backing_DanhMucLoaiHang.pgl3}">
+                                <af:panelHeader text="LoaiHang" id="ph1"
+                                                binding="#{backingBeanScope.backing_DanhMucLoaiHang.ph1}">
+                                    <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                                   binding="#{backingBeanScope.backing_DanhMucLoaiHang.qryId1}">
+                                        <f:facet name="end">
+                                            <af:commandLink text="Advanced" rendered="false" id="cl1"
+                                                            binding="#{backingBeanScope.backing_DanhMucLoaiHang.cl1}"/>
+                                        </f:facet>
+                                    </af:quickQuery>
+                                </af:panelHeader>
+                                <af:table value="#{bindings.LoaiHangView1.collectionModel}" var="row"
+                                          rows="#{bindings.LoaiHangView1.rangeSize}"
+                                          emptyText="#{bindings.LoaiHangView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.LoaiHangView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.LoaiHangView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.LoaiHangView1.rangeSize}"
+                                          partialTriggers="::qryId1 ::b1 ::b2 ::b3 ::b4 ::b8 ::b9" id="t1"
+                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.t1}">
+                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.Id.name}" sortable="true"
+                                               headerText="#{bindings.LoaiHangView1.hints.Id.label}" id="c1">
+                                        <af:outputText value="#{row.Id}"
+                                                       shortDesc="#{bindings.LoaiHangView1.hints.Id.tooltip}" id="ot1">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.LoaiHangView1.hints.Id.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.MaLoaiHang.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.LoaiHangView1.hints.MaLoaiHang.label}" id="c2">
+                                        <af:outputText value="#{row.MaLoaiHang}"
+                                                       shortDesc="#{bindings.LoaiHangView1.hints.MaLoaiHang.tooltip}"
+                                                       id="ot2"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.TenLoaiHang.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.LoaiHangView1.hints.TenLoaiHang.label}" id="c3">
+                                        <af:outputText value="#{row.TenLoaiHang}"
+                                                       shortDesc="#{bindings.LoaiHangView1.hints.TenLoaiHang.tooltip}"
+                                                       id="ot3"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.CreatedBy.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.LoaiHangView1.hints.CreatedBy.label}" id="c4">
+                                        <af:outputText value="#{row.CreatedBy}"
+                                                       shortDesc="#{bindings.LoaiHangView1.hints.CreatedBy.tooltip}"
+                                                       id="ot4"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.CreatedAt.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.LoaiHangView1.hints.CreatedAt.label}" id="c5">
+                                        <af:outputText value="#{row.CreatedAt}"
+                                                       shortDesc="#{bindings.LoaiHangView1.hints.CreatedAt.tooltip}"
+                                                       id="ot5">
+                                            <af:convertDateTime pattern="#{bindings.LoaiHangView1.hints.CreatedAt.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.ModifiedBy.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.LoaiHangView1.hints.ModifiedBy.label}" id="c6">
+                                        <af:outputText value="#{row.ModifiedBy}"
+                                                       shortDesc="#{bindings.LoaiHangView1.hints.ModifiedBy.tooltip}"
+                                                       id="ot6"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.ModifiedAt.name}"
+                                               sortable="true"
+                                               headerText="#{bindings.LoaiHangView1.hints.ModifiedAt.label}" id="c7">
+                                        <af:outputText value="#{row.ModifiedAt}"
+                                                       shortDesc="#{bindings.LoaiHangView1.hints.ModifiedAt.tooltip}"
+                                                       id="ot7">
+                                            <af:convertDateTime pattern="#{bindings.LoaiHangView1.hints.ModifiedAt.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                </af:table>
+                            </af:panelGroupLayout>
+                         <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}"
                                           required="#{bindings.Id.hints.mandatory}"
                                           columns="#{bindings.Id.hints.displayWidth}"
                                           maximumLength="#{bindings.Id.hints.precision}"
@@ -90,7 +172,13 @@
                                         <af:button actionListener="#{bindings.Last.execute}" text="Last"
                                                    disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"
                                                    binding="#{backingBeanScope.backing_DanhMucLoaiHang.b4}"/>
-                                   <af:button text="Submit" id="b5"
+                                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
+                                                   disabled="#{!bindings.CreateInsert.enabled}" id="b8"
+                                                   binding="#{backingBeanScope.backing_DanhMucLoaiHang.b8}"/>
+                                        <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                                   disabled="#{!bindings.Delete.enabled}" id="b9"
+                                                   binding="#{backingBeanScope.backing_DanhMucLoaiHang.b9}"/>
+                                        <af:button text="Submit" id="b5"
                                                binding="#{backingBeanScope.backing_DanhMucLoaiHang.b5}"/>
                                     <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
                                                disabled="#{!bindings.Commit.enabled}" id="b6"
@@ -104,87 +192,6 @@
                                     
                                 </af:panelGroupLayout>
                             </f:facet>
-                            
-                              <af:panelGroupLayout layout="vertical" id="pgl3"
-                                                 binding="#{backingBeanScope.backing_DanhMucLoaiHang.pgl3}">
-                                <af:panelHeader text="LoaiHang" id="ph1"
-                                                binding="#{backingBeanScope.backing_DanhMucLoaiHang.ph1}">
-                                    <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
-                                                   value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
-                                                   model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
-                                                   queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
-                                                   binding="#{backingBeanScope.backing_DanhMucLoaiHang.qryId1}">
-                                        <f:facet name="end">
-                                            <af:commandLink text="Advanced" rendered="false" id="cl1"
-                                                            binding="#{backingBeanScope.backing_DanhMucLoaiHang.cl1}"/>
-                                        </f:facet>
-                                    </af:quickQuery>
-                                </af:panelHeader>
-                                <af:table value="#{bindings.LoaiHangView1.collectionModel}" var="row"
-                                          rows="#{bindings.LoaiHangView1.rangeSize}"
-                                          emptyText="#{bindings.LoaiHangView1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                          rowBandingInterval="0"
-                                          selectedRowKeys="#{bindings.LoaiHangView1.collectionModel.selectedRow}"
-                                          selectionListener="#{bindings.LoaiHangView1.collectionModel.makeCurrent}"
-                                          rowSelection="single" fetchSize="#{bindings.LoaiHangView1.rangeSize}"
-                                          partialTriggers="::qryId1 ::b1 ::b2 ::b3 ::b4" id="t1"
-                                          binding="#{backingBeanScope.backing_DanhMucLoaiHang.t1}">
-                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.Id.name}" sortable="true"
-                                               headerText="#{bindings.LoaiHangView1.hints.Id.label}" id="c1">
-                                        <af:outputText value="#{row.Id}"
-                                                       shortDesc="#{bindings.LoaiHangView1.hints.Id.tooltip}" id="ot1">
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.LoaiHangView1.hints.Id.format}"/>
-                                        </af:outputText>
-                                    </af:column>
-                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.MaLoaiHang.name}"
-                                               sortable="true"
-                                               headerText="#{bindings.LoaiHangView1.hints.MaLoaiHang.label}" id="c2">
-                                        <af:outputText value="#{row.MaLoaiHang}"
-                                                       shortDesc="#{bindings.LoaiHangView1.hints.MaLoaiHang.tooltip}"
-                                                       id="ot2"/>
-                                    </af:column>
-                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.TenLoaiHang.name}"
-                                               sortable="true"
-                                               headerText="#{bindings.LoaiHangView1.hints.TenLoaiHang.label}" id="c3">
-                                        <af:outputText value="#{row.TenLoaiHang}"
-                                                       shortDesc="#{bindings.LoaiHangView1.hints.TenLoaiHang.tooltip}"
-                                                       id="ot3"/>
-                                    </af:column>
-                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.CreatedBy.name}"
-                                               sortable="true"
-                                               headerText="#{bindings.LoaiHangView1.hints.CreatedBy.label}" id="c4">
-                                        <af:outputText value="#{row.CreatedBy}"
-                                                       shortDesc="#{bindings.LoaiHangView1.hints.CreatedBy.tooltip}"
-                                                       id="ot4"/>
-                                    </af:column>
-                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.CreatedAt.name}"
-                                               sortable="true"
-                                               headerText="#{bindings.LoaiHangView1.hints.CreatedAt.label}" id="c5">
-                                        <af:outputText value="#{row.CreatedAt}"
-                                                       shortDesc="#{bindings.LoaiHangView1.hints.CreatedAt.tooltip}"
-                                                       id="ot5">
-                                            <af:convertDateTime pattern="#{bindings.LoaiHangView1.hints.CreatedAt.format}"/>
-                                        </af:outputText>
-                                    </af:column>
-                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.ModifiedBy.name}"
-                                               sortable="true"
-                                               headerText="#{bindings.LoaiHangView1.hints.ModifiedBy.label}" id="c6">
-                                        <af:outputText value="#{row.ModifiedBy}"
-                                                       shortDesc="#{bindings.LoaiHangView1.hints.ModifiedBy.tooltip}"
-                                                       id="ot6"/>
-                                    </af:column>
-                                    <af:column sortProperty="#{bindings.LoaiHangView1.hints.ModifiedAt.name}"
-                                               sortable="true"
-                                               headerText="#{bindings.LoaiHangView1.hints.ModifiedAt.label}" id="c7">
-                                        <af:outputText value="#{row.ModifiedAt}"
-                                                       shortDesc="#{bindings.LoaiHangView1.hints.ModifiedAt.tooltip}"
-                                                       id="ot7">
-                                            <af:convertDateTime pattern="#{bindings.LoaiHangView1.hints.ModifiedAt.format}"/>
-                                        </af:outputText>
-                                    </af:column>
-                                </af:table>
-                            </af:panelGroupLayout>
                         </af:panelFormLayout>
                     </f:facet>
                     <f:facet name="header"/>

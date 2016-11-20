@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="DanhMucXuatXu.jspx" id="d1" binding="#{backingBeanScope.backing_DanhMucXuatXu.d1}">
+            <af:messages id="m1" binding="#{backingBeanScope.backing_DanhMucXuatXu.m1}"/>
+            <af:form id="f1" binding="#{backingBeanScope.backing_DanhMucXuatXu.f1}">
+                <af:pageTemplate viewId="/templateDef1.jspx" id="pt1">
+                    <f:facet name="center">
+                        <af:panelGroupLayout layout="vertical" id="pgl1"
+                                             binding="#{backingBeanScope.backing_DanhMucXuatXu.pgl1}">
+                            <af:panelHeader text="XuatXu" id="ph1"
+                                            binding="#{backingBeanScope.backing_DanhMucXuatXu.ph1}">
+                                <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                               value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                               model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                               queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                               binding="#{backingBeanScope.backing_DanhMucXuatXu.qryId1}">
+                                    <f:facet name="end">
+                                        <af:commandLink text="Advanced" rendered="false" id="cl1"
+                                                        binding="#{backingBeanScope.backing_DanhMucXuatXu.cl1}"/>
+                                    </f:facet>
+                                </af:quickQuery>
+                            </af:panelHeader>
+                            <af:table value="#{bindings.XuatXuView1.collectionModel}" var="row"
+                                      rows="#{bindings.XuatXuView1.rangeSize}"
+                                      emptyText="#{bindings.XuatXuView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.XuatXuView1.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.XuatXuView1.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.XuatXuView1.rangeSize}"
+                                      partialTriggers="::qryId1 ::b1 ::b2 ::b3 ::b4 ::b6 ::b7" id="t1"
+                                      binding="#{backingBeanScope.backing_DanhMucXuatXu.t1}">
+                                <af:column sortProperty="#{bindings.XuatXuView1.hints.Id.name}" sortable="true"
+                                           headerText="#{bindings.XuatXuView1.hints.Id.label}" id="c1">
+                                    <af:outputText value="#{row.Id}"
+                                                   shortDesc="#{bindings.XuatXuView1.hints.Id.tooltip}" id="ot1">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.XuatXuView1.hints.Id.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.XuatXuView1.hints.MaXuatXu.name}" sortable="true"
+                                           headerText="#{bindings.XuatXuView1.hints.MaXuatXu.label}" id="c2">
+                                    <af:outputText value="#{row.MaXuatXu}"
+                                                   shortDesc="#{bindings.XuatXuView1.hints.MaXuatXu.tooltip}" id="ot2"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.XuatXuView1.hints.TenXuatXu.name}" sortable="true"
+                                           headerText="#{bindings.XuatXuView1.hints.TenXuatXu.label}" id="c3">
+                                    <af:outputText value="#{row.TenXuatXu}"
+                                                   shortDesc="#{bindings.XuatXuView1.hints.TenXuatXu.tooltip}"
+                                                   id="ot3"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.XuatXuView1.hints.CreatedBy.name}" sortable="true"
+                                           headerText="#{bindings.XuatXuView1.hints.CreatedBy.label}" id="c4">
+                                    <af:outputText value="#{row.CreatedBy}"
+                                                   shortDesc="#{bindings.XuatXuView1.hints.CreatedBy.tooltip}"
+                                                   id="ot4"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.XuatXuView1.hints.CreatedAt.name}" sortable="true"
+                                           headerText="#{bindings.XuatXuView1.hints.CreatedAt.label}" id="c5">
+                                    <af:outputText value="#{row.CreatedAt}"
+                                                   shortDesc="#{bindings.XuatXuView1.hints.CreatedAt.tooltip}" id="ot5">
+                                        <af:convertDateTime pattern="#{bindings.XuatXuView1.hints.CreatedAt.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.XuatXuView1.hints.ModifiedBy.name}" sortable="true"
+                                           headerText="#{bindings.XuatXuView1.hints.ModifiedBy.label}" id="c6">
+                                    <af:outputText value="#{row.ModifiedBy}"
+                                                   shortDesc="#{bindings.XuatXuView1.hints.ModifiedBy.tooltip}"
+                                                   id="ot6"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.XuatXuView1.hints.ModifiedAt.name}" sortable="true"
+                                           headerText="#{bindings.XuatXuView1.hints.ModifiedAt.label}" id="c7">
+                                    <af:outputText value="#{row.ModifiedAt}"
+                                                   shortDesc="#{bindings.XuatXuView1.hints.ModifiedAt.tooltip}"
+                                                   id="ot7">
+                                        <af:convertDateTime pattern="#{bindings.XuatXuView1.hints.ModifiedAt.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                            </af:table>
+                            <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_DanhMucXuatXu.pfl1}"
+                                                maxColumns="2" rows="3">
+                                <af:panelLabelAndMessage label="#{bindings.Id.hints.label}" id="plam1"
+                                                         binding="#{backingBeanScope.backing_DanhMucXuatXu.plam1}">
+                                    <af:outputText value="#{bindings.Id.inputValue}"
+                                                   shortDesc="#{bindings.Id.hints.tooltip}" id="ot8"
+                                                   binding="#{backingBeanScope.backing_DanhMucXuatXu.ot8}">
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                                    </af:outputText>
+                                </af:panelLabelAndMessage>
+                                <af:inputText value="#{bindings.MaXuatXu.inputValue}"
+                                              label="#{bindings.MaXuatXu.hints.label}"
+                                              required="#{bindings.MaXuatXu.hints.mandatory}"
+                                              columns="#{bindings.MaXuatXu.hints.displayWidth}"
+                                              maximumLength="#{bindings.MaXuatXu.hints.precision}"
+                                              shortDesc="#{bindings.MaXuatXu.hints.tooltip}" id="it1"
+                                              binding="#{backingBeanScope.backing_DanhMucXuatXu.it1}">
+                                    <f:validator binding="#{bindings.MaXuatXu.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.TenXuatXu.inputValue}"
+                                              label="#{bindings.TenXuatXu.hints.label}"
+                                              required="#{bindings.TenXuatXu.hints.mandatory}"
+                                              columns="#{bindings.TenXuatXu.hints.displayWidth}"
+                                              maximumLength="#{bindings.TenXuatXu.hints.precision}"
+                                              shortDesc="#{bindings.TenXuatXu.hints.tooltip}" id="it2"
+                                              binding="#{backingBeanScope.backing_DanhMucXuatXu.it2}">
+                                    <f:validator binding="#{bindings.TenXuatXu.validator}"/>
+                                </af:inputText>
+                                <af:panelLabelAndMessage label="#{bindings.CreatedBy.hints.label}" id="plam2"
+                                                         binding="#{backingBeanScope.backing_DanhMucXuatXu.plam2}">
+                                    <af:outputText value="#{bindings.CreatedBy.inputValue}"
+                                                   shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="ot9"
+                                                   binding="#{backingBeanScope.backing_DanhMucXuatXu.ot9}"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.CreatedAt.hints.label}" id="plam3"
+                                                         binding="#{backingBeanScope.backing_DanhMucXuatXu.plam3}">
+                                    <af:outputText value="#{bindings.CreatedAt.inputValue}"
+                                                   shortDesc="#{bindings.CreatedAt.hints.tooltip}" id="ot10"
+                                                   binding="#{backingBeanScope.backing_DanhMucXuatXu.ot10}">
+                                        <af:convertDateTime pattern="#{bindings.CreatedAt.format}"/>
+                                    </af:outputText>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.ModifiedBy.hints.label}" id="plam4"
+                                                         binding="#{backingBeanScope.backing_DanhMucXuatXu.plam4}">
+                                    <af:outputText value="#{bindings.ModifiedBy.inputValue}"
+                                                   shortDesc="#{bindings.ModifiedBy.hints.tooltip}" id="ot11"
+                                                   binding="#{backingBeanScope.backing_DanhMucXuatXu.ot11}"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.ModifiedAt.hints.label}" id="plam5"
+                                                         binding="#{backingBeanScope.backing_DanhMucXuatXu.plam5}">
+                                    <af:outputText value="#{bindings.ModifiedAt.inputValue}"
+                                                   shortDesc="#{bindings.ModifiedAt.hints.tooltip}" id="ot12"
+                                                   binding="#{backingBeanScope.backing_DanhMucXuatXu.ot12}">
+                                        <af:convertDateTime pattern="#{bindings.ModifiedAt.format}"/>
+                                    </af:outputText>
+                                </af:panelLabelAndMessage>
+                                <f:facet name="footer">
+                                    <af:panelGroupLayout layout="vertical" id="pgl2"
+                                                         binding="#{backingBeanScope.backing_DanhMucXuatXu.pgl2}">
+                                        <af:panelGroupLayout layout="horizontal" id="pgl3"
+                                                             binding="#{backingBeanScope.backing_DanhMucXuatXu.pgl3}">
+                                            <af:button actionListener="#{bindings.First.execute}" text="First"
+                                                       disabled="#{!bindings.First.enabled}" partialSubmit="true"
+                                                       id="b1" binding="#{backingBeanScope.backing_DanhMucXuatXu.b1}"/>
+                                            <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                                       disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+                                                       id="b2" binding="#{backingBeanScope.backing_DanhMucXuatXu.b2}"/>
+                                            <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                                       disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                       id="b3" binding="#{backingBeanScope.backing_DanhMucXuatXu.b3}"/>
+                                            <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                                       disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                       id="b4" binding="#{backingBeanScope.backing_DanhMucXuatXu.b4}"/>
+                                          <af:button text="Submit" id="b5"
+                                                   binding="#{backingBeanScope.backing_DanhMucXuatXu.b5}"/>
+                                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
+                                                   disabled="#{!bindings.CreateInsert.enabled}" id="b6"
+                                                   binding="#{backingBeanScope.backing_DanhMucXuatXu.b6}"/>
+                                        <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                                   disabled="#{!bindings.Delete.enabled}" id="b7"
+                                                   binding="#{backingBeanScope.backing_DanhMucXuatXu.b7}"/>
+                                        <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
+                                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b9"
+                                                   binding="#{backingBeanScope.backing_DanhMucXuatXu.b9}">
+                                            <af:resetActionListener/>
+                                        </af:button>
+                                        <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                                                   disabled="#{!bindings.Commit.enabled}" id="b8"
+                                                   binding="#{backingBeanScope.backing_DanhMucXuatXu.b8}"/>
+                                        </af:panelGroupLayout>
+                                      
+                                    </af:panelGroupLayout>
+                                </f:facet>
+                            </af:panelFormLayout>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="header"/>
+                    <f:facet name="end"/>
+                    <f:facet name="start"/>
+                    <f:facet name="branding"/>
+                    <f:facet name="copyright"/>
+                    <f:facet name="status"/>
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_DanhMucXuatXu-->
+</jsp:root>

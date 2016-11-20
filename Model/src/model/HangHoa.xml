@@ -220,6 +220,13 @@
     AssociationOtherEnd="model.FkHangHoaDonViQuiDoiAssoc.HangHoa1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ChiTietHoaDonBanHang"
+    Association="model.ChitietHoaDonBanHang_HangHoaAssoc"
+    AssociationEnd="model.ChitietHoaDonBanHang_HangHoaAssoc.ChiTietHoaDonBanHang"
+    AssociationOtherEnd="model.ChitietHoaDonBanHang_HangHoaAssoc.HangHoa1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ViewLinkAccessor
     Name="XuatXuView"
     ViewLink="model.FkHangHoaXuatXuLink"

@@ -18,7 +18,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="QUI_CACH"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsQueriable="false">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="QuiCachRow"/>
+  </Attribute>
   <Attribute
     Name="MaQuiCach"
     Precision="100"

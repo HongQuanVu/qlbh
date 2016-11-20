@@ -201,6 +201,26 @@
       trustMode="untrusted"
       CodeSourceName="ChungTuMuaHangViewRow"/>
   </ViewAttribute>
+  <ViewAttribute
+    Name="TienThueVAT"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    Expression="TIEN_SAU_CHIET_KHAU*(THUE_VAT/100)"/>
+  <ViewAttribute
+    Name="TongCongTienThanhToan"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    Expression="TIEN_SAU_CHIET_KHAU*(1+THUE_VAT/100)"/>
   <ViewLinkAccessor
     Name="ChiTietChungTuMuaHangView"
     ViewLink="model.ChiTietCtMhFk2Link"

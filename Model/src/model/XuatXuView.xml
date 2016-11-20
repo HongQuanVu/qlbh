@@ -22,7 +22,8 @@
     PrecisionRule="true"
     EntityAttrName="Id"
     EntityUsage="XuatXu"
-    AliasName="ID"/>
+    AliasName="ID"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="MaXuatXu"
     PrecisionRule="true"

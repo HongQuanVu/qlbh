@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47"
+                id="DanhMucHinhThucThanhToanPageDef" Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="HinhThucThanhToanView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="HinhThucThanhToanView1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="HinhThucThanhToanView1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="HinhThucThanhToanView1Iterator" id="HinhThucThanhToanView1">
+      <nodeDefinition DefName="model.HinhThucThanhToanView" Name="HinhThucThanhToanView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="TenHinhThucThanhToan"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="HinhThucThanhToanView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HinhThucThanhToanView1Iterator" id="TenHinhThucThanhToan">
+      <AttrNames>
+        <Item Value="TenHinhThucThanhToan"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="HinhThucThanhToanView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="HinhThucThanhToanView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="HinhThucThanhToanView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="HinhThucThanhToanView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="HinhThucThanhToanView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="HinhThucThanhToanView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

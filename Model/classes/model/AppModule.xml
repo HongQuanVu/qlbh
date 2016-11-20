@@ -114,6 +114,15 @@
   <ViewUsage
     Name="PhieuThuView3"
     ViewObjectName="model.PhieuThuView"/>
+  <ViewUsage
+    Name="HinhThucThanhToanView1"
+    ViewObjectName="model.HinhThucThanhToanView"/>
+  <ViewUsage
+    Name="HangHoaView6"
+    ViewObjectName="model.HangHoaView"/>
+  <ViewUsage
+    Name="DonViTinhView3"
+    ViewObjectName="model.DonViTinhView"/>
   <ViewLinkUsage
     Name="FkHangHoaLoaiHangLink1"
     ViewLinkObjectName="model.FkHangHoaLoaiHangLink"
@@ -180,4 +189,16 @@
     SrcViewUsageName="model.AppModule.TrangThaiPhieuThuView1"
     DstViewUsageName="model.AppModule.PhieuThuView3"
     Reversed="false"/>
+  <ViewLinkUsage
+    Name="ChiTietHoaDonBanHang_HangHoaLink1"
+    ViewLinkObjectName="model.ChiTietHoaDonBanHang_HangHoaLink"
+    SrcViewUsageName="model.AppModule.ChiTietHoaDonBanHangView2"
+    DstViewUsageName="model.AppModule.HangHoaView6"
+    Reversed="true"/>
+  <ViewLinkUsage
+    Name="FKHangHoaDonViTinhLink1"
+    ViewLinkObjectName="model.FKHangHoaDonViTinhLink"
+    SrcViewUsageName="model.AppModule.HangHoaView6"
+    DstViewUsageName="model.AppModule.DonViTinhView3"
+    Reversed="true"/>
 </AppModule>

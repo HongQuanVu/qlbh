@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47"
+                id="DanhMucTrangThaiHoaDonBanHangPageDef" Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TrangThaiHoaDonBanHangView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TrangThaiHoaDonBanHangView1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="TrangThaiHoaDonBanHangView1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TrangThaiHoaDonBanHangView1Iterator" id="TrangThaiHoaDonBanHangView1">
+      <nodeDefinition DefName="model.TrangThaiHoaDonBanHangView" Name="TrangThaiHoaDonBanHangView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="TenTrangThai"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TrangThaiHoaDonBanHangView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TrangThaiHoaDonBanHangView1Iterator" id="TenTrangThai">
+      <AttrNames>
+        <Item Value="TenTrangThai"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TrangThaiHoaDonBanHangView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TrangThaiHoaDonBanHangView1Iterator" id="Previous" RequiresUpdateModel="true"
+            Action="previous"/>
+    <action IterBinding="TrangThaiHoaDonBanHangView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TrangThaiHoaDonBanHangView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="TrangThaiHoaDonBanHangView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TrangThaiHoaDonBanHangView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

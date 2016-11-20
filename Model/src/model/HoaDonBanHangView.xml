@@ -13,6 +13,9 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_description" Value="TienSauChietKhau=CongTienHang-ChietKhau"/>
+  </DesignTime>
   <ViewAccessor
     Name="KhachHangView1"
     ViewObjectName="model.KhachHangView"
@@ -25,31 +28,6 @@
     Name="HinhThucThanhToanView1"
     ViewObjectName="model.HinhThucThanhToanView"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_TenKhachHang"
-    ListVOName="KhachHangView1"
-    ComboRowCountHint="10"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="TenKhachHang"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="DerivedAttrNames">
-      <Item Value="KhachHangId"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="TenKhachHang"/>
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="TenKhachHang"/>
-      <Item Value="DienThoai"/>
-      <Item Value="DiaChi"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
   <ListBinding
     Name="LOV_TrangThaiId"
     ListVOName="TrangThaiHoaDonBanHangView1"
@@ -86,6 +64,28 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_KhachHangId"
+    ListVOName="KhachHangView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="KhachHangId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="TenKhachHang"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+      <Item Value="TenKhachHang"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TenKhachHang"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="HoaDonBanHang"
     Entity="model.HoaDonBanHang"/>
@@ -96,6 +96,20 @@
     EntityAttrName="Id"
     EntityUsage="HoaDonBanHang"
     AliasName="ID"/>
+<ViewAttribute
+    Name="KhachHangId"
+    PrecisionRule="true"
+    EntityAttrName="KhachHangId"
+    EntityUsage="HoaDonBanHang"
+    AliasName="KHACH_HANG_ID"
+    LOVName="LOV_KhachHangId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MaHoaDon"
     PrecisionRule="true"
@@ -133,13 +147,29 @@
     PrecisionRule="true"
     EntityAttrName="ThueVat"
     EntityUsage="HoaDonBanHang"
-    AliasName="THUE_VAT"/>
+    AliasName="THUE_VAT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.HoaDonBanHangView.ThueVat_LABEL"/>
+        <TOOLTIP
+          ResId="model.HoaDonBanHangView.ThueVat_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CongTienHang"
     PrecisionRule="true"
     EntityAttrName="CongTienHang"
     EntityUsage="HoaDonBanHang"
-    AliasName="CONG_TIEN_HANG"/>
+    AliasName="CONG_TIEN_HANG">
+    <Properties>
+      <SchemaBasedProperties>
+        <TOOLTIP
+          ResId="model.HoaDonBanHangView.CongTienHang_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ChietKhau"
     PrecisionRule="true"
@@ -151,7 +181,17 @@
     PrecisionRule="true"
     EntityAttrName="TienSauChietKhau"
     EntityUsage="HoaDonBanHang"
-    AliasName="TIEN_SAU_CHIET_KHAU"/>
+    AliasName="TIEN_SAU_CHIET_KHAU">
+    <DesignTime>
+      <Attr Name="_description" Value="TienSauChietKhau=CongTienHang-ChietKhau"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <TOOLTIP
+          ResId="model.HoaDonBanHangView.TienSauChietKhau_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -176,12 +216,7 @@
     EntityAttrName="ModifiedAt"
     EntityUsage="HoaDonBanHang"
     AliasName="MODIFIED_AT"/>
-  <ViewAttribute
-    Name="KhachHangId"
-    PrecisionRule="true"
-    EntityAttrName="KhachHangId"
-    EntityUsage="HoaDonBanHang"
-    AliasName="KHACH_HANG_ID"/>
+  
   <ViewAttribute
     Name="TrangThaiId"
     PrecisionRule="true"
@@ -205,16 +240,53 @@
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     AliasName="VIEW_ATTR"
-    SQLType="VARCHAR"
-    LOVName="LOV_TenKhachHang"
-    IsQueriable="false">
+    SQLType="VARCHAR"/>
+  <ViewAttribute
+    Name="TienThueVAT"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    Expression="TIEN_SAU_CHIET_KHAU*(THUE_VAT/100)">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
+        <TOOLTIP
+          ResId="model.HoaDonBanHangView.TienThueVAT_TOOLTIP"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="TongCongTienThanhToan"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    Expression="TIEN_SAU_CHIET_KHAU*(1+THUE_VAT/100)">
+    <Properties>
+      <SchemaBasedProperties>
+        <TOOLTIP
+          ResId="model.HoaDonBanHangView.TongCongTienThanhToan_TOOLTIP"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DiaChiGiaoHang"
+    PrecisionRule="true"
+    EntityAttrName="DiaChiGiaoHang"
+    EntityUsage="HoaDonBanHang"
+    AliasName="DIA_CHI_GIAO_HANG"/>
+  <ViewAttribute
+    Name="GhiChu"
+    PrecisionRule="true"
+    EntityAttrName="GhiChu"
+    EntityUsage="HoaDonBanHang"
+    AliasName="GHI_CHU"/>
   <ViewLinkAccessor
     Name="ChiTietHoaDonBanHangView"
     ViewLink="model.ChiTietCtBhFk2Link"
@@ -225,4 +297,8 @@
     ViewLink="model.FkPhieuThuChungTuMuaHangLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

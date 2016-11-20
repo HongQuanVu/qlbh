@@ -21,7 +21,6 @@
     PrimaryKey="true">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="HoaDonBanHangRow"/>
   </Attribute>
   <Attribute
@@ -210,6 +209,46 @@
     Type="java.math.BigInteger"
     ColumnType="NUMBER"
     TableName="HOA_DON_BAN_HANG"/>
+  <Attribute
+    Name="DiaChiGiaoHang"
+    Precision="300"
+    ColumnName="DIA_CHI_GIAO_HANG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HOA_DON_BAN_HANG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="200"/>
+        <DISPLAYHEIGHT
+          Value="3"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="GhiChu"
+    Precision="500"
+    ColumnName="GHI_CHU"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="HOA_DON_BAN_HANG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <DISPLAYHEIGHT
+          Value="4"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="TrangThaiHoaDonBanHang"
     Association="model.FkHoaDonBanHangTrangThaiAssoc"

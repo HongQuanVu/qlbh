@@ -114,7 +114,8 @@
                                      
                                     <af:menu text="B&#225;n H&#224;ng" id="pt_m3">
                                             
-                                            <af:commandMenuItem text="Hoa Don Ban Hang " id="pt_cmi9"/>
+                                            <af:commandMenuItem text="Hoa Don Ban Hang " id="pt_cmi9"
+                                                                action="danhsachhoadonbanhang"/>
                                             <af:commandMenuItem text="Nhap hang tra ve " id="pt_cmi8"/>
                                         </af:menu>
                                         <af:menu text="So Qui" id="pt_m6">
@@ -125,13 +126,20 @@
                                         <af:menu text= "Doi Tac " id="pt_m7">
                                             <af:commandMenuItem text="Nha Cung Cap " id="pt_cmi13"
                                                                 action="danhmucnhacungcap"/>
-                                            <af:commandMenuItem text="Khach Hang" id="pt_cmi14"/>
+                                            <af:commandMenuItem text="Khach Hang" id="pt_cmi14"
+                                                                action="danhmuckhachhang"/>
                                         </af:menu>
                                         
                                         <af:menu text="Danh Mục" id="pt_m4">
+                                            <af:commandMenuItem text="Danh Muc Xuat Xu" id="pt_cmi17"
+                                                                action="danhmucxuatxu"/>
+                                            <af:commandMenuItem text="Danh Muc Don Vi Tinh" id="pt_cmi15"
+                                                                action="danhmucdonvitinh"/>
                                             <af:commandMenuItem text="Danh Muc Loai Hang  " id="pt_cmi2"
                                                                 action="danhmucloaihang"/>
-                                            <af:commandMenuItem text="Danh Muc Qui Cach  " id="pt_cmi3"/>
+                                            <af:commandMenuItem text="Danh Muc Qui Cach  " id="pt_cmi3"
+                                                                action="danhmucquicach"/>
+                                            <af:commandMenuItem text="Danh Muc Hinh Thuc Thanh Toan" id="pt_cmi16"/>
                                         </af:menu>
                                     
                                     </af:menuBar>

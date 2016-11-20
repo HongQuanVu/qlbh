@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="DanhMucXuatXuPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="XuatXuView1" RangeSize="25" DataControl="AppModuleDataControl" id="XuatXuView1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="XuatXuView1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="XuatXuView1Iterator" id="XuatXuView1">
+      <nodeDefinition DefName="model.XuatXuView" Name="XuatXuView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="MaXuatXu"/>
+          <Item Value="TenXuatXu"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedAt"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="ModifiedAt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="XuatXuView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XuatXuView1Iterator" id="MaXuatXu">
+      <AttrNames>
+        <Item Value="MaXuatXu"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XuatXuView1Iterator" id="TenXuatXu">
+      <AttrNames>
+        <Item Value="TenXuatXu"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XuatXuView1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XuatXuView1Iterator" id="CreatedAt">
+      <AttrNames>
+        <Item Value="CreatedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XuatXuView1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XuatXuView1Iterator" id="ModifiedAt">
+      <AttrNames>
+        <Item Value="ModifiedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="XuatXuView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="XuatXuView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="XuatXuView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="XuatXuView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="XuatXuView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="XuatXuView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

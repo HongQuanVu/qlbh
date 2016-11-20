@@ -22,6 +22,9 @@
     <page path="/DanhMucDonViTinh.jspx" usageId="view_DanhMucDonViTinhPageDef"/>
     <page path="/DanhSachHoaDonBanHang.jspx" usageId="view_DanhSachHoaDonBanHangPageDef"/>
     <page path="/DanhMucKhachHang.jspx" usageId="view_DanhMucKhachHangPageDef"/>
+    <page path="/DanhMucHinhThucThanhToan.jspx" usageId="view_DanhMucHinhThucThanhToanPageDef"/>
+    <page path="/DanhMucTrangThaiHoaDonBanHang.jspx" usageId="view_DanhMucTrangThaiHoaDonBanHangPageDef"/>
+    <page path="/DanhMucXuatXu.jspx" usageId="view_DanhMucXuatXuPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DanhMucLoaiHangPageDef" path="view.pageDefs.DanhMucLoaiHangPageDef"/>
@@ -39,6 +42,9 @@
     <page id="view_DanhMucDonViTinhPageDef" path="view.pageDefs.DanhMucDonViTinhPageDef"/>
     <page id="view_DanhSachHoaDonBanHangPageDef" path="view.pageDefs.DanhSachHoaDonBanHangPageDef"/>
     <page id="view_DanhMucKhachHangPageDef" path="view.pageDefs.DanhMucKhachHangPageDef"/>
+    <page id="view_DanhMucHinhThucThanhToanPageDef" path="view.pageDefs.DanhMucHinhThucThanhToanPageDef"/>
+    <page id="view_DanhMucTrangThaiHoaDonBanHangPageDef" path="view.pageDefs.DanhMucTrangThaiHoaDonBanHangPageDef"/>
+    <page id="view_DanhMucXuatXuPageDef" path="view.pageDefs.DanhMucXuatXuPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"

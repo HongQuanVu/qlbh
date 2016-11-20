@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="DanhMucTrangThaiHoaDonBanHang.jspx" id="d1"
+                     binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.d1}">
+            <af:messages id="m1" binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.m1}"/>
+            <af:form id="f1" binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.f1}">
+                <af:pageTemplate viewId="/templateDef1.jspx" id="pt1">
+                    <f:facet name="center">
+                        <af:panelFormLayout id="pfl1"
+                                            binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.pfl1}">
+                            <af:panelLabelAndMessage label="#{bindings.Id.hints.label}" id="plam1"
+                                                     binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.plam1}">
+                                <af:outputText value="#{bindings.Id.inputValue}"
+                                               shortDesc="#{bindings.Id.hints.tooltip}" id="ot3"
+                                               binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.ot3}">
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                                </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:inputText value="#{bindings.TenTrangThai.inputValue}"
+                                          label="#{bindings.TenTrangThai.hints.label}"
+                                          required="#{bindings.TenTrangThai.hints.mandatory}"
+                                          columns="#{bindings.TenTrangThai.hints.displayWidth}"
+                                          maximumLength="#{bindings.TenTrangThai.hints.precision}"
+                                          shortDesc="#{bindings.TenTrangThai.hints.tooltip}" id="it1"
+                                          binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.it1}">
+                                <f:validator binding="#{bindings.TenTrangThai.validator}"/>
+                            </af:inputText>
+                            <f:facet name="footer">
+                                <af:panelGroupLayout layout="vertical" id="pgl2"
+                                                     binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.pgl2}">
+                                    <af:panelGroupLayout layout="horizontal" id="pgl3"
+                                                         binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.pgl3}">
+                                        <af:button actionListener="#{bindings.First.execute}" text="First"
+                                                   disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"
+                                                   binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.b1}"/>
+                                        <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                                   disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+                                                   id="b2"
+                                                   binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.b2}"/>
+                                        <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                                   disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"
+                                                   binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.b3}"/>
+                                        <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                                   disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"
+                                                   binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.b4}"/>
+                                     <af:button text="Submit" id="b5"
+                                               binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.b5}"/>
+                                    <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
+                                               disabled="#{!bindings.CreateInsert.enabled}" id="b6"
+                                               binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.b6}"/>
+                                    <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                               disabled="#{!bindings.Delete.enabled}" id="b7"
+                                               binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.b7}"/>
+                                    <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                                               disabled="#{!bindings.Commit.enabled}" id="b8"
+                                               binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.b8}"/>
+                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
+                                               disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b9"
+                                               binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.b9}">
+                                        <af:resetActionListener/>
+                                    </af:button>
+                                    </af:panelGroupLayout>
+                                   
+                                </af:panelGroupLayout>
+                            </f:facet>
+                        </af:panelFormLayout>
+                    </f:facet>
+                    <f:facet name="header"/>
+                    <f:facet name="end"/>
+                    <f:facet name="start">
+                        <af:panelGroupLayout layout="vertical" id="pgl1"
+                                             binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.pgl1}">
+                            <af:panelHeader text="TrangThaiHoaDonBanHang" id="ph1"
+                                            binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.ph1}">
+                                <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                               value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                               model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                               queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                               binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.qryId1}">
+                                    <f:facet name="end">
+                                        <af:commandLink text="Advanced" rendered="false" id="cl1"
+                                                        binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.cl1}"/>
+                                    </f:facet>
+                                </af:quickQuery>
+                            </af:panelHeader>
+                            <af:table value="#{bindings.TrangThaiHoaDonBanHangView1.collectionModel}" var="row"
+                                      rows="#{bindings.TrangThaiHoaDonBanHangView1.rangeSize}"
+                                      emptyText="#{bindings.TrangThaiHoaDonBanHangView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.TrangThaiHoaDonBanHangView1.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.TrangThaiHoaDonBanHangView1.collectionModel.makeCurrent}"
+                                      rowSelection="single"
+                                      fetchSize="#{bindings.TrangThaiHoaDonBanHangView1.rangeSize}"
+                                      partialTriggers="::qryId1 ::b1 ::b2 ::b3 ::b4 ::b6 ::b7" id="t1"
+                                      binding="#{backingBeanScope.backing_DanhMucTrangThaiHoaDonBanHang.t1}">
+                                <af:column sortProperty="#{bindings.TrangThaiHoaDonBanHangView1.hints.Id.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.TrangThaiHoaDonBanHangView1.hints.Id.label}" id="c1">
+                                    <af:outputText value="#{row.Id}"
+                                                   shortDesc="#{bindings.TrangThaiHoaDonBanHangView1.hints.Id.tooltip}"
+                                                   id="ot1">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.TrangThaiHoaDonBanHangView1.hints.Id.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.TrangThaiHoaDonBanHangView1.hints.TenTrangThai.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.TrangThaiHoaDonBanHangView1.hints.TenTrangThai.label}"
+                                           id="c2">
+                                    <af:outputText value="#{row.TenTrangThai}"
+                                                   shortDesc="#{bindings.TrangThaiHoaDonBanHangView1.hints.TenTrangThai.tooltip}"
+                                                   id="ot2"/>
+                                </af:column>
+                            </af:table>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="branding"/>
+                    <f:facet name="copyright"/>
+                    <f:facet name="status"/>
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_DanhMucTrangThaiHoaDonBanHang-->
+</jsp:root>

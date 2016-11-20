@@ -207,4 +207,24 @@
     EntityAttrName="SoLuongSauQuiDoi"
     EntityUsage="ChiTietChungTuMuaHang"
     AliasName="SO_LUONG_SAU_QUI_DOI"/>
+  <ViewAttribute
+    Name="ThanhTien"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    Expression="DON_GIA*SO_LUONG"/>
+  <ViewAttribute
+    Name="ThanhTienSauVAT"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    Expression="DON_GIA*SO_LUONG*(1+THUE_VAT/100)"/>
 </ViewObject>

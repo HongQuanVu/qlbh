@@ -24,6 +24,7 @@ import oracle.adf.view.rich.component.rich.layout.RichToolbar;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.nav.RichCommandLink;
 import oracle.adf.view.rich.component.rich.output.RichMessages;
+import oracle.adf.view.rich.component.rich.output.RichOutputFormatted;
 import oracle.adf.view.rich.component.rich.output.RichOutputText;
 import oracle.adf.view.rich.component.rich.output.RichPanelCollection;
 
@@ -199,7 +200,9 @@ public class ChungTuMuaHang {
     private RichOutputText ot371;
     private RichPanelLabelAndMessage plam150;
     private RichOutputText ot380;
-
+   
+    private RichOutputFormatted of1;
+   
 
     public void setF1(RichForm f1) {
         this.f1 = f1;
@@ -1571,4 +1574,16 @@ public class ChungTuMuaHang {
     public RichOutputText getOt380() {
         return ot380;
     }
+
+   
+
+    public void setOf1(RichOutputFormatted of1) {
+        this.of1 = of1;
+    }
+
+    public RichOutputFormatted getOf1() {
+        return of1;
+    }
+
+    
 }

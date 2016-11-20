@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="qlbh" id="Project_1cd33c44" html="y" template="Default" database="Oracle" >
-	<schema name="ORDSYS" schemaname="ORDSYS" >
+	<schema name="QLBH" schemaname="QLBH" >
 		<table name="CHI_TIET_CHUNG_TU_MUA_HANG" >
 			<column name="ID" type="number" jt="2" mandatory="y" />
 			<column name="CHUNG_TU_MUA_HANG_ID" type="number" jt="2" />
@@ -8,9 +8,7 @@
 			<column name="SO_LUONG" type="number" jt="2" />
 			<column name="DON_VI_TINH_ID" type="number" jt="2" />
 			<column name="DON_GIA" type="number" jt="2" />
-			<column name="THUE_VAT" type="number" jt="2" >
-				<defo>null</defo>
-			</column>
+			<column name="THUE_VAT" type="number" jt="2" />
 			<column name="GIA_SAU_VAT" type="number" jt="2" />
 			<column name="GHI_CHU" type="varchar2" length="300" decimal="0" jt="12" />
 			<column name="CREATED_BY" type="varchar2" length="100" decimal="0" jt="12" />
@@ -22,16 +20,16 @@
 			<column name="DON_VI_TINH_QUI_DOI_ID" type="number" length="38" decimal="0" jt="2" />
 			<column name="QUI_DOI" type="number" length="38" decimal="0" jt="2" />
 			<column name="SO_LUONG_SAU_QUI_DOI" type="number" length="38" decimal="0" jt="2" />
-			<index name="SYS_C0011119" unique="PRIMARY_KEY" >
+			<index name="SYS_C0010931" unique="PRIMARY_KEY" >
 				<column name="ID" />
 			</index>
-			<fk name="CHI_TIET_CT_MH_FK2" to_schema="ORDSYS" to_table="CHUNG_TU_MUA_HANG" update_action="cascade" >
+			<fk name="CHI_TIET_CT_MH_FK2" to_schema="QLBH" to_table="CHUNG_TU_MUA_HANG" update_action="cascade" >
 				<fk_column name="CHUNG_TU_MUA_HANG_ID" pk="ID" />
 			</fk>
-			<fk name="CHI_TIET_CT_MH_FK3" to_schema="ORDSYS" to_table="DON_VI_TINH" update_action="cascade" >
+			<fk name="CHI_TIET_CT_MH_FK3" to_schema="QLBH" to_table="DON_VI_TINH" update_action="cascade" >
 				<fk_column name="DON_VI_TINH_ID" pk="ID" />
 			</fk>
-			<fk name="CHI_TIET_CT_MH_FK1" to_schema="ORDSYS" to_table="HANG_HOA" update_action="cascade" >
+			<fk name="CHI_TIET_CT_MH_FK1" to_schema="QLBH" to_table="HANG_HOA" update_action="cascade" >
 				<fk_column name="HANG_HOA_ID" pk="ID" />
 			</fk>
 		</table>
@@ -57,13 +55,13 @@
 			<index name="PK_CHI_TIET_HDBH" unique="PRIMARY_KEY" >
 				<column name="ID" />
 			</index>
-			<fk name="CHI_TIET_CT_BH_FK3" to_schema="ORDSYS" to_table="DON_VI_TINH" update_action="cascade" >
+			<fk name="CHI_TIET_CT_BH_FK3" to_schema="QLBH" to_table="DON_VI_TINH" update_action="cascade" >
 				<fk_column name="DON_VI_TINH_ID" pk="ID" />
 			</fk>
-			<fk name="CHI_TIET_CT_BH_FK1" to_schema="ORDSYS" to_table="HANG_HOA" update_action="cascade" >
+			<fk name="CHI_TIET_CT_BH_FK1" to_schema="QLBH" to_table="HANG_HOA" update_action="cascade" >
 				<fk_column name="HANG_HOA_ID" pk="ID" />
 			</fk>
-			<fk name="CHI_TIET_CT_BH_FK2" to_schema="ORDSYS" to_table="HOA_DON_BAN_HANG" update_action="cascade" >
+			<fk name="CHI_TIET_CT_BH_FK2" to_schema="QLBH" to_table="HOA_DON_BAN_HANG" update_action="cascade" >
 				<fk_column name="HOA_DON_BAN_HANG_ID" pk="ID" />
 			</fk>
 		</table>
@@ -92,16 +90,16 @@
 			<index name="IDX_CHUNG_TU_MUA_HANG" unique="NORMAL" >
 				<column name="TRANG_THAI_ID" />
 			</index>
-			<index name="SYS_C0011090" unique="PRIMARY_KEY" >
+			<index name="SYS_C0010925" unique="PRIMARY_KEY" >
 				<column name="ID" />
 			</index>
-			<fk name="CHUNG_TU_MUA_HANG_FK2" to_schema="ORDSYS" to_table="DON_VI_BAN_HANG" update_action="cascade" >
+			<fk name="CHUNG_TU_MUA_HANG_FK2" to_schema="QLBH" to_table="DON_VI_BAN_HANG" update_action="cascade" >
 				<fk_column name="DON_VI_BAN_HANG_ID" pk="ID" />
 			</fk>
-			<fk name="CHUNG_TU_MUA_HANG_FK1" to_schema="ORDSYS" to_table="HINH_THUC_THANH_TOAN" update_action="cascade" >
+			<fk name="CHUNG_TU_MUA_HANG_FK1" to_schema="QLBH" to_table="HINH_THUC_THANH_TOAN" update_action="cascade" >
 				<fk_column name="HINH_THUC_THANH_TOAN_ID" pk="ID" />
 			</fk>
-			<fk name="FK_CHUNG_TU_MUA_HANG" to_schema="ORDSYS" to_table="TRANG_THAI_CHUNG_TU_MUA_HANG" update_action="cascade" >
+			<fk name="FK_CHUNG_TU_MUA_HANG" to_schema="QLBH" to_table="TRANG_THAI_CHUNG_TU_MUA_HANG" update_action="cascade" >
 				<fk_column name="TRANG_THAI_ID" pk="ID" />
 			</fk>
 		</table>
@@ -121,7 +119,7 @@
 			<column name="CREATED_AT" type="date" length="7" decimal="0" jt="91" />
 			<column name="MODIFIED_BY" type="varchar2" length="100" decimal="0" jt="12" />
 			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
-			<index name="SYS_C0011086" unique="PRIMARY_KEY" >
+			<index name="SYS_C0010922" unique="PRIMARY_KEY" >
 				<column name="ID" />
 			</index>
 		</table>
@@ -135,7 +133,7 @@
 			</column>
 			<column name="MODIFIED_BY" type="varchar2" length="100" decimal="0" jt="12" />
 			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
-			<index name="SYS_C0011058" unique="PRIMARY_KEY" >
+			<index name="SYS_C0010926" unique="PRIMARY_KEY" >
 				<column name="ID" />
 			</index>
 		</table>
@@ -156,35 +154,37 @@
 			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
 			<column name="DON_VI_QUI_DOI_ID" type="number" jt="2" />
 			<column name="SO_LUONG_QUI_DOI" type="number" length="38" decimal="0" jt="2" />
+			<column name="BARCODE" type="varchar2" length="30" jt="12" />
+			<column name="DIA_CHI_GIAO_HANG" type="varchar2" length="200" jt="12" />
 			<index name="IDX_HANG_HOA" unique="NORMAL" >
 				<column name="QUI_CACH_ID" />
-			</index>
-			<index name="SYS_C0011078" unique="PRIMARY_KEY" >
-				<column name="ID" />
 			</index>
 			<index name="IDX_HANG_HOA_0" unique="NORMAL" >
 				<column name="DON_VI_QUI_DOI_ID" />
 			</index>
-			<fk name="FK_HANG_HOA_DON_VI_TINH" to_schema="ORDSYS" to_table="DON_VI_TINH" update_action="cascade" >
+			<index name="SYS_C0010930" unique="PRIMARY_KEY" >
+				<column name="ID" />
+			</index>
+			<fk name="FK_HANG_HOA_DON_VI_QUI_DOI" to_schema="QLBH" to_table="DON_VI_TINH" update_action="cascade" >
+				<fk_column name="DON_VI_QUI_DOI_ID" pk="ID" />
+			</fk>
+			<fk name="FK_HANG_HOA_DON_VI_TINH" to_schema="QLBH" to_table="DON_VI_TINH" update_action="cascade" >
 				<fk_column name="DON_VI_TINH_ID" pk="ID" />
 			</fk>
-			<fk name="FK_HANG_HOA_LOAI_HANG" to_schema="ORDSYS" to_table="LOAI_HANG" update_action="cascade" >
+			<fk name="FK_HANG_HOA_LOAI_HANG" to_schema="QLBH" to_table="LOAI_HANG" update_action="cascade" >
 				<fk_column name="LOAI_HANG_ID" pk="ID" />
 			</fk>
-			<fk name="FK_HANG_HOA_QUI_CACH" to_schema="ORDSYS" to_table="QUI_CACH" update_action="cascade" >
+			<fk name="FK_HANG_HOA_QUI_CACH" to_schema="QLBH" to_table="QUI_CACH" update_action="cascade" >
 				<fk_column name="QUI_CACH_ID" pk="ID" />
 			</fk>
-			<fk name="FK_HANG_HOA_XUAT_XU" to_schema="ORDSYS" to_table="XUAT_XU" update_action="cascade" >
+			<fk name="FK_HANG_HOA_XUAT_XU" to_schema="QLBH" to_table="XUAT_XU" update_action="cascade" >
 				<fk_column name="XUAT_XU_ID" pk="ID" />
-			</fk>
-			<fk name="FK_HANG_HOA_DON_VI_QUI_DOI" to_schema="ORDSYS" to_table="DON_VI_TINH" >
-				<fk_column name="DON_VI_QUI_DOI_ID" pk="ID" />
 			</fk>
 		</table>
 		<table name="HINH_THUC_THANH_TOAN" >
 			<column name="ID" type="number" jt="2" mandatory="y" />
 			<column name="TEN_HINH_THUC_THANH_TOAN" type="varchar2" length="100" decimal="0" jt="12" />
-			<index name="SYS_C0011087" unique="PRIMARY_KEY" >
+			<index name="SYS_C0010923" unique="PRIMARY_KEY" >
 				<column name="ID" />
 			</index>
 		</table>
@@ -216,16 +216,16 @@
 			<index name="IDX_HOA_DON_BAN_HANG_0" unique="NORMAL" >
 				<column name="HINH_THUC_THANH_TOAN_ID" />
 			</index>
-			<index name="SYS_C0011141" unique="PRIMARY_KEY" >
+			<index name="SYS_C0010934" unique="PRIMARY_KEY" >
 				<column name="ID" />
 			</index>
-			<fk name="HOA_DON_BAN_HANG_FK1" to_schema="ORDSYS" to_table="HINH_THUC_THANH_TOAN" update_action="cascade" >
+			<fk name="HOA_DON_BAN_HANG_FK1" to_schema="QLBH" to_table="HINH_THUC_THANH_TOAN" update_action="cascade" >
 				<fk_column name="HINH_THUC_THANH_TOAN_ID" pk="ID" />
 			</fk>
-			<fk name="HOA_DON_BAN_HANG_FK2" to_schema="ORDSYS" to_table="KHACH_HANG" update_action="cascade" >
+			<fk name="HOA_DON_BAN_HANG_FK2" to_schema="QLBH" to_table="KHACH_HANG" update_action="cascade" >
 				<fk_column name="KHACH_HANG_ID" pk="ID" />
 			</fk>
-			<fk name="FK_HOA_DON_BAN_HANG_TRANG_THAI" to_schema="ORDSYS" to_table="TRANG_THAI_HOA_DON_BAN_HANG" update_action="cascade" >
+			<fk name="FK_HOA_DON_BAN_HANG_TRANG_THAI" to_schema="QLBH" to_table="TRANG_THAI_HOA_DON_BAN_HANG" update_action="cascade" >
 				<fk_column name="TRANG_THAI_ID" pk="ID" />
 			</fk>
 		</table>
@@ -259,7 +259,7 @@
 			</column>
 			<column name="MODIFIED_BY" type="varchar2" length="100" decimal="0" jt="12" />
 			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
-			<index name="SYS_C0011056" unique="PRIMARY_KEY" >
+			<index name="SYS_C0010927" unique="PRIMARY_KEY" >
 				<column name="ID" />
 			</index>
 		</table>
@@ -289,13 +289,13 @@
 			<index name="PK_PHIEU_CHI" unique="PRIMARY_KEY" >
 				<column name="ID" />
 			</index>
-			<fk name="FK_PHIEU_CHI_CHUNG_TU_MUA_HANG" to_schema="ORDSYS" to_table="CHUNG_TU_MUA_HANG" update_action="cascade" >
+			<fk name="FK_PHIEU_CHI_CHUNG_TU_MUA_HANG" to_schema="QLBH" to_table="CHUNG_TU_MUA_HANG" update_action="cascade" >
 				<fk_column name="CHUNG_TU_MUA_HANG_ID" pk="ID" />
 			</fk>
-			<fk name="FK_PHIEU_CHI_HTTT_ID" to_schema="ORDSYS" to_table="HINH_THUC_THANH_TOAN" update_action="cascade" >
+			<fk name="FK_PHIEU_CHI_HTTT_ID" to_schema="QLBH" to_table="HINH_THUC_THANH_TOAN" update_action="cascade" >
 				<fk_column name="HINH_THUC_THANH_TOAN_ID" pk="ID" />
 			</fk>
-			<fk name="FK_PHIEU_CHI" to_schema="ORDSYS" to_table="TRANG_THAI_PHIEU_CHI" update_action="cascade" >
+			<fk name="FK_PHIEU_CHI" to_schema="QLBH" to_table="TRANG_THAI_PHIEU_CHI" update_action="cascade" >
 				<fk_column name="TRANG_THAI_PHIEU_CHI_ID" pk="ID" />
 			</fk>
 		</table>
@@ -325,13 +325,13 @@
 			<index name="PK_PHIEU_THU" unique="PRIMARY_KEY" >
 				<column name="ID" />
 			</index>
-			<fk name="FK_PHIEU_THU_HTTT_ID" to_schema="ORDSYS" to_table="HINH_THUC_THANH_TOAN" update_action="cascade" >
+			<fk name="FK_PHIEU_THU_HTTT_ID" to_schema="QLBH" to_table="HINH_THUC_THANH_TOAN" update_action="cascade" >
 				<fk_column name="HINH_THUC_THANH_TOAN_ID" pk="ID" />
 			</fk>
-			<fk name="FK_PHIEU_THU_CHUNG_TU_MUA_HANG" to_schema="ORDSYS" to_table="HOA_DON_BAN_HANG" update_action="cascade" >
+			<fk name="FK_PHIEU_THU_CHUNG_TU_MUA_HANG" to_schema="QLBH" to_table="HOA_DON_BAN_HANG" update_action="cascade" >
 				<fk_column name="HOA_DON_BAN_HANG_ID" pk="ID" />
 			</fk>
-			<fk name="FK_PHIEU_THU_TRANG_THAI" to_schema="ORDSYS" to_table="TRANG_THAI_PHIEU_THU" update_action="cascade" >
+			<fk name="FK_PHIEU_THU_TRANG_THAI" to_schema="QLBH" to_table="TRANG_THAI_PHIEU_THU" update_action="cascade" >
 				<fk_column name="TRANG_THAI_PHIEU_THU_ID" pk="ID" />
 			</fk>
 		</table>
@@ -358,7 +358,7 @@
 			</column>
 			<column name="MODIFIED_BY" type="varchar2" length="100" decimal="0" jt="12" />
 			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
-			<index name="SYS_C0011066" unique="PRIMARY_KEY" >
+			<index name="SYS_C0010928" unique="PRIMARY_KEY" >
 				<column name="ID" />
 			</index>
 		</table>
@@ -400,106 +400,179 @@
 			</column>
 			<column name="MODIFIED_BY" type="varchar2" length="100" decimal="0" jt="12" />
 			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
-			<index name="SYS_C0011057" unique="PRIMARY_KEY" >
+			<index name="SYS_C0010929" unique="PRIMARY_KEY" >
 				<column name="ID" />
 			</index>
 		</table>
-		<sequence name="PS_TXN_SEQ" start="12101" />
-		<sequence name="SEQ_CHITIET_CT_MUA_HANG_ID" start="201" />
-		<sequence name="SEQ_CTMH_ID" start="101" />
+		<sequence name="PS_TXN_SEQ" start="16501" />
+		<sequence name="SEQ_CHITIET_CT_MUA_HANG_ID" start="261" />
+		<sequence name="SEQ_CHI_TIET_HDBH_ID" start="21" />
+		<sequence name="SEQ_CTMH_ID" start="121" />
 		<sequence name="SEQ_CT_CHUNG_TU_MH" start="61" />
-		<sequence name="SEQ_DON_VI_BAN_HANG_ID" start="21" />
+		<sequence name="SEQ_DON_VI_BAN_HANG_ID" start="41" />
 		<sequence name="SEQ_DON_VI_MUA_HANG_ID" start="1" />
-		<sequence name="SEQ_HANG_HOA_ID" start="41" />
+		<sequence name="SEQ_DON_VI_TINH_ID" start="50" />
+		<sequence name="SEQ_HANG_HOA_ID" start="121" />
 		<sequence name="SEQ_HINH_THUC_THANH_TOAN_ID" start="1" />
+		<sequence name="SEQ_HOA_DON_BAN_HANG_ID" start="121" />
+		<sequence name="SEQ_KHACH_HANG_ID" start="41" />
 		<sequence name="SEQ_LOAI_HANG_ID" start="1" />
-		<sequence name="SEQ_PHIEU_CHI_ID" start="41" />
+		<sequence name="SEQ_PHIEU_CHI_ID" start="81" />
+		<sequence name="SEQ_PHIEU_THU_ID" start="1" />
+		<sequence name="SEQ_QUI_CACH_ID" start="1" />
+		<sequence name="SEQ_XUAT_XU_ID" start="1" />
+		<trigger name="TR_CT_CT_MH_AFT_INS_UPD" id="Trigger_37066452" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_CT_CT_MH_AFT_INS_UPD" 
+ AFTER INSERT  OR UPDATE OR DELETE
+ ON CHI_TIET_CHUNG_TU_MUA_HANG
+BEGIN
+    UPDATE CHUNG_TU_MUA_HANG CT
+    SET CT.CONG_TIEN_HANG  =
+    (
+     SELECT SUM(CTCT.SO_LUONG*CTCT.DON_GIA)
+     FROM CHI_TIET_CHUNG_TU_MUA_HANG CTCT
+     WHERE CTCT.CHUNG_TU_MUA_HANG_ID =CT.ID
+     );
+    UPDATE CHUNG_TU_MUA_HANG CT
+    SET CT.TIEN_SAU_CHIET_KHAU = CT.CONG_TIEN_HANG  -CT.CHIET_KHAU ;
+ END;
+]]></string>
+		</trigger>
+		<trigger name="TR_CT_CT_MH_AF_INS_U" id="Trigger_195984a2" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_CT_CT_MH_AF_INS_U" 
+ BEFORE INSERT  OR UPDATE
+ ON CHI_TIET_CHUNG_TU_MUA_HANG
+ REFERENCING NEW AS NEW
+ FOR EACH ROW
+BEGIN
+  SELECT CT.THUE_VAT ,(CT.THUE_VAT/100)*:NEW.DON_GIA +:NEW.DON_GIA  INTO :NEW.THUE_VAT ,:NEW.GIA_SAU_VAT
+  FROM CHUNG_TU_MUA_HANG CT
+  WHERE CT.ID = :new.chung_tu_mua_hang_id ;
+ END;
+]]></string>
+		</trigger>
+		<trigger name="TR_CT_CT_MH_BEF_INS_UPD" id="Trigger_1f87a6fc" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_CT_CT_MH_BEF_INS_UPD" 
+ BEFORE INSERT  OR UPDATE
+ ON CHI_TIET_CHUNG_TU_MUA_HANG
+ REFERENCING NEW AS NEW
+ FOR EACH ROW
+DECLARE
+ v_Hang_Hoa_Don_Vi_Tinh_ID NUMBER:=-1;
+ v_Hang_hoa_Ten_Don_Vi_Tinh DON_VI_TINH.TEN_DON_VI_TINH%Type:='';
+ v_Ten_Don_Vi_Tinh_Nhap DON_VI_TINH.TEN_DON_VI_TINH%TYPE:='';
+BEGIN
+  SELECT  H.DON_VI_TINH_ID  INTO v_Hang_Hoa_Don_Vi_Tinh_ID FROM HANG_HOA H WHERE H.ID = :new.hang_hoa_id ;
+  /*
+  If v_Hang_Hoa_Don_Vi_Tinh_ID <> :new.Don_Vi_Tinh_Id THEN
+     SELECT DT.TEN_DON_VI_TINH into v_Hang_hoa_Ten_Don_Vi_Tinh  FROM DON_VI_TINH DT WHERE DT.ID =v_Hang_Hoa_Don_Vi_Tinh_ID ;
+     SELECT DT.TEN_DON_VI_TINH into v_Ten_Don_Vi_Tinh_Nhap  FROM DON_VI_TINH DT WHERE DT.ID =:new.Don_Vi_Tinh_Id ;
+     raise_application_error(-20001 ,' Don Vi Tinh cua Hang Hoa la '||v_Hang_hoa_Ten_Don_Vi_Tinh||' khac voi  Don Vi Tinh dang nhap '||v_Ten_Don_Vi_Tinh_Nhap) ;
+  end if ;
+  */SELECT CT.THUE_VAT ,(CT.THUE_VAT/100)*:NEW.DON_GIA +:NEW.DON_GIA  INTO :NEW.THUE_VAT ,:NEW.GIA_SAU_VAT
+  FROM CHUNG_TU_MUA_HANG CT
+  WHERE CT.ID = :new.chung_tu_mua_hang_id ;
+ SELECT H.DON_VI_QUI_DOI_ID INTO :NEW.DON_VI_TINH_QUI_DOI_ID
+ FROM HANG_HOA H
+ WHERE H.ID  =:new.Hang_Hoa_Id  ;
+ SELECT H.SO_LUONG_QUI_DOI INTO :NEW.QUI_DOI
+ FROM HANG_HOA H
+ WHERE H.ID  =:new.Hang_Hoa_Id  ;
+ --Neu so luong va qui doi co' thi tinh' soluong sau khi qui doi
+ IF :new.Qui_Doi IS NOT NULL and :new.So_Luong IS NOT NULL THEN
+     :new.So_Luong_Sau_Qui_Doi :=:new.So_Luong/:new.Qui_Doi ;
+ END IF ;
+ END;
+]]></string>
+		</trigger>
+		<trigger name="TR_CT_CT_MH_BEF_UP" id="Trigger_fe57cea" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_CT_CT_MH_BEF_UP" 
+ BEFORE UPDATE
+ ON  CHI_TIET_CHUNG_TU_MUA_HANG
+ REFERENCING NEW AS NEW
+ FOR EACH ROW
+BEGIN
+ SELECT CT.THUE_VAT INTO :NEW.THUE_VAT
+ FROM CHUNG_TU_MUA_HANG CT
+ WHERE CT.ID = :NEW.CHUNG_TU_MUA_HANG_ID ;
+ SELECT H.DON_VI_QUI_DOI_ID INTO :NEW.DON_VI_TINH_QUI_DOI_ID
+ FROM HANG_HOA H
+ WHERE H.ID  =:new.Hang_Hoa_Id  ;
+ SELECT H.SO_LUONG_QUI_DOI INTO :NEW.QUI_DOI
+ FROM HANG_HOA H
+ WHERE H.ID  =:new.Hang_Hoa_Id  ;
+ --Neu so luong va qui doi co' thi tinh' soluong sau khi qui doi
+ IF :new.Qui_Doi IS NOT NULL and :new.So_Luong IS NOT NULL THEN
+     :new.So_Luong_Sau_Qui_Doi :=:new.So_Luong/:new.Qui_Doi ;
+ END IF ;
+ END;
+]]></string>
+		</trigger>
+		<trigger name="TR_CT_MH_AFT_INS_UPD" id="Trigger_9c61871" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_CT_MH_AFT_INS_UPD" 
+ AFTER INSERT  OR UPDATE  OF THUE_VAT
+ ON CHUNG_TU_MUA_HANG
+BEGIN
+   UPDATE CHI_TIET_CHUNG_TU_MUA_HANG CTCT
+   set CTCT.thue_vat =(SELECT CT.THUE_VAT FROM CHUNG_TU_MUA_HANG CT
+   WHERE CT.ID =CTCT.CHUNG_TU_MUA_HANG_ID
+   )
+   ;
+ END;
+]]></string>
+		</trigger>
+		<trigger name="TR_CT_MH_BEF_INS_UPD2" id="Trigger_1d00459c" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_CT_MH_BEF_INS_UPD2" 
+ BEFORE INSERT  OR UPDATE
+ ON CHUNG_TU_MUA_HANG
+ REFERENCING NEW AS NEW
+ FOR EACH ROW
+BEGIN
+  :NEW.TIEN_SAU_CHIET_KHAU :=:NEW.CONG_TIEN_HANG-:NEW.CHIET_KHAU ;
+END;
+]]></string>
+		</trigger>
+		<trigger name="TR_DON_VI_BAN_HANG_BEF_INS" id="Trigger_1465fd1" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_DON_VI_BAN_HANG_BEF_INS" 
+ BEFORE INSERT
+ ON DON_VI_BAN_HANG
+ REFERENCING NEW AS NEW
+ FOR EACH ROW
+BEGIN
+ SELECT SEQ_DON_VI_BAN_HANG_ID.nextval INTO :NEW.ID FROM dual;
+ END;
+]]></string>
+		</trigger>
 	</schema>
-	<connector name="qlbh" database="Oracle" driver_class="oracle.jdbc.OracleDriver" driver_jar="ojdbc7-12.1.0.1.jar" driver_desc="Connect via SID" host="192.168.1.223" port="1521" instance="orcl" user="ordsys" passwd="b3Jkc3lz" />
-	<layout name="Default Layout" id="Layout_302131e3" show_relation="columns" >
-		<entity schema="ORDSYS" name="CHI_TIET_CHUNG_TU_MUA_HANG" color="bfd4f5" x="672" y="48" />
-		<entity schema="ORDSYS" name="CHUNG_TU_MUA_HANG" color="c8f5bf" x="48" y="48" />
-		<entity schema="ORDSYS" name="DON_VI_BAN_HANG" color="c8f5bf" x="336" y="48" />
-		<entity schema="ORDSYS" name="DON_VI_TINH" color="bfd4f5" x="944" y="48" />
-		<entity schema="ORDSYS" name="HINH_THUC_THANH_TOAN" color="f5ddbf" x="336" y="640" />
-		<entity schema="ORDSYS" name="LOAI_HANG" color="bfbff5" x="672" y="976" />
-		<entity schema="ORDSYS" name="PHIEU_CHI" color="f5ddbf" x="48" y="640" />
-		<entity schema="ORDSYS" name="PS_TXN" color="c8f5bf" x="48" y="400" />
-		<entity schema="ORDSYS" name="QUI_CACH" color="bfbff5" x="880" y="976" />
-		<entity schema="ORDSYS" name="TRANG_THAI_CHUNG_TU_MUA_HANG" color="c8f5bf" x="336" y="400" />
-		<entity schema="ORDSYS" name="TRANG_THAI_PHIEU_CHI" color="f5ddbf" x="336" y="960" />
-		<entity schema="ORDSYS" name="XUAT_XU" color="bfbff5" x="640" y="416" />
-		<entity schema="ORDSYS" name="HANG_HOA" color="bfbff5" x="672" y="640" />
-	</layout>
+	<connector name="qlbh" database="Oracle" driver_class="oracle.jdbc.OracleDriver" driver_jar="ojdbc7-12.1.0.1.jar" driver_desc="Connect via SID" host="11.148.211.130.bc.googleusercontent.com" port="1521" instance="orcl" user="qlbh" passwd="cWxiaA==" />
+	<layout name="Default Layout" id="Layout_302131e3" show_relation="columns" />
 	<layout name="Sample Layout with Groups" id="Layout_2bb8ac39" show_relation="columns" >
-		<entity schema="ORDSYS" name="CHI_TIET_CHUNG_TU_MUA_HANG" color="bfd4f5" x="672" y="192" />
-		<entity schema="ORDSYS" name="CHUNG_TU_MUA_HANG" color="c8f5bf" x="48" y="192" />
-		<entity schema="ORDSYS" name="DON_VI_BAN_HANG" color="c8f5bf" x="336" y="192" />
-		<entity schema="ORDSYS" name="DON_VI_TINH" color="bfd4f5" x="944" y="192" />
-		<entity schema="ORDSYS" name="HANG_HOA" color="bfbff5" x="672" y="784" />
-		<entity schema="ORDSYS" name="HINH_THUC_THANH_TOAN" color="f5ddbf" x="336" y="784" />
-		<entity schema="ORDSYS" name="LOAI_HANG" color="bfbff5" x="672" y="1120" />
-		<entity schema="ORDSYS" name="PHIEU_CHI" color="f5ddbf" x="48" y="784" />
-		<entity schema="ORDSYS" name="PS_TXN" color="c8f5bf" x="48" y="544" />
-		<entity schema="ORDSYS" name="QUI_CACH" color="bfbff5" x="880" y="1120" />
-		<entity schema="ORDSYS" name="TRANG_THAI_CHUNG_TU_MUA_HANG" color="c8f5bf" x="336" y="544" />
-		<entity schema="ORDSYS" name="TRANG_THAI_PHIEU_CHI" color="f5ddbf" x="336" y="1104" />
-		<entity schema="ORDSYS" name="XUAT_XU" color="bfbff5" x="880" y="784" />
-		<entity schema="ORDSYS" name="TRANG_THAI_HOA_DON_BAN_HANG" color="accceb" x="1568" y="848" />
-		<entity schema="ORDSYS" name="TRANG_THAI_PHIEU_THU" color="accceb" x="1280" y="880" />
-		<entity schema="ORDSYS" name="KHACH_HANG" color="accceb" x="1680" y="560" />
-		<entity schema="ORDSYS" name="HOA_DON_BAN_HANG" color="accceb" x="1648" y="304" />
-		<entity schema="ORDSYS" name="PHIEU_THU" color="accceb" x="1440" y="752" />
-		<entity schema="ORDSYS" name="CHI_TIET_HOA_DON_BAN_HANG" color="accceb" x="1456" y="144" />
-		<callout x="48" y="80" pointer="NO" >
+		<entity schema="QLBH" name="CHI_TIET_CHUNG_TU_MUA_HANG" color="bfd4f5" x="1968" y="416" />
+		<entity schema="QLBH" name="CHI_TIET_HOA_DON_BAN_HANG" color="bfd4f5" x="1488" y="640" />
+		<entity schema="QLBH" name="CHUNG_TU_MUA_HANG" color="bfbff5" x="400" y="416" />
+		<entity schema="QLBH" name="DON_VI_BAN_HANG" color="bfbff5" x="688" y="416" />
+		<entity schema="QLBH" name="DON_VI_TINH" color="bfd4f5" x="1760" y="416" />
+		<entity schema="QLBH" name="HINH_THUC_THANH_TOAN" color="f5ddbf" x="416" y="1056" />
+		<entity schema="QLBH" name="HOA_DON_BAN_HANG" color="c8f5bf" x="1488" y="1056" />
+		<entity schema="QLBH" name="KHACH_HANG" color="c8f5bf" x="1776" y="1056" />
+		<entity schema="QLBH" name="LOAI_HANG" color="d2bff5" x="1248" y="784" />
+		<entity schema="QLBH" name="PHIEU_CHI" color="bfd4f5" x="432" y="48" />
+		<entity schema="QLBH" name="PHIEU_THU" color="f5ddbf" x="704" y="1056" />
+		<entity schema="QLBH" name="PS_TXN" color="bfbff5" x="400" y="768" />
+		<entity schema="QLBH" name="TRANG_THAI_CHUNG_TU_MUA_HANG" color="bfbff5" x="688" y="768" />
+		<entity schema="QLBH" name="TRANG_THAI_HOA_DON_BAN_HANG" color="c8f5bf" x="1776" y="1408" />
+		<entity schema="QLBH" name="TRANG_THAI_PHIEU_CHI" color="bfd4f5" x="720" y="48" />
+		<entity schema="QLBH" name="TRANG_THAI_PHIEU_THU" color="f5ddbf" x="416" y="1200" />
+		<entity schema="QLBH" name="XUAT_XU" color="bfd4f5" x="1760" y="640" />
+		<entity schema="QLBH" name="HANG_HOA" color="d2bff5" x="1024" y="416" />
+		<entity schema="QLBH" name="QUI_CACH" color="d2bff5" x="1248" y="416" />
+		<callout x="48" y="288" pointer="NO" >
 			<comment><![CDATA[In DbSchema you may create multiple layouts with the same or different tables.
 Layouts will be saved to project file. 
 Double-click any column, foreign key or table headers to edit.]]></comment>
 		</callout>
-		<group name="CHUNG_TU_MUA_HANG" color="eef7ec" >
-			<entity schema="ORDSYS" name="CHUNG_TU_MUA_HANG" />
-			<entity schema="ORDSYS" name="DON_VI_BAN_HANG" />
-			<entity schema="ORDSYS" name="TRANG_THAI_CHUNG_TU_MUA_HANG" />
-			<entity schema="ORDSYS" name="PS_TXN" />
-		</group>
-		<group name="CHI_TIET_CHUNG_TU_MUA_HANG" color="ecf0f7" >
-			<entity schema="ORDSYS" name="CHI_TIET_CHUNG_TU_MUA_HANG" />
-			<entity schema="ORDSYS" name="DON_VI_TINH" />
-		</group>
-		<group name="HANG_HOA" color="ececf7" >
-			<entity schema="ORDSYS" name="HANG_HOA" />
-			<entity schema="ORDSYS" name="XUAT_XU" />
-			<entity schema="ORDSYS" name="QUI_CACH" />
-			<entity schema="ORDSYS" name="LOAI_HANG" />
-		</group>
-		<group name="PHIEU_CHI" color="f7f3ec" >
-			<entity schema="ORDSYS" name="PHIEU_CHI" />
-			<entity schema="ORDSYS" name="HINH_THUC_THANH_TOAN" />
-			<entity schema="ORDSYS" name="TRANG_THAI_PHIEU_CHI" />
-		</group>
-		<group name="Ban_Hang" color="c4e0f9" >
-			<entity schema="ORDSYS" name="CHI_TIET_HOA_DON_BAN_HANG" />
-			<entity schema="ORDSYS" name="HOA_DON_BAN_HANG" />
-			<entity schema="ORDSYS" name="KHACH_HANG" />
-			<entity schema="ORDSYS" name="PHIEU_THU" />
-			<entity schema="ORDSYS" name="TRANG_THAI_HOA_DON_BAN_HANG" />
-			<entity schema="ORDSYS" name="TRANG_THAI_PHIEU_THU" />
-		</group>
 	</layout>
 	<layout name="Sample Layout with Relational Data Browse" id="Layout_1df21220" show_relation="columns" >
-		<entity schema="ORDSYS" name="CHI_TIET_CHUNG_TU_MUA_HANG" color="bfd4f5" x="672" y="160" />
-		<entity schema="ORDSYS" name="CHUNG_TU_MUA_HANG" color="c8f5bf" x="48" y="160" />
-		<entity schema="ORDSYS" name="DON_VI_BAN_HANG" color="c8f5bf" x="336" y="160" />
-		<entity schema="ORDSYS" name="DON_VI_TINH" color="bfd4f5" x="944" y="160" />
-		<entity schema="ORDSYS" name="HANG_HOA" color="bfbff5" x="672" y="752" />
-		<entity schema="ORDSYS" name="HINH_THUC_THANH_TOAN" color="f5ddbf" x="336" y="752" />
-		<entity schema="ORDSYS" name="LOAI_HANG" color="bfbff5" x="672" y="1088" />
-		<entity schema="ORDSYS" name="PHIEU_CHI" color="f5ddbf" x="48" y="752" />
-		<entity schema="ORDSYS" name="PS_TXN" color="c8f5bf" x="48" y="512" />
-		<entity schema="ORDSYS" name="QUI_CACH" color="bfbff5" x="880" y="1088" />
-		<entity schema="ORDSYS" name="TRANG_THAI_CHUNG_TU_MUA_HANG" color="c8f5bf" x="336" y="512" />
-		<entity schema="ORDSYS" name="TRANG_THAI_PHIEU_CHI" color="f5ddbf" x="336" y="1072" />
-		<entity schema="ORDSYS" name="XUAT_XU" color="bfbff5" x="880" y="752" />
 		<callout x="48" y="48" pointer="NO" >
 			<comment><![CDATA[Below is a Relational Data Browse for exploring and editing data from multiple tables at a time.
 Tables should be bind by foreign keys - if they are not you can create VIRTUAL foreign keys in the layout. 
@@ -508,10 +581,5 @@ Virtual foreign keys will be saved to project file.
 Descend into children tables by pressing the foreign key arrow icon near title.
 Right-click column headers in browse tables to set filters.]]></comment>
 		</callout>
-		<browser id="Browse_2fc4e3ef" name="Sample Relational Data Browse" >
-			<browse_table schema="ORDSYS" entity="CHUNG_TU_MUA_HANG" x="10" y="10" width="400" height="300" >
-				<browse_table schema="ORDSYS" entity="DON_VI_BAN_HANG" fk="CHUNG_TU_MUA_HANG_FK2" x="420" y="10" width="400" height="300" record_view="y" />
-			</browse_table>
-		</browser>
 	</layout>
 </project>

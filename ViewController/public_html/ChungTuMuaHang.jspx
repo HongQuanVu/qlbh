@@ -143,6 +143,26 @@
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TienSauChietKhau.format}"/>
                                         </af:inputText>
+                                        <af:panelLabelAndMessage label="#{bindings.TienThueVAT.hints.label}"
+                                                                 id="plam16"
+                                                                 binding="#{backingBeanScope.backing_ChungTuMuaHang.plam16}">
+                                            <af:outputFormatted value="#{bindings.TienThueVAT.inputValue}" id="of1"
+                                                                binding="#{backingBeanScope.backing_ChungTuMuaHang.of1}">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.TienThueVAT.format}"/>
+                                            </af:outputFormatted>
+                                        </af:panelLabelAndMessage>
+                                        <af:panelLabelAndMessage label="#{bindings.TongCongTienThanhToan.hints.label}"
+                                                                 id="plam17"
+                                                                 binding="#{backingBeanScope.backing_ChungTuMuaHang.plam17}">
+                                            <af:outputText value="#{bindings.TongCongTienThanhToan.inputValue}"
+                                                           shortDesc="#{bindings.TongCongTienThanhToan.hints.tooltip}"
+                                                           id="ot39"
+                                                           binding="#{backingBeanScope.backing_ChungTuMuaHang.ot39}">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.TongCongTienThanhToan.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
                                         <af:panelLabelAndMessage label="#{bindings.TienDaTraNCC.hints.label}"
                                                                  id="plam140"
                                                                  binding="#{backingBeanScope.backing_ChungTuMuaHang.plam140}">
@@ -263,6 +283,16 @@
                                                                                           pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.SoLuong.format}"/>
                                                                     </af:outputText>
                                                                 </af:column>
+                                                                <af:column headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.ThanhTien.label}"
+                                                                           id="c27">
+                                                                    <af:outputText value="#{row.ThanhTien}"
+                                                                                   shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.ThanhTien.tooltip}"
+                                                                                   id="ot38">
+                                                                        <af:convertNumber groupingUsed="false"
+                                                                                          pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.ThanhTien.format}"/>
+                                                                    </af:outputText>
+                                                                </af:column>
+                                                                
                                                                 <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.DonViTinhId.name}"
                                                                            sortable="true"
                                                                            headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.DonViTinhId.label}"
@@ -320,15 +350,17 @@
                                                                                           pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.DonGia.format}"/>
                                                                     </af:outputText>
                                                                 </af:column>
-                                                                <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.ThueVat.name}"
+                                                                
+                                                                
+                                                                <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.ThanhTien.name}"
                                                                            sortable="true"
-                                                                           headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.ThueVat.label}"
+                                                                           headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.ThanhTien.label}"
                                                                            id="c7">
-                                                                    <af:outputText value="#{row.ThueVat}"
-                                                                                   shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.ThueVat.tooltip}"
+                                                                    <af:outputText value="#{row.ThanhTien}"
+                                                                                   shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.ThanhTien.tooltip}"
                                                                                    id="ot22">
                                                                         <af:convertNumber groupingUsed="false"
-                                                                                          pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.ThueVat.format}"/>
+                                                                                          pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.ThanhTien.format}"/>
                                                                     </af:outputText>
                                                                 </af:column>
                                                                 <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.GiaSauVat.name}"
@@ -342,8 +374,20 @@
                                                                                           pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.GiaSauVat.format}"/>
                                                                     </af:outputText>
                                                                 </af:column>
-                                                                
-                                                                
+                                                                <af:column headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.ThanhTienSauVAT.label}"
+                                                                           id="c28">
+                                                                    <af:inputText value="#{row.bindings.ThanhTienSauVAT.inputValue}"
+                                                                                  label="#{bindings.ChiTietChungTuMuaHangView2.hints.ThanhTienSauVAT.label}"
+                                                                                  required="#{bindings.ChiTietChungTuMuaHangView2.hints.ThanhTienSauVAT.mandatory}"
+                                                                                  columns="#{bindings.ChiTietChungTuMuaHangView2.hints.ThanhTienSauVAT.displayWidth}"
+                                                                                  maximumLength="#{bindings.ChiTietChungTuMuaHangView2.hints.ThanhTienSauVAT.precision}"
+                                                                                  shortDesc="#{bindings.ChiTietChungTuMuaHangView2.hints.ThanhTienSauVAT.tooltip}"
+                                                                                  id="it16" readOnly="true">
+                                                                        <f:validator binding="#{row.bindings.ThanhTienSauVAT.validator}"/>
+                                                                        <af:convertNumber groupingUsed="false"
+                                                                                          pattern="#{bindings.ChiTietChungTuMuaHangView2.hints.ThanhTienSauVAT.format}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
                                                                 <af:column sortProperty="#{bindings.ChiTietChungTuMuaHangView2.hints.GhiChu.name}"
                                                                            sortable="true"
                                                                            headerText="#{bindings.ChiTietChungTuMuaHangView2.hints.GhiChu.label}"

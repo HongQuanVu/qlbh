@@ -15,6 +15,21 @@
   <view id="DanhucDonViBanHang">
     <page>/DanhucDonViBanHang.jspx</page>
   </view>
+  <view id="DanhMucDonViTinh">
+    <page>/DanhMucDonViTinh.jspx</page>
+  </view>
+  <view id="DanhMucQuiCach">
+    <page>/DanhMucQuiCach.jspx</page>
+  </view>
+  <view id="DanhMucKhachHang">
+    <page>/DanhMucKhachHang.jspx</page>
+  </view>
+  <view id="DanhSachHoaDonBanHang">
+    <page>/DanhSachHoaDonBanHang.jspx</page>
+  </view>
+  <view id="DanhMucXuatXu">
+    <page>/DanhMucXuatXu.jspx</page>
+  </view>
   <control-flow-rule id="__8">
     <from-activity-id>*</from-activity-id>
     <control-flow-case id="__9">
@@ -36,6 +51,26 @@
     <control-flow-case id="__15">
       <from-outcome>danhmucnhacungcap</from-outcome>
       <to-activity-id>DanhucDonViBanHang</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__20">
+      <from-outcome>danhmucdonvitinh</from-outcome>
+      <to-activity-id>DanhMucDonViTinh</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__21">
+      <from-outcome>danhmucquicach</from-outcome>
+      <to-activity-id>DanhMucQuiCach</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__22">
+      <from-outcome>danhmuckhachhang</from-outcome>
+      <to-activity-id>DanhMucKhachHang</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__23">
+      <from-outcome>danhsachhoadonbanhang</from-outcome>
+      <to-activity-id>DanhSachHoaDonBanHang</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__30">
+      <from-outcome>danhmucxuatxu</from-outcome>
+      <to-activity-id>DanhMucXuatXu</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__1">
@@ -116,5 +151,41 @@
     <managed-bean-class>view.backing.DanhMucKhachHang</managed-bean-class>
     <managed-bean-scope>backingBean</managed-bean-scope>
     <!--oracle-jdev-comment:managed-bean-jsp-link:1DanhMucKhachHang.jspx-->
+  </managed-bean>
+  <managed-bean id="__24">
+    <managed-bean-name>backing_DanhMucHinhThucThanhToan</managed-bean-name>
+    <managed-bean-class>view.backing.DanhMucHinhThucThanhToan</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1DanhMucHinhThucThanhToan.jspx-->
+  </managed-bean>
+  <managed-bean id="__25">
+    <managed-bean-name>backing_DanhMucTrangThaiPhieuThu</managed-bean-name>
+    <managed-bean-class>view.backing.DanhMucTrangThaiPhieuThu</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1DanhMucTrangThaiPhieuThu.jspx-->
+  </managed-bean>
+  <managed-bean id="__26">
+    <managed-bean-name>backing_DanhMucTrangThaiHoaDonBanHang</managed-bean-name>
+    <managed-bean-class>view.backing.DanhMucTrangThaiHoaDonBanHang</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1DanhMucTrangThaiHoaDonBanHang.jspx-->
+  </managed-bean>
+  <managed-bean id="__27">
+    <managed-bean-name>backing_DanhMucTrangThaiChungTuMuaHang</managed-bean-name>
+    <managed-bean-class>view.backing.DanhMucTrangThaiChungTuMuaHang</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1DanhMucTrangThaiChungTuMuaHang.jspx-->
+  </managed-bean>
+  <managed-bean id="__28">
+    <managed-bean-name>backing_DanhMucTrangThaiPhieuChi</managed-bean-name>
+    <managed-bean-class>view.backing.DanhMucTrangThaiPhieuChi</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1DanhMucTrangThaiPhieuChi.jspx-->
+  </managed-bean>
+  <managed-bean id="__29">
+    <managed-bean-name>backing_DanhMucXuatXu</managed-bean-name>
+    <managed-bean-class>view.backing.DanhMucXuatXu</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1DanhMucXuatXu.jspx-->
   </managed-bean>
 </adfc-config>

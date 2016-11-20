@@ -26,34 +26,6 @@
     ViewObjectName="model.DonViTinhView"
     RowLevelBinds="true"/>
   <ListBinding
-    Name="LOV_TenHangHoa"
-    ListVOName="HangHoaView1"
-    ComboRowCountHint="10"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="TenHangHoa"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="DerivedAttrNames">
-      <Item Value="HangHoaId"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="TenHang"/>
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="MaHang"/>
-      <Item Value="TenHang"/>
-      <Item Value="GiaBan"/>
-      <Item Value="DonViTinhId"/>
-      <Item Value="QuiCachId"/>
-    </AttrArray>
-    <DisplayCriteria
-      Name="HangHoaViewHideBuyPriceCriteria"
-      Hint="showAndExecute"/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_DonViTinhId"
     ListVOName="DonViTinhView1"
     NullValueFlag="start"
@@ -89,6 +61,28 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_HangHoaId"
+    ListVOName="HangHoaView1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="HangHoaId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="TenHangHoa"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+      <Item Value="TenHang"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TenHang"/>
+      <Item Value="GiaBan"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="ChiTietHoaDonBanHang"
     Entity="model.ChiTietHoaDonBanHang"/>
@@ -110,7 +104,15 @@
     PrecisionRule="true"
     EntityAttrName="HangHoaId"
     EntityUsage="ChiTietHoaDonBanHang"
-    AliasName="HANG_HOA_ID"/>
+    AliasName="HANG_HOA_ID"
+    LOVName="LOV_HangHoaId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SoLuong"
     PrecisionRule="true"
@@ -215,13 +217,32 @@
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     AliasName="VIEW_ATTR"
-    SQLType="VARCHAR"
-    LOVName="LOV_TenHangHoa">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    SQLType="VARCHAR"/>
+  <ViewAttribute
+    Name="ThanhTien"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="BIGINT"
+    AliasName="THANH_TIEN"
+    SQLType="NUMERIC"
+    IsUpdateable="false"
+    Expression="SO_LUONG*DON_GIA"/>
+  <ViewAttribute
+    Name="ThanhTienSauVAT"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="THANH_TIEN_SAU_VAT"
+    SQLType="NUMERIC"
+    Expression="SO_LUONG*DON_GIA*(1+THUE_VAT/100)"
+    IsQueriable="false"/>
+  <ViewLinkAccessor
+    Name="HangHoaView"
+    ViewLink="model.ChiTietHoaDonBanHang_HangHoaLink"
+    Type="oracle.jbo.server.ViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

@@ -124,6 +124,8 @@
           <Item Value="DonViTinhQuiDoiId"/>
           <Item Value="QuiDoi"/>
           <Item Value="SoLuongSauQuiDoi"/>
+          <Item Value="ThanhTien"/>
+          <Item Value="ThanhTienSauVAT"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -282,6 +284,16 @@
     <attributeValues IterBinding="ChiTietChungTuMuaHangView1Iterator" id="SoLuongSauQuiDoi">
       <AttrNames>
         <Item Value="SoLuongSauQuiDoi"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="TienThueVAT">
+      <AttrNames>
+        <Item Value="TienThueVAT"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChungTuMuaHangView1Iterator" id="TongCongTienThanhToan">
+      <AttrNames>
+        <Item Value="TongCongTienThanhToan"/>
       </AttrNames>
     </attributeValues>
   </bindings>

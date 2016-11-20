@@ -39,6 +39,8 @@ public class DanhMucLoaiHang {
     private RichTable t1;
     private RichButton b6;
     private RichButton b7;
+    private RichButton b8;
+    private RichButton b9;
 
     public void setF1(RichForm f1) {
         this.f1 = f1;
@@ -238,5 +240,21 @@ public class DanhMucLoaiHang {
 
     public RichButton getB7() {
         return b7;
+    }
+
+    public void setB8(RichButton b8) {
+        this.b8 = b8;
+    }
+
+    public RichButton getB8() {
+        return b8;
+    }
+
+    public void setB9(RichButton b9) {
+        this.b9 = b9;
+    }
+
+    public RichButton getB9() {
+        return b9;
     }
 }

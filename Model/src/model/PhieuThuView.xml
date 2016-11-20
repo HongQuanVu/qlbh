@@ -13,6 +13,50 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="TrangThaiPhieuThuView1"
+    ViewObjectName="model.TrangThaiPhieuThuView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HinhThucThanhToanView1"
+    ViewObjectName="model.HinhThucThanhToanView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_TrangThaiPhieuThuId"
+    ListVOName="TrangThaiPhieuThuView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TrangThaiPhieuThuId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TenTrangThaiPhieuThu"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_HinhThucThanhToanId"
+    ListVOName="HinhThucThanhToanView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="HinhThucThanhToanId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TenHinhThucThanhToan"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="PhieuThu"
     Entity="model.PhieuThu"/>
@@ -22,7 +66,8 @@
     PrecisionRule="true"
     EntityAttrName="Id"
     EntityUsage="PhieuThu"
-    AliasName="ID"/>
+    AliasName="ID"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="MaPhieuThu"
     IsNotNull="true"
@@ -66,13 +111,29 @@
     PrecisionRule="true"
     EntityAttrName="TrangThaiPhieuThuId"
     EntityUsage="PhieuThu"
-    AliasName="TRANG_THAI_PHIEU_THU_ID"/>
+    AliasName="TRANG_THAI_PHIEU_THU_ID"
+    LOVName="LOV_TrangThaiPhieuThuId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="HinhThucThanhToanId"
     PrecisionRule="true"
     EntityAttrName="HinhThucThanhToanId"
     EntityUsage="PhieuThu"
-    AliasName="HINH_THUC_THANH_TOAN_ID"/>
+    AliasName="HINH_THUC_THANH_TOAN_ID"
+    LOVName="LOV_HinhThucThanhToanId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="GhiChu"
     PrecisionRule="true"

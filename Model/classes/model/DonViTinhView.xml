@@ -71,4 +71,8 @@
     Type="oracle.jbo.server.ViewRowImpl"
     Reversed="true"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="TenDonViTinh"/>
+  </SortCriteria>
 </ViewObject>

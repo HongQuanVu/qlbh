@@ -178,7 +178,6 @@
                                                            disabled="#{!bindings.Last.enabled}" partialSubmit="true"
                                                            id="b4"
                                                            binding="#{backingBeanScope.backing_DanhMucDonViTinh.b4}"/>
-                                            </af:panelGroupLayout>
                                             <af:button text="Submit" id="b5"
                                                        binding="#{backingBeanScope.backing_DanhMucDonViTinh.b5}"/>
                                             <af:button actionListener="#{bindings.CreateInsert.execute}"
@@ -194,6 +193,8 @@
                                                        binding="#{backingBeanScope.backing_DanhMucDonViTinh.b8}">
                                                 <af:resetActionListener/>
                                             </af:button>
+                                            </af:panelGroupLayout>
+                                           
                                         </af:panelGroupLayout>
                                     </f:facet>
                                 </af:panelFormLayout>

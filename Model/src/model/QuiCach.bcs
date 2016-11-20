@@ -1,0 +1,12 @@
+//Groovy Scripts for model.QuiCach
+
+package model
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="Id")
+def Id_ExpressionScript_Expression()
+{
+(new oracle.jbo.server.SequenceImpl("SEQ_QUI_CACH_ID", object.getDBTransaction())).getSequenceNumber()
+}
+

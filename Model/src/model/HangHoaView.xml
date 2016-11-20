@@ -358,28 +358,24 @@
         ViewAttribute="MaHang"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="TenHang"
         ViewAttribute="TenHang"
         Operator="CONTAINS"
         Conjunction="OR"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="DonViTinhId"
         ViewAttribute="DonViTinhId"
         Operator="="
         Conjunction="OR"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="GiaBan"
         ViewAttribute="GiaBan"
         Operator="BETWEEN"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
@@ -410,6 +406,11 @@
   <ViewLinkAccessor
     Name="DonViQuiDoiView"
     ViewLink="model.FkHangHoaDonViQuiDoiLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ChiTietHoaDonBanHangView"
+    ViewLink="model.ChiTietHoaDonBanHang_HangHoaLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

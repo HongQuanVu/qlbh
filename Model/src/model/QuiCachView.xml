@@ -22,7 +22,8 @@
     PrecisionRule="true"
     EntityAttrName="Id"
     EntityUsage="QuiCach"
-    AliasName="ID"/>
+    AliasName="ID"
+    IsQueriable="false"/>
   <ViewAttribute
     Name="MaQuiCach"
     PrecisionRule="true"

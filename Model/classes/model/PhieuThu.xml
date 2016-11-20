@@ -20,7 +20,13 @@
     Type="java.math.BigInteger"
     ColumnType="NUMBER"
     TableName="PHIEU_THU"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsQueriable="false">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="PhieuThuRow"/>
+  </Attribute>
   <Attribute
     Name="MaPhieuThu"
     IsNotNull="true"
