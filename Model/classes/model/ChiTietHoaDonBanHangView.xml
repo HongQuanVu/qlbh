@@ -70,12 +70,8 @@
       <Item Value="HangHoaId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="DerivedAttrNames">
-      <Item Value="TenHangHoa"/>
-    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Id"/>
-      <Item Value="TenHang"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="TenHang"/>
@@ -208,17 +204,6 @@
     EntityUsage="ChiTietHoaDonBanHang"
     AliasName="MODIFIED_AT"/>
   <ViewAttribute
-    Name="TenHangHoa"
-    IsUpdateable="false"
-    IsSelected="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="255"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="VIEW_ATTR"
-    SQLType="VARCHAR"/>
-  <ViewAttribute
     Name="ThanhTien"
     IsPersistent="false"
     PrecisionRule="true"
@@ -239,6 +224,24 @@
     SQLType="NUMERIC"
     Expression="SO_LUONG*DON_GIA*(1+THUE_VAT/100)"
     IsQueriable="false"/>
+  <ViewAttribute
+    Name="TenHangHoa"
+    IsUpdateable="false"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="TenHangHoa"
+    EntityUsage="ChiTietHoaDonBanHang"
+    AliasName="TEN_HANG_HOA"/>
+  <ViewAttribute
+    Name="MaHang"
+    IsUpdateable="false"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="MaHang"
+    EntityUsage="ChiTietHoaDonBanHang"
+    AliasName="MA_HANG"/>
   <ViewLinkAccessor
     Name="HangHoaView"
     ViewLink="model.ChiTietHoaDonBanHang_HangHoaLink"

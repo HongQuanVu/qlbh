@@ -149,6 +149,28 @@
     Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="CHI_TIET_HOA_DON_BAN_HANG"/>
+  <Attribute
+    Name="TenHangHoa"
+    Precision="80"
+    ColumnName="TEN_HANG_HOA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsQueriable="false"
+    Expression="(SELECT TEN_HANG FROM HANG_HOA WHERE ID=HANG_HOA_ID)"/>
+  <Attribute
+    Name="MaHang"
+    Precision="80"
+    ColumnName="MA_HANG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsPersistent="false"
+    IsQueriable="false"
+    IsUpdateable="false"
+    Expression="(SELECT MA_HANG FROM HANG_HOA WHERE ID=HANG_HOA_ID)"/>
   <AccessorAttribute
     Name="HoaDonBanHang"
     Association="model.ChiTietCtBhFk2Assoc"

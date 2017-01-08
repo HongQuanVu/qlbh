@@ -309,7 +309,27 @@
             <value n="id" v="BC4J Oracle Domains"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="WebLogic Authentication"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
+      <hash n="internalDefinitions">
+         <list n="libraryDefinitions">
+            <hash>
+               <list n="classPath">
+                  <url path="../../../Oracle/Middleware/JDev_Home/wlserver/server/lib/wls-api.jar" jar-entry=""/>
+                  <url path="../../../Oracle/Middleware/JDev_Home/wlserver/server/lib/weblogic.jar" jar-entry=""/>
+                  <url path="../../../Oracle/Middleware/JDev_Home/wlserver/modules/com.bea.core.weblogic.security.auth.jar" jar-entry=""/>
+                  <url path="../../../Oracle/Middleware/JDev_Home/wlserver/modules/com.oracle.weblogic.security.authn.server.jar" jar-entry=""/>
+                  <url path="../../../Oracle/Middleware/JDev_Home/wlserver/modules/com.oracle.weblogic.security.service.authentication.jar" jar-entry=""/>
+                  <url path="../../../Oracle/Middleware/JDev_Home/wlserver/modules/com.oracle.weblogic.security.service.authorization.jar" jar-entry=""/>
+               </list>
+               <value n="description" v="WebLogic Authentication"/>
+               <value n="id" v="WebLogic Authentication"/>
+            </hash>
+         </list>
+      </hash>
       <list n="libraryReferences">
          <hash>
             <value n="id" v="JSP Runtime"/>
@@ -425,6 +445,10 @@
          </hash>
          <hash>
             <value n="id" v="BC4J Oracle Domains"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="WebLogic Authentication"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

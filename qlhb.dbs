@@ -23,7 +23,7 @@
 			<index name="SYS_C0010931" unique="PRIMARY_KEY" >
 				<column name="ID" />
 			</index>
-			<fk name="CHI_TIET_CT_MH_FK2" to_schema="QLBH" to_table="CHUNG_TU_MUA_HANG" update_action="cascade" >
+			<fk name="CHI_TIET_CT_MH_FK2" to_schema="QLBH" to_table="CHUNG_TU_MUA_HANG" delete_action="cascade" update_action="cascade" >
 				<fk_column name="CHUNG_TU_MUA_HANG_ID" pk="ID" />
 			</fk>
 			<fk name="CHI_TIET_CT_MH_FK3" to_schema="QLBH" to_table="DON_VI_TINH" update_action="cascade" >
@@ -155,7 +155,6 @@
 			<column name="DON_VI_QUI_DOI_ID" type="number" jt="2" />
 			<column name="SO_LUONG_QUI_DOI" type="number" length="38" decimal="0" jt="2" />
 			<column name="BARCODE" type="varchar2" length="30" jt="12" />
-			<column name="DIA_CHI_GIAO_HANG" type="varchar2" length="200" jt="12" />
 			<index name="IDX_HANG_HOA" unique="NORMAL" >
 				<column name="QUI_CACH_ID" />
 			</index>
@@ -406,23 +405,104 @@
 				<column name="ID" />
 			</index>
 		</table>
-		<sequence name="PS_TXN_SEQ" start="16501" />
-		<sequence name="SEQ_CHITIET_CT_MUA_HANG_ID" start="261" />
-		<sequence name="SEQ_CHI_TIET_HDBH_ID" start="21" />
-		<sequence name="SEQ_CTMH_ID" start="121" />
+		<sequence name="PS_TXN_SEQ" start="20651" />
+		<sequence name="SEQ_CHITIET_CT_MUA_HANG_ID" start="301" />
+		<sequence name="SEQ_CHI_TIET_HDBH_ID" start="61" />
+		<sequence name="SEQ_CTMH_ID" start="141" />
 		<sequence name="SEQ_CT_CHUNG_TU_MH" start="61" />
-		<sequence name="SEQ_DON_VI_BAN_HANG_ID" start="41" />
+		<sequence name="SEQ_DON_VI_BAN_HANG_ID" start="1161" />
 		<sequence name="SEQ_DON_VI_MUA_HANG_ID" start="1" />
-		<sequence name="SEQ_DON_VI_TINH_ID" start="50" />
-		<sequence name="SEQ_HANG_HOA_ID" start="121" />
+		<sequence name="SEQ_DON_VI_TINH_ID" start="90" />
+		<sequence name="SEQ_HANG_HOA_ID" start="181" />
 		<sequence name="SEQ_HINH_THUC_THANH_TOAN_ID" start="1" />
-		<sequence name="SEQ_HOA_DON_BAN_HANG_ID" start="121" />
-		<sequence name="SEQ_KHACH_HANG_ID" start="41" />
-		<sequence name="SEQ_LOAI_HANG_ID" start="1" />
-		<sequence name="SEQ_PHIEU_CHI_ID" start="81" />
-		<sequence name="SEQ_PHIEU_THU_ID" start="1" />
-		<sequence name="SEQ_QUI_CACH_ID" start="1" />
-		<sequence name="SEQ_XUAT_XU_ID" start="1" />
+		<sequence name="SEQ_HOA_DON_BAN_HANG_ID" start="161" />
+		<sequence name="SEQ_KHACH_HANG_ID" start="61" />
+		<sequence name="SEQ_LOAI_HANG_ID" start="21" />
+		<sequence name="SEQ_PHIEU_CHI_ID" start="101" />
+		<sequence name="SEQ_PHIEU_THU_ID" start="21" />
+		<sequence name="SEQ_QUI_CACH_ID" start="21" />
+		<sequence name="SEQ_TRANG_THAI_HDBH_ID" start="1" />
+		<sequence name="SEQ_XUAT_XU_ID" start="21" />
+		<trigger name="TR_CT_MH_CONG_TIEN_HANG" id="Trigger_37bbbf2a" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "TR_CT_MH_CONG_TIEN_HANG" 
+ AFTER  INSERT  OR UPDATE OR DELETE
+ ON CHI_TIET_CHUNG_TU_MUA_HANG 
+ --FOR EACH ROW 
+BEGIN
+    UPDATE CHUNG_TU_MUA_HANG CT
+    SET CT.CONG_TIEN_HANG  =
+    (
+     SELECT SUM(CTCT.SO_LUONG*CTCT.DON_GIA)
+     FROM CHI_TIET_CHUNG_TU_MUA_HANG CTCT
+     WHERE CTCT.CHUNG_TU_MUA_HANG_ID =CT.ID
+     )
+     --WHERE CT.ID = :New.Chung_Tu_Mua_Hang_Id
+     ;
+    UPDATE CHUNG_TU_MUA_HANG CT
+    SET CT.TIEN_SAU_CHIET_KHAU = CT.CONG_TIEN_HANG  -CT.CHIET_KHAU 
+   -- WHERE CT.ID  =:New.Chung_Tu_Mua_Hang_Id 
+   ;
+ END;
+]]></string>
+		</trigger>
+		<trigger name="TR_CT_MH_GIA_SAU_VAT" id="Trigger_2b353ac0" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "TR_CT_MH_GIA_SAU_VAT" 
+ BEFORE INSERT  OR UPDATE
+ ON CHI_TIET_CHUNG_TU_MUA_HANG
+ REFERENCING NEW AS NEW
+ FOR EACH ROW
+BEGIN
+  SELECT CT.THUE_VAT ,(CT.THUE_VAT/100)*:NEW.DON_GIA +:NEW.DON_GIA  INTO :NEW.THUE_VAT ,:NEW.GIA_SAU_VAT
+  FROM CHUNG_TU_MUA_HANG CT
+  WHERE CT.ID = :new.chung_tu_mua_hang_id ;
+ END;
+]]></string>
+		</trigger>
+		<trigger name="TR_CT_MH_QUI_DOI_SO_LUONG" id="Trigger_2952e192" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "TR_CT_MH_QUI_DOI_SO_LUONG" 
+ BEFORE INSERT  OR UPDATE
+ ON CHI_TIET_CHUNG_TU_MUA_HANG
+ REFERENCING NEW AS NEW
+ FOR EACH ROW
+DECLARE
+ v_Hang_Hoa_Don_Vi_Tinh_ID NUMBER:=-1;
+ v_Hang_hoa_Ten_Don_Vi_Tinh DON_VI_TINH.TEN_DON_VI_TINH%Type:='';
+ v_Ten_Don_Vi_Tinh_Nhap DON_VI_TINH.TEN_DON_VI_TINH%TYPE:='';
+BEGIN
+  SELECT  H.DON_VI_TINH_ID  INTO v_Hang_Hoa_Don_Vi_Tinh_ID FROM HANG_HOA H WHERE H.ID = :new.hang_hoa_id ;
+  
+  If v_Hang_Hoa_Don_Vi_Tinh_ID <> :new.Don_Vi_Tinh_Id THEN
+     SELECT DT.TEN_DON_VI_TINH into v_Hang_hoa_Ten_Don_Vi_Tinh  FROM DON_VI_TINH DT WHERE DT.ID =v_Hang_Hoa_Don_Vi_Tinh_ID ;
+     SELECT DT.TEN_DON_VI_TINH into v_Ten_Don_Vi_Tinh_Nhap  FROM DON_VI_TINH DT WHERE DT.ID =:new.Don_Vi_Tinh_Id ;
+     raise_application_error(-20001 ,' Don Vi Tinh cua Hang Hoa la '||v_Hang_hoa_Ten_Don_Vi_Tinh||' khac voi  Don Vi Tinh dang nhap '||v_Ten_Don_Vi_Tinh_Nhap) ;
+  end if ;
+  SELECT CT.THUE_VAT ,(CT.THUE_VAT/100)*:NEW.DON_GIA +:NEW.DON_GIA  INTO :NEW.THUE_VAT ,:NEW.GIA_SAU_VAT
+  FROM CHUNG_TU_MUA_HANG CT
+  WHERE CT.ID = :new.chung_tu_mua_hang_id ;
+ SELECT H.DON_VI_QUI_DOI_ID INTO :NEW.DON_VI_TINH_QUI_DOI_ID
+ FROM HANG_HOA H
+ WHERE H.ID  =:new.Hang_Hoa_Id  ;
+ SELECT H.SO_LUONG_QUI_DOI INTO :NEW.QUI_DOI
+ FROM HANG_HOA H
+ WHERE H.ID  =:new.Hang_Hoa_Id  ;
+ --Neu so luong va qui doi co' thi tinh' soluong sau khi qui doi
+ IF :new.Qui_Doi IS NOT NULL and :new.So_Luong IS NOT NULL THEN
+     :new.So_Luong_Sau_Qui_Doi :=:new.So_Luong/:new.Qui_Doi ;
+ END IF ;
+ END;
+]]></string>
+		</trigger>
+		<trigger name="TR_CT_MH_TIEN_SAU_CK" id="Trigger_dc1097" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "TR_CT_MH_TIEN_SAU_CK" 
+ BEFORE INSERT  OR UPDATE
+ ON CHUNG_TU_MUA_HANG
+ REFERENCING NEW AS NEW
+ FOR EACH ROW
+BEGIN
+  :NEW.TIEN_SAU_CHIET_KHAU :=:NEW.CONG_TIEN_HANG-:NEW.CHIET_KHAU ;
+END;
+]]></string>
+		</trigger>
 		<trigger name="TR_DON_VI_BAN_HANG_BEF_INS" id="Trigger_1465fd1" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_DON_VI_BAN_HANG_BEF_INS" 
  BEFORE INSERT
@@ -432,6 +512,85 @@
 BEGIN
  SELECT SEQ_DON_VI_BAN_HANG_ID.nextval INTO :NEW.ID FROM dual;
  END;
+]]></string>
+		</trigger>
+		<trigger name="TR_HOA_DON_CT_CONG_TIEN_HANG" id="Trigger_125ed7f4" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "TR_HOA_DON_CT_CONG_TIEN_HANG" 
+AFTER  INSERT  OR UPDATE OR DELETE
+ ON CHI_TIET_HOA_DON_BAN_HANG  
+ --FOR EACH ROW 
+BEGIN
+    UPDATE HOA_DON_BAN_HANG CT
+    SET CT.CONG_TIEN_HANG  =
+    (
+     SELECT SUM(CTCT.SO_LUONG*CTCT.DON_GIA)
+     FROM CHI_TIET_HOA_DON_BAN_HANG CTCT
+     WHERE CTCT.HOA_DON_BAN_HANG_ID =CT.ID
+     )
+    
+     ;
+    UPDATE HOA_DON_BAN_HANG CT
+    SET CT.TIEN_SAU_CHIET_KHAU = CT.CONG_TIEN_HANG  -CT.CHIET_KHAU 
+   ;
+ END;
+]]></string>
+		</trigger>
+		<trigger name="TR_HOA_DON_CT_GIA_SAU_VAT" id="Trigger_30f2ac6e" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "TR_HOA_DON_CT_GIA_SAU_VAT" 
+ BEFORE INSERT  OR UPDATE
+ ON CHI_TIET_HOA_DON_BAN_HANG
+ REFERENCING NEW AS NEW
+ FOR EACH ROW
+BEGIN
+  SELECT CT.THUE_VAT ,(CT.THUE_VAT/100)*:NEW.DON_GIA +:NEW.DON_GIA  INTO :NEW.THUE_VAT ,:NEW.GIA_SAU_VAT
+  FROM HOA_DON_BAN_HANG CT
+  WHERE CT.ID = :new.Hoa_Don_Ban_Hang_Id ;
+ END;
+]]></string>
+		</trigger>
+		<trigger name="TR_HOA_DON_CT_QUI_DOI_SO_LUONG" id="Trigger_25a5d6e2" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "TR_HOA_DON_CT_QUI_DOI_SO_LUONG" 
+ BEFORE INSERT  OR UPDATE
+ ON CHI_TIET_HOA_DON_BAN_HANG
+ REFERENCING NEW AS NEW
+ FOR EACH ROW
+DECLARE
+ v_Hang_Hoa_Don_Vi_Tinh_ID NUMBER:=-1;
+ v_Hang_hoa_Ten_Don_Vi_Tinh DON_VI_TINH.TEN_DON_VI_TINH%Type:='';
+ v_Ten_Don_Vi_Tinh_Nhap DON_VI_TINH.TEN_DON_VI_TINH%TYPE:='';
+BEGIN
+  SELECT  H.DON_VI_TINH_ID  INTO v_Hang_Hoa_Don_Vi_Tinh_ID FROM HANG_HOA H WHERE H.ID = :new.hang_hoa_id ;
+  
+  If v_Hang_Hoa_Don_Vi_Tinh_ID <> :new.Don_Vi_Tinh_Id THEN
+     SELECT DT.TEN_DON_VI_TINH into v_Hang_hoa_Ten_Don_Vi_Tinh  FROM DON_VI_TINH DT WHERE DT.ID =v_Hang_Hoa_Don_Vi_Tinh_ID ;
+     SELECT DT.TEN_DON_VI_TINH into v_Ten_Don_Vi_Tinh_Nhap  FROM DON_VI_TINH DT WHERE DT.ID =:new.Don_Vi_Tinh_Id ;
+     raise_application_error(-20001 ,' Don Vi Tinh cua Hang Hoa la '||v_Hang_hoa_Ten_Don_Vi_Tinh||' khac voi  Don Vi Tinh dang nhap '||v_Ten_Don_Vi_Tinh_Nhap) ;
+  end if ;
+  SELECT CT.THUE_VAT ,(CT.THUE_VAT/100)*:NEW.DON_GIA +:NEW.DON_GIA  INTO :NEW.THUE_VAT ,:NEW.GIA_SAU_VAT
+  FROM HOA_DON_BAN_HANG CT
+  WHERE CT.ID = :new.Hoa_Don_Ban_Hang_Id ;
+ SELECT H.DON_VI_QUI_DOI_ID INTO :NEW.DON_VI_TINH_QUI_DOI_ID
+ FROM HANG_HOA H
+ WHERE H.ID  =:new.Hang_Hoa_Id  ;
+ SELECT H.SO_LUONG_QUI_DOI INTO :NEW.QUI_DOI
+ FROM HANG_HOA H
+ WHERE H.ID  =:new.Hang_Hoa_Id  ;
+ --Neu so luong va qui doi co' thi tinh' soluong sau khi qui doi
+ IF :new.Qui_Doi IS NOT NULL and :new.So_Luong IS NOT NULL THEN
+     :new.So_Luong_Sau_Qui_Doi :=:new.So_Luong/:new.Qui_Doi ;
+ END IF ;
+ END;
+]]></string>
+		</trigger>
+		<trigger name="TR_HOA_DON_TIEN_SAU_CHIET_KHAU" id="Trigger_43dba2f" isSystem="false" >
+			<string><![CDATA[CREATE OR REPLACE TRIGGER "TR_HOA_DON_TIEN_SAU_CHIET_KHAU"
+ BEFORE INSERT  OR UPDATE
+ ON HOA_DON_BAN_HANG
+ REFERENCING NEW AS NEW
+ FOR EACH ROW
+BEGIN
+  :new.TIEN_SAU_CHIET_KHAU:=:new.CONG_TIEN_HANG-:new.CHIET_KHAU ;
+END ;
 ]]></string>
 		</trigger>
 	</schema>

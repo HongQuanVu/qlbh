@@ -128,6 +128,8 @@
           <Item Value="SoLuongSauQuiDoi"/>
           <Item Value="ThanhTien"/>
           <Item Value="ThanhTienSauVAT"/>
+          <Item Value="MaHang"/>
+          <Item Value="TenHangHoa"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -286,5 +288,15 @@
     </tree>
     <action IterBinding="PhieuThuView2Iterator" id="CreateInsert2" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="PhieuThuView2Iterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="ChiTietHoaDonBanHangView2Iterator" id="TenHangHoa">
+      <AttrNames>
+        <Item Value="TenHangHoa"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ChiTietHoaDonBanHangView2Iterator" id="MaHang">
+      <AttrNames>
+        <Item Value="MaHang"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

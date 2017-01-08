@@ -413,4 +413,8 @@
     ViewLink="model.ChiTietHoaDonBanHang_HangHoaLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="TenHang"/>
+  </SortCriteria>
 </ViewObject>

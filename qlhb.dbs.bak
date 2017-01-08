@@ -210,6 +210,8 @@
 			<column name="MODIFIED_AT" type="date" length="7" decimal="0" jt="91" />
 			<column name="KHACH_HANG_ID" type="number" jt="2" />
 			<column name="TRANG_THAI_ID" type="number" length="38" decimal="0" jt="2" />
+			<column name="DIA_CHI_GIAO_HANG" type="varchar2" length="300" jt="12" />
+			<column name="GHI_CHU" type="varchar2" length="500" jt="12" />
 			<index name="IDX_HOA_DON_BAN_HANG" unique="NORMAL" >
 				<column name="TRANG_THAI_ID" />
 			</index>
@@ -421,117 +423,6 @@
 		<sequence name="SEQ_PHIEU_THU_ID" start="1" />
 		<sequence name="SEQ_QUI_CACH_ID" start="1" />
 		<sequence name="SEQ_XUAT_XU_ID" start="1" />
-		<trigger name="TR_CT_CT_MH_AFT_INS_UPD" id="Trigger_37066452" isSystem="false" >
-			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_CT_CT_MH_AFT_INS_UPD" 
- AFTER INSERT  OR UPDATE OR DELETE
- ON CHI_TIET_CHUNG_TU_MUA_HANG
-BEGIN
-    UPDATE CHUNG_TU_MUA_HANG CT
-    SET CT.CONG_TIEN_HANG  =
-    (
-     SELECT SUM(CTCT.SO_LUONG*CTCT.DON_GIA)
-     FROM CHI_TIET_CHUNG_TU_MUA_HANG CTCT
-     WHERE CTCT.CHUNG_TU_MUA_HANG_ID =CT.ID
-     );
-    UPDATE CHUNG_TU_MUA_HANG CT
-    SET CT.TIEN_SAU_CHIET_KHAU = CT.CONG_TIEN_HANG  -CT.CHIET_KHAU ;
- END;
-]]></string>
-		</trigger>
-		<trigger name="TR_CT_CT_MH_AF_INS_U" id="Trigger_195984a2" isSystem="false" >
-			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_CT_CT_MH_AF_INS_U" 
- BEFORE INSERT  OR UPDATE
- ON CHI_TIET_CHUNG_TU_MUA_HANG
- REFERENCING NEW AS NEW
- FOR EACH ROW
-BEGIN
-  SELECT CT.THUE_VAT ,(CT.THUE_VAT/100)*:NEW.DON_GIA +:NEW.DON_GIA  INTO :NEW.THUE_VAT ,:NEW.GIA_SAU_VAT
-  FROM CHUNG_TU_MUA_HANG CT
-  WHERE CT.ID = :new.chung_tu_mua_hang_id ;
- END;
-]]></string>
-		</trigger>
-		<trigger name="TR_CT_CT_MH_BEF_INS_UPD" id="Trigger_1f87a6fc" isSystem="false" >
-			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_CT_CT_MH_BEF_INS_UPD" 
- BEFORE INSERT  OR UPDATE
- ON CHI_TIET_CHUNG_TU_MUA_HANG
- REFERENCING NEW AS NEW
- FOR EACH ROW
-DECLARE
- v_Hang_Hoa_Don_Vi_Tinh_ID NUMBER:=-1;
- v_Hang_hoa_Ten_Don_Vi_Tinh DON_VI_TINH.TEN_DON_VI_TINH%Type:='';
- v_Ten_Don_Vi_Tinh_Nhap DON_VI_TINH.TEN_DON_VI_TINH%TYPE:='';
-BEGIN
-  SELECT  H.DON_VI_TINH_ID  INTO v_Hang_Hoa_Don_Vi_Tinh_ID FROM HANG_HOA H WHERE H.ID = :new.hang_hoa_id ;
-  /*
-  If v_Hang_Hoa_Don_Vi_Tinh_ID <> :new.Don_Vi_Tinh_Id THEN
-     SELECT DT.TEN_DON_VI_TINH into v_Hang_hoa_Ten_Don_Vi_Tinh  FROM DON_VI_TINH DT WHERE DT.ID =v_Hang_Hoa_Don_Vi_Tinh_ID ;
-     SELECT DT.TEN_DON_VI_TINH into v_Ten_Don_Vi_Tinh_Nhap  FROM DON_VI_TINH DT WHERE DT.ID =:new.Don_Vi_Tinh_Id ;
-     raise_application_error(-20001 ,' Don Vi Tinh cua Hang Hoa la '||v_Hang_hoa_Ten_Don_Vi_Tinh||' khac voi  Don Vi Tinh dang nhap '||v_Ten_Don_Vi_Tinh_Nhap) ;
-  end if ;
-  */SELECT CT.THUE_VAT ,(CT.THUE_VAT/100)*:NEW.DON_GIA +:NEW.DON_GIA  INTO :NEW.THUE_VAT ,:NEW.GIA_SAU_VAT
-  FROM CHUNG_TU_MUA_HANG CT
-  WHERE CT.ID = :new.chung_tu_mua_hang_id ;
- SELECT H.DON_VI_QUI_DOI_ID INTO :NEW.DON_VI_TINH_QUI_DOI_ID
- FROM HANG_HOA H
- WHERE H.ID  =:new.Hang_Hoa_Id  ;
- SELECT H.SO_LUONG_QUI_DOI INTO :NEW.QUI_DOI
- FROM HANG_HOA H
- WHERE H.ID  =:new.Hang_Hoa_Id  ;
- --Neu so luong va qui doi co' thi tinh' soluong sau khi qui doi
- IF :new.Qui_Doi IS NOT NULL and :new.So_Luong IS NOT NULL THEN
-     :new.So_Luong_Sau_Qui_Doi :=:new.So_Luong/:new.Qui_Doi ;
- END IF ;
- END;
-]]></string>
-		</trigger>
-		<trigger name="TR_CT_CT_MH_BEF_UP" id="Trigger_fe57cea" isSystem="false" >
-			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_CT_CT_MH_BEF_UP" 
- BEFORE UPDATE
- ON  CHI_TIET_CHUNG_TU_MUA_HANG
- REFERENCING NEW AS NEW
- FOR EACH ROW
-BEGIN
- SELECT CT.THUE_VAT INTO :NEW.THUE_VAT
- FROM CHUNG_TU_MUA_HANG CT
- WHERE CT.ID = :NEW.CHUNG_TU_MUA_HANG_ID ;
- SELECT H.DON_VI_QUI_DOI_ID INTO :NEW.DON_VI_TINH_QUI_DOI_ID
- FROM HANG_HOA H
- WHERE H.ID  =:new.Hang_Hoa_Id  ;
- SELECT H.SO_LUONG_QUI_DOI INTO :NEW.QUI_DOI
- FROM HANG_HOA H
- WHERE H.ID  =:new.Hang_Hoa_Id  ;
- --Neu so luong va qui doi co' thi tinh' soluong sau khi qui doi
- IF :new.Qui_Doi IS NOT NULL and :new.So_Luong IS NOT NULL THEN
-     :new.So_Luong_Sau_Qui_Doi :=:new.So_Luong/:new.Qui_Doi ;
- END IF ;
- END;
-]]></string>
-		</trigger>
-		<trigger name="TR_CT_MH_AFT_INS_UPD" id="Trigger_9c61871" isSystem="false" >
-			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_CT_MH_AFT_INS_UPD" 
- AFTER INSERT  OR UPDATE  OF THUE_VAT
- ON CHUNG_TU_MUA_HANG
-BEGIN
-   UPDATE CHI_TIET_CHUNG_TU_MUA_HANG CTCT
-   set CTCT.thue_vat =(SELECT CT.THUE_VAT FROM CHUNG_TU_MUA_HANG CT
-   WHERE CT.ID =CTCT.CHUNG_TU_MUA_HANG_ID
-   )
-   ;
- END;
-]]></string>
-		</trigger>
-		<trigger name="TR_CT_MH_BEF_INS_UPD2" id="Trigger_1d00459c" isSystem="false" >
-			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_CT_MH_BEF_INS_UPD2" 
- BEFORE INSERT  OR UPDATE
- ON CHUNG_TU_MUA_HANG
- REFERENCING NEW AS NEW
- FOR EACH ROW
-BEGIN
-  :NEW.TIEN_SAU_CHIET_KHAU :=:NEW.CONG_TIEN_HANG-:NEW.CHIET_KHAU ;
-END;
-]]></string>
-		</trigger>
 		<trigger name="TR_DON_VI_BAN_HANG_BEF_INS" id="Trigger_1465fd1" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE TRIGGER "QLBH"."TR_DON_VI_BAN_HANG_BEF_INS" 
  BEFORE INSERT
@@ -548,12 +439,10 @@ BEGIN
 	<layout name="Default Layout" id="Layout_302131e3" show_relation="columns" />
 	<layout name="Sample Layout with Groups" id="Layout_2bb8ac39" show_relation="columns" >
 		<entity schema="QLBH" name="CHI_TIET_CHUNG_TU_MUA_HANG" color="bfd4f5" x="1968" y="416" />
-		<entity schema="QLBH" name="CHI_TIET_HOA_DON_BAN_HANG" color="bfd4f5" x="1488" y="640" />
 		<entity schema="QLBH" name="CHUNG_TU_MUA_HANG" color="bfbff5" x="400" y="416" />
 		<entity schema="QLBH" name="DON_VI_BAN_HANG" color="bfbff5" x="688" y="416" />
 		<entity schema="QLBH" name="DON_VI_TINH" color="bfd4f5" x="1760" y="416" />
 		<entity schema="QLBH" name="HINH_THUC_THANH_TOAN" color="f5ddbf" x="416" y="1056" />
-		<entity schema="QLBH" name="HOA_DON_BAN_HANG" color="c8f5bf" x="1488" y="1056" />
 		<entity schema="QLBH" name="KHACH_HANG" color="c8f5bf" x="1776" y="1056" />
 		<entity schema="QLBH" name="LOAI_HANG" color="d2bff5" x="1248" y="784" />
 		<entity schema="QLBH" name="PHIEU_CHI" color="bfd4f5" x="432" y="48" />
@@ -566,6 +455,8 @@ BEGIN
 		<entity schema="QLBH" name="XUAT_XU" color="bfd4f5" x="1760" y="640" />
 		<entity schema="QLBH" name="HANG_HOA" color="d2bff5" x="1024" y="416" />
 		<entity schema="QLBH" name="QUI_CACH" color="d2bff5" x="1248" y="416" />
+		<entity schema="QLBH" name="CHI_TIET_HOA_DON_BAN_HANG" color="bfd4f5" x="1488" y="640" />
+		<entity schema="QLBH" name="HOA_DON_BAN_HANG" color="c8f5bf" x="1488" y="1056" />
 		<callout x="48" y="288" pointer="NO" >
 			<comment><![CDATA[In DbSchema you may create multiple layouts with the same or different tables.
 Layouts will be saved to project file. 

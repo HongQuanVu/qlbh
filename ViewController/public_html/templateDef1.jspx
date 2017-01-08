@@ -97,9 +97,38 @@
                             <af:panelGroupLayout id="titleWrp" styleClass="AFBrandingBarItem">
                                 <af:panelGroupLayout id="titlePgl" layout="vertical" styleClass="AFBrandingBarTitle">
                                     <af:facetRef facetName="header"/>
+                                   <af:popup childCreation="deferred" autoCancel="disabled" id="pt_loginPopup">
+                                                <af:panelWindow id="pt_pw1" modal="true" title="Log in to CIA ">
+                                                    <af:panelFormLayout id="pt_pfl1">
+                                                        <af:inputText label="User Name" id="pt_it1"
+                                                                      value="#{login.username}"/>
+                                                        <af:inputText label="Password" id="pt_it2"
+                                                                      value="#{login.password}" secret="true"/>
+                                                        <f:facet name="footer">
+                                                            <af:panelGroupLayout id="pt_pgl6" layout="horizontal"
+                                                                                 halign="end">
+                                                                <af:spacer width="4" id="pt_s3"/>
+                                                                <af:commandButton text="Log In" id="pt_cb1"
+                                                                                  action="#{login.performLogin}"/>
+                                                                <af:commandButton text="Cancel" id="pt_cb2"
+                                                                                  immediate="true"/>
+                                                            </af:panelGroupLayout>
+                                                        </f:facet>
+                                                    </af:panelFormLayout>
+                                                </af:panelWindow>
+                                            </af:popup>
                                     <af:menuBar id="pt_mb1">
-                                        <af:menu text="Nguoi dung " id="pt_m1">                                            
-                                        </af:menu>
+                                     
+                                        
+                                        <af:menu text="Nguoi dung" id="pt_m1"
+                                                         rendered="#{!securityContext.authenticated}">
+                                                    <af:commandMenuItem text="Log In" id="pt_cmi30"
+                                                                        rendered="#{!securityContext.authenticated}">
+                                                        <af:showPopupBehavior popupId="pt_loginPopup"
+                                                                              triggerType="action"/>
+                                                    </af:commandMenuItem>
+                                       </af:menu>
+                                                
                                          <af:menu text="H&#224;ng Ho&#225;" id="pt_m5">
                                             <af:commandMenuItem text="Danh Mục H&#224;ng Ho&#225;" id="pt_cmi4"
                                                                 action="danhmuchanghoa"/>
@@ -137,7 +166,7 @@
                                                                 action="danhmucdonvitinh"/>
                                             <af:commandMenuItem text="Danh Muc Loai Hang  " id="pt_cmi2"
                                                                 action="danhmucloaihang"/>
-                                            <af:commandMenuItem text="Danh Muc Qui Cach  " id="pt_cmi3"
+                                            <af:commandMenuItem text="Danh Muc Qui Cach  " id="pt_cmi31"
                                                                 action="danhmucquicach"/>
                                             <af:commandMenuItem text="Danh Muc Hinh Thuc Thanh Toan" id="pt_cmi16"/>
                                         </af:menu>

@@ -157,6 +157,10 @@ public class DanhSachHoaDonBanHang {
     private RichButton b24;
     private RichButton b25;
     private RichButton b26;
+    private RichPanelLabelAndMessage plam17;
+    private RichOutputText ot48;
+    private RichPanelLabelAndMessage plam18;
+    private RichOutputText ot49;
 
     public void setF1(RichForm f1) {
         this.f1 = f1;
@@ -1277,5 +1281,37 @@ public class DanhSachHoaDonBanHang {
 
     public RichButton getB26() {
         return b26;
+    }
+
+    public void setPlam17(RichPanelLabelAndMessage plam17) {
+        this.plam17 = plam17;
+    }
+
+    public RichPanelLabelAndMessage getPlam17() {
+        return plam17;
+    }
+
+    public void setOt48(RichOutputText ot48) {
+        this.ot48 = ot48;
+    }
+
+    public RichOutputText getOt48() {
+        return ot48;
+    }
+
+    public void setPlam18(RichPanelLabelAndMessage plam18) {
+        this.plam18 = plam18;
+    }
+
+    public RichPanelLabelAndMessage getPlam18() {
+        return plam18;
+    }
+
+    public void setOt49(RichOutputText ot49) {
+        this.ot49 = ot49;
+    }
+
+    public RichOutputText getOt49() {
+        return ot49;
     }
 }

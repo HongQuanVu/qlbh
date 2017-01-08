@@ -293,7 +293,19 @@
                                                         <f:validator binding="#{row.bindings.HangHoaId.validator}"/>
                                                     </af:selectOneChoice>
                                                 </af:column>
-                                                <af:column sortProperty="#{bindings.ChiTietHoaDonBanHangView2.hints.SoLuong.name}"
+                                                        <af:column headerText="#{bindings.ChiTietHoaDonBanHangView2.hints.MaHang.label}"
+                                                                   id="c21">
+                                                            <af:outputText value="#{row.MaHang}"
+                                                                           shortDesc="#{bindings.ChiTietHoaDonBanHangView2.hints.MaHang.tooltip}"
+                                                                           id="ot46"/>
+                                                        </af:column>
+                                                        <af:column headerText="#{bindings.ChiTietHoaDonBanHangView2.hints.TenHangHoa.label}"
+                                                                   id="c22">
+                                                            <af:outputText value="#{row.TenHangHoa}"
+                                                                           shortDesc="#{bindings.ChiTietHoaDonBanHangView2.hints.TenHangHoa.tooltip}"
+                                                                           id="ot47"/>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.ChiTietHoaDonBanHangView2.hints.SoLuong.name}"
                                                            sortable="true"
                                                            headerText="#{bindings.ChiTietHoaDonBanHangView2.hints.SoLuong.label}"
                                                            id="c2">
@@ -443,7 +455,23 @@
                                                                binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.si6}"/>
                                                 <f:validator binding="#{bindings.HangHoaId.validator}"/>
                                             </af:selectOneChoice>
-                                            <af:inputText value="#{bindings.SoLuong.inputValue}"
+                                                    <af:panelLabelAndMessage label="#{bindings.MaHang.hints.label}"
+                                                                             id="plam18"
+                                                                             binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.plam18}">
+                                                        <af:outputText value="#{bindings.MaHang.inputValue}"
+                                                                       shortDesc="#{bindings.MaHang.hints.tooltip}"
+                                                                       id="ot49"
+                                                                       binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.ot49}"/>
+                                                    </af:panelLabelAndMessage>
+                                                    <af:panelLabelAndMessage label="#{bindings.TenHangHoa.hints.label}"
+                                                                             id="plam17"
+                                                                             binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.plam17}">
+                                                        <af:outputText value="#{bindings.TenHangHoa.inputValue}"
+                                                                       shortDesc="#{bindings.TenHangHoa.hints.tooltip}"
+                                                                       id="ot48"
+                                                                       binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.ot48}"/>
+                                                    </af:panelLabelAndMessage>
+                                                    <af:inputText value="#{bindings.SoLuong.inputValue}"
                                                           label="#{bindings.SoLuong.hints.label}"
                                                           required="#{bindings.SoLuong.hints.mandatory}"
                                                           columns="#{bindings.SoLuong.hints.displayWidth}"
