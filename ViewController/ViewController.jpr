@@ -72,7 +72,7 @@
    </list>
    <value n="defaultPackage" v="view"/>
    <hash n="oracle.adfdtinternal.model.ide.security.SecurityPolicies">
-      <value n="grantOption" v="all"/>
+      <value n="grantOption" v="new"/>
    </hash>
    <hash n="oracle.adfdtinternal.view.rich.setting.ADFViewSettings">
       <value n="ENABLE_ADF_WEBAPP_LIB_SUPPORT" v="true"/>

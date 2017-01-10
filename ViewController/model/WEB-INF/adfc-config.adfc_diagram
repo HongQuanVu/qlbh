@@ -16,11 +16,11 @@
       <property
          name="activityId">main</property>
       <property
-         name="x">201.5</property>
+         name="x">262.5</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>main&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">58.835938</property>
+         name="y">43.703125</property>
       <property
          name="page">/main.jspx</property>
       <property
@@ -34,7 +34,7 @@
       <property
          name="fromOutcome">main</property>
       <property
-         name="sdm:polyPoints">T50,151.0,114.80078,201.5,112.76953,B50</property>
+         name="sdm:polyPoints">R28,187.0,143.30078,262.5,97.76953,B50</property>
    </ControlFlowCase>
    <View
       id="View5">
@@ -59,7 +59,7 @@
       <property
          name="fromOutcome">chungtumuahang</property>
       <property
-         name="sdm:polyPoints">R45,187.9892,153.80078,463.97363,106.90234,L50</property>
+         name="sdm:polyPoints">R50,189.71451,157.30078,463.97363,106.90234,L50</property>
    </ControlFlowCase>
    <View
       id="View7">
@@ -84,7 +84,7 @@
       <property
          name="fromOutcome">danhmuchanghoa</property>
       <property
-         name="sdm:polyPoints">R55,188.23633,160.80078,475.81543,215.76953,L50</property>
+         name="sdm:polyPoints">R61,188.1983,164.30078,475.81543,215.76953,L50</property>
    </ControlFlowCase>
    <View
       id="View9">
@@ -134,7 +134,7 @@
       <property
          name="fromOutcome">danhmucnhacungcap</property>
       <property
-         name="sdm:polyPoints">R66,187.0,167.80078,476.2881,328.3711,L50</property>
+         name="sdm:polyPoints">R72,187.0,171.30078,476.2881,328.3711,L50</property>
    </ControlFlowCase>
    <View
       id="View13">
@@ -234,7 +234,7 @@
       <property
          name="fromOutcome">danhsachhoadonbanhang</property>
       <property
-         name="sdm:polyPoints">R34,187.0,146.80078,519.584,9.300781,L50</property>
+         name="sdm:polyPoints">R39,188.6874,150.30078,519.584,9.300781,L50</property>
    </ControlFlowCase>
    <View
       id="View21">
