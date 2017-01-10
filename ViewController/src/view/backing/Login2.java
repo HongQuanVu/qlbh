@@ -86,10 +86,10 @@ public class Login2 {
      System.out.println(this.username);
      System.out.println(this.password);
      
-        byte[] pw = this.getPassword().getBytes();
+        char[] pw = this.getPassword().toCharArray();
         FacesContext ctx = FacesContext.getCurrentInstance();
         HttpServletRequest request = (HttpServletRequest)ctx.getExternalContext().getRequest();
-        CallbackHandler handler = new SimpleCallbackHandler(this.getUsername(), pw);
+        CallbackHandler handler = new SimpleCallbackHandler(this.username , pw);
         
         try {
             Subject mySubject = Authentication.login(handler);

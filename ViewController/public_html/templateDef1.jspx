@@ -119,47 +119,57 @@
                                             </af:popup>
                                     <af:menuBar id="pt_mb1">
                                      
+                                     <af:menu text="Logged on as #{securityContext.userName}"
+                                                         rendered="#{securityContext.authenticated}">
+                                                    <af:commandMenuItem text="Log Out" id="pt_cmi40"
+                                                                        rendered="#{securityContext.authenticated}"
+                                                                        action="#{login.performLogout}"/>
+                                                    <af:commandMenuItem text="Change Password" id="pt_cmi50" action="changepassword"/>
+                                        </af:menu>
                                         
                                         <af:menu text="Nguoi dung" id="pt_m1"
-                                                         rendered="#{!securityContext.authenticated}">
+                                                       rendered="#{!securityContext.authenticated}">
                                                     <af:commandMenuItem text="Log In" id="pt_cmi30"
                                                                         rendered="#{!securityContext.authenticated}">
                                                         <af:showPopupBehavior popupId="pt_loginPopup"
                                                                               triggerType="action"/>
                                                     </af:commandMenuItem>
+                                                    <af:commandMenuItem text="Log out" id="pt_cmi3"
+                                                                        rendered="#{securityContext.authenticated}">
+                                                            </af:commandMenuItem>
                                        </af:menu>
                                                 
-                                         <af:menu text="H&#224;ng Ho&#225;" id="pt_m5">
+                                         <af:menu text="H&#224;ng Ho&#225;" id="pt_m5" rendered="#{securityContext.authenticated}" >
                                             <af:commandMenuItem text="Danh Mục H&#224;ng Ho&#225;" id="pt_cmi4"
                                                                 action="danhmuchanghoa"/>
                                             <af:commandMenuItem text="Thiết Lập Gi&#225;" id="pt_cmi6"/>
                                             <af:commandMenuItem text="Kiểm Kho" id="pt_cmi5"/>
                                         </af:menu>
-                                        <af:menu text="Mua H&#224;ng" id="pt_m2">
+                                        <af:menu text="Mua H&#224;ng" id="pt_m2" rendered="#{securityContext.authenticated}">
                                             <af:commandMenuItem text="Chứng từ mua h&#224;ng" id="pt_cmi1"
                                                                 action="chungtumuahang"/>
                                             <af:commandMenuItem text="Trả h&#224;ng đ&#227; mua" id="pt_cmi7"/>
                                         </af:menu>
                                      
-                                    <af:menu text="B&#225;n H&#224;ng" id="pt_m3">
+                                    <af:menu text="B&#225;n H&#224;ng" id="pt_m3" rendered="#{securityContext.authenticated}">
                                             
                                             <af:commandMenuItem text="Hoa Don Ban Hang " id="pt_cmi9"
                                                                 action="danhsachhoadonbanhang"/>
                                             <af:commandMenuItem text="Nhap hang tra ve " id="pt_cmi8"/>
                                         </af:menu>
-                                        <af:menu text="So Qui" id="pt_m6">
+                                        <af:menu text="So Qui" id="pt_m6" rendered="#{securityContext.authenticated}">
                                             <af:commandMenuItem text="Phieu Thu" id="pt_cmi10"/>
                                             <af:commandMenuItem text="Phieu Chi" id="pt_cmi11"/>
                                             <af:commandMenuItem text="So Qui Tien Mat" id="pt_cmi12"/>
                                         </af:menu>
-                                        <af:menu text= "Doi Tac " id="pt_m7">
+                                        <af:menu text= "Doi Tac " id="pt_m7" rendered="#{securityContext.authenticated}">
                                             <af:commandMenuItem text="Nha Cung Cap " id="pt_cmi13"
                                                                 action="danhmucnhacungcap"/>
                                             <af:commandMenuItem text="Khach Hang" id="pt_cmi14"
                                                                 action="danhmuckhachhang"/>
                                         </af:menu>
                                         
-                                        <af:menu text="Danh Mục" id="pt_m4">
+                                        <af:menu text="Danh Mục" id="pt_m4" rendered="#{securityContext.authenticated}">
                                             <af:commandMenuItem text="Danh Muc Xuat Xu" id="pt_cmi17"
                                                                 action="danhmucxuatxu"/>
                                             <af:commandMenuItem text="Danh Muc Don Vi Tinh" id="pt_cmi15"
