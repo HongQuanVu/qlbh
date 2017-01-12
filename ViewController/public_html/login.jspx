@@ -7,18 +7,18 @@
             <af:form id="f1" binding="#{backingBeanScope.backing_login2.f1}">
                 <af:pageTemplate viewId="/templateDef1.jspx" id="pt1">
                     <f:facet name="center">
-                     <af:panelFormLayout id="pt_pfl1">
-                                                        <af:inputText label="User Name" id="pt_it1"
+                     <af:panelFormLayout id="pt_pfl100" rendered="false">
+                                                        <af:inputText label="User Name" id="pt_it1_username"
                                                                       value="#{backingBeanScope.backing_login2.username }"/>
-                                                        <af:inputText label="Password" id="pt_it2"
+                                                        <af:inputText label="Password" id="pt_it2_password"
                                                                       value="#{backingBeanScope.backing_login2.password}" secret="true"/>
                                                         <f:facet name="footer">
-                                                            <af:panelGroupLayout id="pt_pgl6" layout="horizontal"
+                                                            <af:panelGroupLayout id="pt_pgl6_grouplayout" layout="horizontal"
                                                                                  halign="end">
-                                                                <af:spacer width="4" id="pt_s3"/>
-                                                                <af:commandButton text="Log In" id="pt_cb1"
+                                                                <af:spacer width="4" id="pt_s3_space"/>
+                                                                <af:commandButton text="Log In" id="pt_cb1_login"
                                                                                   action="#{backingBeanScope.backing_login2.performLogin}"/>
-                                                                <af:commandButton text="Cancel" id="pt_cb2"
+                                                                <af:commandButton text="Cancel" id="pt_cb2_cancel"
                                                                                   immediate="true"/>
                                 
                                 </af:panelGroupLayout>

@@ -88,7 +88,7 @@
     ColumnType="NUMBER"
     TableName="HANG_HOA"/>
   <Attribute
-    Name="DonGia"
+    Name="GiaMua"
     ColumnName="DON_GIA"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"

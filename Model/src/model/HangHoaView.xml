@@ -225,7 +225,7 @@
   <ViewAttribute
     Name="DonGia"
     PrecisionRule="true"
-    EntityAttrName="DonGia"
+    EntityAttrName="GiaMua"
     EntityUsage="HangHoa"
     AliasName="DON_GIA"/>
   <ViewAttribute

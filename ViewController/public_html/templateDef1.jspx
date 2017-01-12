@@ -98,7 +98,7 @@
                                 <af:panelGroupLayout id="titlePgl" layout="vertical" styleClass="AFBrandingBarTitle">
                                     <af:facetRef facetName="header"/>
                                    <af:popup childCreation="deferred" autoCancel="disabled" id="pt_loginPopup">
-                                                <af:panelWindow id="pt_pw1" modal="true" title="Log in to CIA ">
+                                                <af:panelWindow id="pt_pw1" modal="true" title="Log in  ">
                                                     <af:panelFormLayout id="pt_pfl1">
                                                         <af:inputText label="User Name" id="pt_it1"
                                                                       value="#{login.username}"/>
