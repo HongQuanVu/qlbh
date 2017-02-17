@@ -27,6 +27,7 @@
           <Item Value="CreatedAt"/>
           <Item Value="ModifiedBy"/>
           <Item Value="ModifiedAt"/>
+          <Item Value="DiaChiGiaoHang"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -113,5 +114,10 @@
     <action IterBinding="KhachHangView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <attributeValues IterBinding="KhachHangView1Iterator" id="DiaChiGiaoHang">
+      <AttrNames>
+        <Item Value="DiaChiGiaoHang"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -74,6 +74,12 @@
                                                                shortDesc="#{bindings.KhachHangView1.hints.DiaChi.tooltip}"
                                                                id="ot4"/>
                                             </af:column>
+                                            <af:column headerText="#{bindings.KhachHangView1.hints.DiaChiGiaoHang.label}"
+                                                       id="c16">
+                                                <af:outputText value="#{row.DiaChiGiaoHang}"
+                                                               shortDesc="#{bindings.KhachHangView1.hints.DiaChiGiaoHang.tooltip}"
+                                                               id="ot21"/>
+                                            </af:column>
                                             <af:column sortProperty="#{bindings.KhachHangView1.hints.DienThoai.name}"
                                                        sortable="true"
                                                        headerText="#{bindings.KhachHangView1.hints.DienThoai.label}"
@@ -215,6 +221,7 @@
                                                               binding="#{backingBeanScope.backing_DanhMucKhachHang.it3}">
                                                     <f:validator binding="#{bindings.DiaChi.validator}"/>
                                                 </af:inputText>
+                                                
                                                 <af:inputText value="#{bindings.DienThoai.inputValue}"
                                                               label="#{bindings.DienThoai.hints.label}"
                                                               required="#{bindings.DienThoai.hints.mandatory}"
@@ -269,6 +276,16 @@
                                                               shortDesc="#{bindings.TenNganHang.hints.tooltip}" id="it9"
                                                               binding="#{backingBeanScope.backing_DanhMucKhachHang.it9}">
                                                     <f:validator binding="#{bindings.TenNganHang.validator}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.DiaChiGiaoHang.inputValue}"
+                                                              label="#{bindings.DiaChiGiaoHang.hints.label}"
+                                                              required="#{bindings.DiaChiGiaoHang.hints.mandatory}"
+                                                              columns="#{bindings.DiaChiGiaoHang.hints.displayWidth}"
+                                                              maximumLength="#{bindings.DiaChiGiaoHang.hints.precision}"
+                                                              shortDesc="#{bindings.DiaChiGiaoHang.hints.tooltip}"
+                                                              id="it11"
+                                                              binding="#{backingBeanScope.backing_DanhMucKhachHang.it11}">
+                                                    <f:validator binding="#{bindings.DiaChiGiaoHang.validator}"/>
                                                 </af:inputText>
                                                 <af:inputText value="#{bindings.GhiChu.inputValue}"
                                                               label="#{bindings.GhiChu.hints.label}"

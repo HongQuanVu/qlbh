@@ -21,7 +21,6 @@
     PrimaryKey="true">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="KhachHangRow"/>
   </Attribute>
   <Attribute
@@ -212,7 +211,9 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="KHACH_HANG">
+    TableName="KHACH_HANG"
+    IsUpdateable="while_insert"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -229,7 +230,9 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="KHACH_HANG">
+    TableName="KHACH_HANG"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
@@ -244,7 +247,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="KHACH_HANG">
+    TableName="KHACH_HANG"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -261,13 +265,26 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="KHACH_HANG">
+    TableName="KHACH_HANG"
+    HistoryColumn="DateHistory">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+  </Attribute>
+  <Attribute
+    Name="DiaChiGiaoHang"
+    Precision="300"
+    ColumnName="DIA_CHI_GIAO_HANG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="KHACH_HANG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
   </Attribute>
   <AccessorAttribute
     Name="HoaDonBanHang"

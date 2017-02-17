@@ -108,6 +108,12 @@
     EntityAttrName="ModifiedAt"
     EntityUsage="KhachHang"
     AliasName="MODIFIED_AT"/>
+  <ViewAttribute
+    Name="DiaChiGiaoHang"
+    PrecisionRule="true"
+    EntityAttrName="DiaChiGiaoHang"
+    EntityUsage="KhachHang"
+    AliasName="DIA_CHI_GIAO_HANG"/>
   <ViewLinkAccessor
     Name="HoaDonBanHangView"
     ViewLink="model.HoaDonBanHangFk2Link"

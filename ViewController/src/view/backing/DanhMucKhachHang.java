@@ -66,6 +66,7 @@ public class DanhMucKhachHang {
     private RichButton b7;
     private RichButton b8;
     private RichButton b9;
+    private RichInputText it11;
 
     public void setF1(RichForm f1) {
         this.f1 = f1;
@@ -441,5 +442,13 @@ public class DanhMucKhachHang {
 
     public RichButton getB9() {
         return b9;
+    }
+
+    public void setIt11(RichInputText it11) {
+        this.it11 = it11;
+    }
+
+    public RichInputText getIt11() {
+        return it11;
     }
 }
