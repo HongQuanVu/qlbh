@@ -181,13 +181,13 @@
                                             <af:button text="Submit" id="b5"
                                                        binding="#{backingBeanScope.backing_DanhMucDonViTinh.b5}"/>
                                             <af:button actionListener="#{bindings.CreateInsert.execute}"
-                                                       text="CreateInsert" disabled="#{!bindings.CreateInsert.enabled}"
+                                                       text="Create New" disabled="#{!bindings.CreateInsert.enabled}"
                                                        id="b6"
                                                        binding="#{backingBeanScope.backing_DanhMucDonViTinh.b6}"/>
-                                            <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                                            <af:button actionListener="#{bindings.Commit.execute}" text="Save Change"
                                                        disabled="#{!bindings.Commit.enabled}" id="b7"
                                                        binding="#{backingBeanScope.backing_DanhMucDonViTinh.b7}"/>
-                                            <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
+                                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel Change"
                                                        disabled="#{!bindings.Rollback.enabled}" immediate="true"
                                                        id="b8"
                                                        binding="#{backingBeanScope.backing_DanhMucDonViTinh.b8}">

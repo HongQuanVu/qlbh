@@ -7,20 +7,20 @@
       <property
          name="activityId">*</property>
       <property
-         name="x">151.0</property>
+         name="x">178.0</property>
       <property
-         name="y">156.86719</property>
+         name="y">180.16602</property>
    </WildcardControlFlowRule>
    <View
       id="View3">
       <property
          name="activityId">main</property>
       <property
-         name="x">262.5</property>
+         name="x">-75.5</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>main&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">43.703125</property>
+         name="y">102.00195</property>
       <property
          name="page">/main.jspx</property>
       <property
@@ -34,7 +34,7 @@
       <property
          name="fromOutcome">main</property>
       <property
-         name="sdm:polyPoints">R28,187.0,143.30078,262.5,97.63672,B50</property>
+         name="sdm:polyPoints">L45,142.0,176.81543,-34.5,101.65137,R50</property>
    </ControlFlowCase>
    <View
       id="View5">
@@ -59,7 +59,7 @@
       <property
          name="fromOutcome">chungtumuahang</property>
       <property
-         name="sdm:polyPoints">R50,189.71451,157.30078,463.97363,106.90234,L50</property>
+         name="sdm:polyPoints">R45,215.34676,176.81543,463.97363,106.618164,L50</property>
    </ControlFlowCase>
    <View
       id="View7">
@@ -84,7 +84,7 @@
       <property
          name="fromOutcome">danhmuchanghoa</property>
       <property
-         name="sdm:polyPoints">R61,188.1983,164.30078,475.81543,215.76953,L50</property>
+         name="sdm:polyPoints">R55,215.07144,183.81543,475.81543,215.48535,L50</property>
    </ControlFlowCase>
    <View
       id="View9">
@@ -109,7 +109,7 @@
       <property
          name="fromOutcome">danhmucloaihang</property>
       <property
-         name="sdm:polyPoints">B43,147.5,201.21185,121.33984,428.63672,T50</property>
+         name="sdm:polyPoints">B43,174.5,224.79497,121.33984,428.35254,T50</property>
    </ControlFlowCase>
    <View
       id="View11">
@@ -134,7 +134,7 @@
       <property
          name="fromOutcome">danhmucnhacungcap</property>
       <property
-         name="sdm:polyPoints">R72,187.0,171.30078,476.2881,328.3711,L50</property>
+         name="sdm:polyPoints">R66,214.0,190.81543,476.2881,328.0869,L50</property>
    </ControlFlowCase>
    <View
       id="View13">
@@ -159,7 +159,7 @@
       <property
          name="fromOutcome">danhmucdonvitinh</property>
       <property
-         name="sdm:polyPoints">B29,140.5,199.80078,2.7558594,374.90234,T50</property>
+         name="sdm:polyPoints">B29,167.5,222.81543,2.7558594,374.61816,T50</property>
    </ControlFlowCase>
    <View
       id="View15">
@@ -184,7 +184,7 @@
       <property
          name="fromOutcome">danhmucquicach</property>
       <property
-         name="sdm:polyPoints">B57,154.5,202.17365,281.6006,444.16797,T50</property>
+         name="sdm:polyPoints">B57,181.5,225.07907,281.6006,443.8838,T50</property>
    </ControlFlowCase>
    <View
       id="View17">
@@ -209,7 +209,7 @@
       <property
          name="fromOutcome">danhmuckhachhang</property>
       <property
-         name="sdm:polyPoints">B71,161.5,199.80078,435.1582,456.16797,T50</property>
+         name="sdm:polyPoints">B71,188.5,222.81543,435.1582,455.8838,T50</property>
    </ControlFlowCase>
    <View
       id="View19">
@@ -234,7 +234,7 @@
       <property
          name="fromOutcome">danhsachhoadonbanhang</property>
       <property
-         name="sdm:polyPoints">R39,188.6874,150.30078,519.584,9.300781,L50</property>
+         name="sdm:polyPoints">R34,214.0,169.81543,519.584,9.016602,L50</property>
    </ControlFlowCase>
    <View
       id="View21">
@@ -259,6 +259,31 @@
       <property
          name="fromOutcome">danhmucxuatxu</property>
       <property
-         name="sdm:polyPoints">L50,115.0,157.30078,-89.26367,293.30078,T50</property>
+         name="sdm:polyPoints">L55,142.0,183.81543,-48.26367,347.0166,R50</property>
+   </ControlFlowCase>
+   <View
+      id="View23">
+      <property
+         name="activityId">TonKho</property>
+      <property
+         name="x">169.5</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>TonKho&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">73.69531</property>
+      <property
+         name="page">/TonKho.jspx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase24"
+      from="WildcardControlFlowRule2"
+      to="View23">
+      <property
+         name="fromOutcome">tonkho</property>
+      <property
+         name="sdm:polyPoints">T50,178.0,137.81543,169.5,127.34473,B50</property>
    </ControlFlowCase>
 </SDM>

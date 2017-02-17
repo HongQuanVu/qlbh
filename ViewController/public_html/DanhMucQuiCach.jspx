@@ -190,7 +190,7 @@
                                                                        disabled="#{!bindings.Delete.enabled}" id="b9"
                                                                        binding="#{backingBeanScope.backing_DanhMucQuiCach.b9}"/>
                                                            <af:button actionListener="#{bindings.CreateInsert.execute}"
-                                                                       text="CreateInsert"
+                                                                       text="Create New"
                                                                        disabled="#{!bindings.CreateInsert.enabled}"
                                                                        id="b8"
                                                                        binding="#{backingBeanScope.backing_DanhMucQuiCach.b8}"/>
@@ -198,11 +198,11 @@
                                                             <af:button text="Submit" id="b5"
                                                                        binding="#{backingBeanScope.backing_DanhMucQuiCach.b5}"/>
                                                             <af:button actionListener="#{bindings.Commit.execute}"
-                                                                       text="Commit"
+                                                                       text="Save Change"
                                                                        disabled="#{!bindings.Commit.enabled}" id="b6"
                                                                        binding="#{backingBeanScope.backing_DanhMucQuiCach.b6}"/>
                                                             <af:button actionListener="#{bindings.Rollback.execute}"
-                                                                       text="Rollback"
+                                                                       text="Cancel Change"
                                                                        disabled="#{!bindings.Rollback.enabled}"
                                                                        immediate="true" id="b7"
                                                                        binding="#{backingBeanScope.backing_DanhMucQuiCach.b7}">

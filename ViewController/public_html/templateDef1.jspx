@@ -143,7 +143,7 @@
                                             <af:commandMenuItem text="Danh Mục H&#224;ng Ho&#225;" id="pt_cmi4"
                                                                 action="danhmuchanghoa"/>
                                             <af:commandMenuItem text="Thiết Lập Gi&#225;" id="pt_cmi6"/>
-                                            <af:commandMenuItem text="Kiểm Kho" id="pt_cmi5"/>
+                                            <af:commandMenuItem text="Tồn Kho" id="pt_cmi5" action="tonkho"/>
                                         </af:menu>
                                         <af:menu text="Mua H&#224;ng" id="pt_m2" rendered="#{securityContext.authenticated}">
                                             <af:commandMenuItem text="Chứng từ mua h&#224;ng" id="pt_cmi1"

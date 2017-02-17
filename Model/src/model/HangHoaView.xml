@@ -225,9 +225,16 @@
   <ViewAttribute
     Name="DonGia"
     PrecisionRule="true"
-    EntityAttrName="GiaMua"
+    EntityAttrName="DonGia"
     EntityUsage="HangHoa"
-    AliasName="DON_GIA"/>
+    AliasName="DON_GIA">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.HangHoaView.DonGia_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="GiaBan"
     PrecisionRule="true"
@@ -245,25 +252,75 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="HangHoa"
-    AliasName="CREATED_BY"/>
+    AliasName="CREATED_BY"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedAt"
     PrecisionRule="true"
     EntityAttrName="CreatedAt"
     EntityUsage="HangHoa"
-    AliasName="CREATED_AT"/>
+    AliasName="CREATED_AT"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="ModifiedBy"
     PrecisionRule="true"
     EntityAttrName="ModifiedBy"
     EntityUsage="HangHoa"
-    AliasName="MODIFIED_BY"/>
+    AliasName="MODIFIED_BY"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="ModifiedAt"
     PrecisionRule="true"
     EntityAttrName="ModifiedAt"
     EntityUsage="HangHoa"
-    AliasName="MODIFIED_AT"/>
+    AliasName="MODIFIED_AT"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="TenDonViTinh"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    Expression="(SELECT TEN_DON_VI_TINH FROM DON_VI_TINH WHERE ID = DON_VI_TINH_ID)"/>
+  <ViewAttribute
+    Name="SoLuongMuaVao"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    Expression="select SUM(c.so_luong)  
+from v_chi_tiet_chung_tu_mua_hang c
+where c.HangHoaID=id"
+    IsQueriable="false"/>
+  <ViewAttribute
+    Name="SoLuongBanRa"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    Expression="select SUM(c.so_luong)  
+from v_chi_tiet_hoa_don_ban_hang c
+where c.HangHoaID=id"/>
+  <ViewAttribute
+    Name="SoLuongTon"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"/>
   <ViewCriteria
     Name="LOV_HangHoaView_Hide_Sell_Price_Criteria"
     ViewObjectName="model.HangHoaView"
@@ -413,6 +470,10 @@
     ViewLink="model.ChiTietHoaDonBanHang_HangHoaLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
   <SortCriteria>
     <Sort
       Attribute="TenHang"/>

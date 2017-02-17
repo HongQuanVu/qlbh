@@ -172,7 +172,7 @@
                                         <af:button actionListener="#{bindings.Last.execute}" text="Last"
                                                    disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"
                                                    binding="#{backingBeanScope.backing_DanhMucLoaiHang.b4}"/>
-                                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
+                                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="Create New"
                                                    disabled="#{!bindings.CreateInsert.enabled}" id="b8"
                                                    binding="#{backingBeanScope.backing_DanhMucLoaiHang.b8}"/>
                                         <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
@@ -180,10 +180,10 @@
                                                    binding="#{backingBeanScope.backing_DanhMucLoaiHang.b9}"/>
                                         <af:button text="Submit" id="b5"
                                                binding="#{backingBeanScope.backing_DanhMucLoaiHang.b5}"/>
-                                    <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                                    <af:button actionListener="#{bindings.Commit.execute}" text="Save Change"
                                                disabled="#{!bindings.Commit.enabled}" id="b6"
                                                binding="#{backingBeanScope.backing_DanhMucLoaiHang.b6}"/>
-                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
+                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel Change"
                                                disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b7"
                                                binding="#{backingBeanScope.backing_DanhMucLoaiHang.b7}">
                                         <af:resetActionListener/>

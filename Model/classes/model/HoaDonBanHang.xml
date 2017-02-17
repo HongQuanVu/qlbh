@@ -136,7 +136,9 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="HOA_DON_BAN_HANG">
+    TableName="HOA_DON_BAN_HANG"
+    IsUpdateable="while_insert"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -153,7 +155,9 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="HOA_DON_BAN_HANG">
+    TableName="HOA_DON_BAN_HANG"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
@@ -168,7 +172,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="HOA_DON_BAN_HANG">
+    TableName="HOA_DON_BAN_HANG"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -185,7 +190,8 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="HOA_DON_BAN_HANG">
+    TableName="HOA_DON_BAN_HANG"
+    HistoryColumn="DateHistory">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH

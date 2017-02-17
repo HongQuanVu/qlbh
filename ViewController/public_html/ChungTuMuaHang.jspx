@@ -20,15 +20,15 @@
                                                        disabled="#{!bindings.Delete.enabled}" id="b7"
                                                        binding="#{backingBeanScope.backing_ChungTuMuaHang.b7}"/>
                                             <af:button actionListener="#{bindings.CreateInsert.execute}"
-                                                       text="CreateInsert" disabled="#{!bindings.CreateInsert.enabled}"
+                                                       text="Create New" disabled="#{!bindings.CreateInsert.enabled}"
                                                        id="b6" binding="#{backingBeanScope.backing_ChungTuMuaHang.b6}"/>
                                             <af:button text="Submit" id="b5"
                                                        binding="#{backingBeanScope.backing_ChungTuMuaHang.b5}"/>
-                                            <af:button text="Commit" disabled="#{!bindings.Commit.enabled}"
+                                            <af:button text="Save Change" disabled="#{!bindings.Commit.enabled}"
                                                        id="btnChungTuNhapHangCommit"
                                                        binding="#{backingBeanScope.backing_ChungTuMuaHang.b8}"
                                                        action="#{backingBeanScope.backing_ChungTuMuaHang.btnChungTuNhapHangCommit_action}"/>
-                                            <af:button text="Rollback" disabled="#{!bindings.Rollback.enabled}"
+                                            <af:button text="Cancel Change" disabled="#{!bindings.Rollback.enabled}"
                                                        immediate="true" id="btnChungTuRollBack"
                                                        binding="#{backingBeanScope.backing_ChungTuMuaHang.b9}"
                                                        action="#{backingBeanScope.backing_ChungTuMuaHang.btnChungTuRollBack_action}">
@@ -614,7 +614,26 @@
                                                                                      binding="#{backingBeanScope.backing_ChungTuMuaHang.pgl8}">
                                                                     <af:panelGroupLayout layout="horizontal" id="pgl7"
                                                                                          binding="#{backingBeanScope.backing_ChungTuMuaHang.pgl7}">
-                                                                        <af:button text="Rollback"
+                                                                         <af:button actionListener="#{bindings.Delete1.execute}"
+                                                                                   text="Delete"
+                                                                                   disabled="#{!bindings.Delete1.enabled}"
+                                                                                   id="b16"
+                                                                                   binding="#{backingBeanScope.backing_ChungTuMuaHang.b16}"/>
+                                                                  
+                                                                      
+                                                                        <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                                                                                   text="Create New"
+                                                                                   disabled="#{!bindings.CreateInsert1.enabled}"
+                                                                                   id="b15"
+                                                                                   binding="#{backingBeanScope.backing_ChungTuMuaHang.b15}"/>
+                                                                            <af:button text="Submit" id="b14"
+                                                                                   binding="#{backingBeanScope.backing_ChungTuMuaHang.b14}"/>
+                                                                        <af:button text="Save Change"
+                                                                                   disabled="#{!bindings.Commit.enabled}"
+                                                                                   id="buttonChiTietCommit"
+                                                                                   binding="#{backingBeanScope.backing_ChungTuMuaHang.b17}"
+                                                                                   action="#{backingBeanScope.backing_ChungTuMuaHang.buttonChiTietCommit_action}"/>
+                                                                     <af:button text="Cancel Change"
                                                                                    disabled="#{!bindings.Rollback.enabled}"
                                                                                    immediate="true"
                                                                                    id="btnChitetHangHoaRollback"
@@ -622,23 +641,6 @@
                                                                                    action="#{backingBeanScope.backing_ChungTuMuaHang.btnChitetHangHoaRollback_action}">
                                                                             <af:resetActionListener/>
                                                                         </af:button>
-                                                                        <af:button actionListener="#{bindings.CreateInsert1.execute}"
-                                                                                   text="CreateInsert1"
-                                                                                   disabled="#{!bindings.CreateInsert1.enabled}"
-                                                                                   id="b15"
-                                                                                   binding="#{backingBeanScope.backing_ChungTuMuaHang.b15}"/>
-                                                                        <af:button actionListener="#{bindings.Delete1.execute}"
-                                                                                   text="Delete1"
-                                                                                   disabled="#{!bindings.Delete1.enabled}"
-                                                                                   id="b16"
-                                                                                   binding="#{backingBeanScope.backing_ChungTuMuaHang.b16}"/>
-                                                                        <af:button text="Submit" id="b14"
-                                                                                   binding="#{backingBeanScope.backing_ChungTuMuaHang.b14}"/>
-                                                                        <af:button text="Commit"
-                                                                                   disabled="#{!bindings.Commit.enabled}"
-                                                                                   id="buttonChiTietCommit"
-                                                                                   binding="#{backingBeanScope.backing_ChungTuMuaHang.b17}"
-                                                                                   action="#{backingBeanScope.backing_ChungTuMuaHang.buttonChiTietCommit_action}"/>
                                                                     </af:panelGroupLayout>
                                                                 </af:panelGroupLayout>
                                                             </f:facet>
@@ -1016,12 +1018,12 @@
                                                                                        id="b97"
                                                                                        binding="#{backingBeanScope.backing_ChungTuMuaHang.b96}"/>
                                                                             <af:button actionListener="#{bindings.Commit.execute}"
-                                                                                       text="Commit"
+                                                                                       text="Save Change"
                                                                                        disabled="#{!bindings.Commit.enabled}"
                                                                                        id="b98"
                                                                                        binding="#{backingBeanScope.backing_ChungTuMuaHang.b98}"/>
                                                                             <af:button actionListener="#{bindings.Rollback.execute}"
-                                                                                       text="Rollback"
+                                                                                       text="Cancel Change"
                                                                                        disabled="#{!bindings.Rollback.enabled}"
                                                                                        immediate="true" id="b99"
                                                                                        binding="#{backingBeanScope.backing_ChungTuMuaHang.b99}">

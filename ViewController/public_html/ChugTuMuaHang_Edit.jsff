@@ -134,10 +134,10 @@
                                disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"
                                binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.b4}"/>
                   <af:button text="Submit" id="b5" binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.b5}"/>
-                <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                <af:button actionListener="#{bindings.Commit.execute}" text="Save Change"
                            disabled="#{!bindings.Commit.enabled}" id="b6"
                            binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.b6}"/>
-                <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
+                <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel Change"
                            disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b7"
                            binding="#{backingBeanScope.backing_ChugTuMuaHang_Edit.b7}">
                     <af:resetActionListener/>

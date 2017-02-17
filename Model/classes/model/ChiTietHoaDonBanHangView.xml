@@ -76,6 +76,7 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="TenHang"/>
       <Item Value="GiaBan"/>
+      <Item Value="TenDonViTinh"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

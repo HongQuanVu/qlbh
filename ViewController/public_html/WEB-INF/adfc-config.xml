@@ -30,6 +30,9 @@
   <view id="DanhMucXuatXu">
     <page>/DanhMucXuatXu.jspx</page>
   </view>
+  <view id="TonKho">
+    <page>/TonKho.jspx</page>
+  </view>
   <control-flow-rule id="__8">
     <from-activity-id>*</from-activity-id>
     <control-flow-case id="__9">
@@ -71,6 +74,10 @@
     <control-flow-case id="__30">
       <from-outcome>danhmucxuatxu</from-outcome>
       <to-activity-id>DanhMucXuatXu</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__34">
+      <from-outcome>tonkho</from-outcome>
+      <to-activity-id>TonKho</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__1">

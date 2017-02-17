@@ -72,7 +72,7 @@
    </list>
    <value n="defaultPackage" v="view"/>
    <hash n="oracle.adfdtinternal.model.ide.security.SecurityPolicies">
-      <value n="grantOption" v="new"/>
+      <value n="grantOption" v="all"/>
    </hash>
    <hash n="oracle.adfdtinternal.view.rich.setting.ADFViewSettings">
       <value n="ENABLE_ADF_WEBAPP_LIB_SUPPORT" v="true"/>
@@ -285,6 +285,18 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
+            <value n="id" v="WebLogic Authentication"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Security"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JPS Designtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="Oracle XML Parser v2"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -312,29 +324,14 @@
             <value n="id" v="BC4J Oracle Domains"/>
             <value n="isJDK" v="false"/>
          </hash>
-         <hash>
-            <value n="id" v="WebLogic Authentication"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="BC4J Security"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="JPS Designtime"/>
-            <value n="isJDK" v="false"/>
-         </hash>
       </list>
       <hash n="internalDefinitions">
          <list n="libraryDefinitions">
             <hash>
                <list n="classPath">
-                  <url path="../../../Oracle/Middleware/JDev_Home/wlserver/server/lib/wls-api.jar" jar-entry=""/>
-                  <url path="../../../Oracle/Middleware/JDev_Home/wlserver/server/lib/weblogic.jar" jar-entry=""/>
-                  <url path="../../../Oracle/Middleware/JDev_Home/wlserver/modules/com.bea.core.weblogic.security.auth.jar" jar-entry=""/>
-                  <url path="../../../Oracle/Middleware/JDev_Home/wlserver/modules/com.oracle.weblogic.security.authn.server.jar" jar-entry=""/>
-                  <url path="../../../Oracle/Middleware/JDev_Home/wlserver/modules/com.oracle.weblogic.security.service.authentication.jar" jar-entry=""/>
-                  <url path="../../../Oracle/Middleware/JDev_Home/wlserver/modules/com.oracle.weblogic.security.service.authorization.jar" jar-entry=""/>
+                  <url path="../../../../../JDev_Home/JDev_Home/JDev_Home/wlserver/server/lib/wls-api.jar" jar-entry=""/>
+                  <url path="../../../../../JDev_Home/JDev_Home/JDev_Home/wlserver/server/lib/weblogic.jar" jar-entry=""/>
+                  <url path="../../../../../JDev_Home/JDev_Home/JDev_Home/wlserver/modules/com.bea.core.weblogic.security.auth.jar" jar-entry=""/>
                </list>
                <value n="description" v="WebLogic Authentication"/>
                <value n="id" v="WebLogic Authentication"/>
@@ -431,6 +428,18 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
+            <value n="id" v="WebLogic Authentication"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Security"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JPS Designtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="Oracle XML Parser v2"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -456,18 +465,6 @@
          </hash>
          <hash>
             <value n="id" v="BC4J Oracle Domains"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="WebLogic Authentication"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="BC4J Security"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="JPS Designtime"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

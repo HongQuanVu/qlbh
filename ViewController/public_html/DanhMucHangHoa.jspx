@@ -113,7 +113,7 @@
                                               columns="#{bindings.DonGia.hints.displayWidth}"
                                               maximumLength="#{bindings.DonGia.hints.precision}"
                                               shortDesc="#{bindings.DonGia.hints.tooltip}" id="it4"
-                                              binding="#{backingBeanScope.backing_DanhMucHangHoa.it4}">
+                                              binding="#{backingBeanScope.backing_DanhMucHangHoa.it4}" rendered="false">
                                     <f:validator binding="#{bindings.DonGia.validator}"/>
                                     <af:convertNumber groupingUsed="false" pattern="#{bindings.DonGia.format}"/>
                                 </af:inputText>
@@ -123,7 +123,10 @@
                                               columns="#{bindings.GiaBan.hints.displayWidth}"
                                               maximumLength="#{bindings.GiaBan.hints.precision}"
                                               shortDesc="#{bindings.GiaBan.hints.tooltip}" id="it5"
-                                              binding="#{backingBeanScope.backing_DanhMucHangHoa.it5}">
+                                              binding="#{backingBeanScope.backing_DanhMucHangHoa.it5}"
+                                              rendered="#{securityContext.userInRole['hanghoa_dieuchinh_gia_ban']}"
+                                              
+                                              >
                                     <f:validator binding="#{bindings.GiaBan.validator}"/>
                                     <af:convertNumber groupingUsed="false" pattern="#{bindings.GiaBan.format}"/>
                                 </af:inputText>
@@ -193,15 +196,15 @@
                                             <af:button text="Submit" id="b5"
                                                    binding="#{backingBeanScope.backing_DanhMucHangHoa.b5}"/>  
                                                    <af:button actionListener="#{bindings.CreateInsert.execute}"
-                                                           text="CreateInsert"
+                                                           text="Create New"
                                                            disabled="#{!bindings.CreateInsert.enabled}" id="b6"
                                                            binding="#{backingBeanScope.backing_DanhMucHangHoa.b6}"
                                                     />
-                                                    <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                                                    <af:button actionListener="#{bindings.Commit.execute}" text="Save Change"
                                                                disabled="#{!bindings.Commit.enabled}" id="b7"
                                                                binding="#{backingBeanScope.backing_DanhMucHangHoa.b7}"/>
                                                     <af:button actionListener="#{bindings.Rollback.execute}"
-                                                               text="Rollback" disabled="#{!bindings.Rollback.enabled}"
+                                                               text="Cancel Change" disabled="#{!bindings.Rollback.enabled}"
                                                                immediate="true" id="b8"
                                                                binding="#{backingBeanScope.backing_DanhMucHangHoa.b8}">
                                                         <af:resetActionListener/>
@@ -323,7 +326,8 @@
                                             </af:column>
                                             <af:column sortProperty="#{bindings.HangHoaView1.hints.DonGia.name}"
                                                        sortable="true"
-                                                       headerText="#{bindings.HangHoaView1.hints.DonGia.label}" id="c8">
+                                                       headerText="#{bindings.HangHoaView1.hints.DonGia.label}" id="c8"
+                                                       rendered="false">
                                                 <af:outputText value="#{row.DonGia}"
                                                                shortDesc="#{bindings.HangHoaView1.hints.DonGia.tooltip}"
                                                                id="ot4">
@@ -339,6 +343,36 @@
                                                                id="ot5">
                                                     <af:convertNumber groupingUsed="false"
                                                                       pattern="#{bindings.HangHoaView1.hints.GiaBan.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.HangHoaView1.hints.SoLuongMuaVao.label}"
+                                                       id="c16"  sortable="true"
+                                                        sortProperty="#{bindings.HangHoaView1.hints.SoLuongMuaVao.name}"
+                                                       >
+                                                <af:outputText value="#{row.SoLuongMuaVao}"
+                                                               shortDesc="#{bindings.HangHoaView1.hints.SoLuongMuaVao.tooltip}"
+                                                               id="ot12">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.HangHoaView1.hints.SoLuongMuaVao.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            
+                                            <af:column headerText="#{bindings.HangHoaView1.hints.SoLuongBanRa.label}"
+                                                       id="c15"  sortable="true"   sortProperty="#{bindings.HangHoaView1.hints.SoLuongBanRa.name}">
+                                                <af:outputText value="#{row.SoLuongBanRa}"
+                                                               shortDesc="#{bindings.HangHoaView1.hints.SoLuongBanRa.tooltip}"
+                                                               id="ot11">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.HangHoaView1.hints.SoLuongBanRa.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.HangHoaView1.hints.SoLuongTon.label}"
+                                                       id="c17"  sortable="true" sortProperty="#{bindings.HangHoaView1.hints.SoluongTon.name}">
+                                                <af:outputText value="#{row.SoLuongTon}"
+                                                               shortDesc="#{bindings.HangHoaView1.hints.SoLuongTon.tooltip}"
+                                                               id="ot13">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.HangHoaView1.hints.SoLuongTon.format}"/>
                                                 </af:outputText>
                                             </af:column>
                                             <af:column sortProperty="#{bindings.HangHoaView1.hints.GhiChu.name}"

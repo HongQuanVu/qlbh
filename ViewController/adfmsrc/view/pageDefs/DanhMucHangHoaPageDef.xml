@@ -88,6 +88,9 @@
           <Item Value="CreatedAt"/>
           <Item Value="ModifiedBy"/>
           <Item Value="ModifiedAt"/>
+          <Item Value="SoLuongBanRa"/>
+          <Item Value="SoLuongMuaVao"/>
+          <Item Value="SoLuongTon"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

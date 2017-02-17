@@ -115,7 +115,9 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="CHUNG_TU_MUA_HANG">
+    TableName="CHUNG_TU_MUA_HANG"
+    IsUpdateable="while_insert"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -126,7 +128,9 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="CHUNG_TU_MUA_HANG"/>
+    TableName="CHUNG_TU_MUA_HANG"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="ModifiedBy"
     Precision="100"
@@ -134,7 +138,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="CHUNG_TU_MUA_HANG">
+    TableName="CHUNG_TU_MUA_HANG"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -145,7 +150,8 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="CHUNG_TU_MUA_HANG"/>
+    TableName="CHUNG_TU_MUA_HANG"
+    HistoryColumn="DateHistory"/>
   
   <AccessorAttribute
     Name="ChiTietChungTuMuaHang"

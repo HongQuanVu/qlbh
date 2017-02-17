@@ -123,6 +123,9 @@
   <ViewUsage
     Name="DonViTinhView3"
     ViewObjectName="model.DonViTinhView"/>
+  <ViewUsage
+    Name="ViewTonKhoHangHoa1"
+    ViewObjectName="model.ViewTonKhoHangHoa"/>
   <ViewLinkUsage
     Name="FkHangHoaLoaiHangLink1"
     ViewLinkObjectName="model.FkHangHoaLoaiHangLink"

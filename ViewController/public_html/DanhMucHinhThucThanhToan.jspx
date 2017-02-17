@@ -48,16 +48,16 @@
                                                    binding="#{backingBeanScope.backing_DanhMucHinhThucThanhToan.b4}"/>
                                     <af:button text="Submit" id="b5"
                                                binding="#{backingBeanScope.backing_DanhMucHinhThucThanhToan.b5}"/>
-                                    <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
+                                    <af:button actionListener="#{bindings.CreateInsert.execute}" text="Create New"
                                                disabled="#{!bindings.CreateInsert.enabled}" id="b6"
                                                binding="#{backingBeanScope.backing_DanhMucHinhThucThanhToan.b6}"/>
                                     <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
                                                disabled="#{!bindings.Delete.enabled}" id="b7"
                                                binding="#{backingBeanScope.backing_DanhMucHinhThucThanhToan.b7}"/>
-                                    <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
+                                    <af:button actionListener="#{bindings.Commit.execute}" text="Save Change"
                                                disabled="#{!bindings.Commit.enabled}" id="b8"
                                                binding="#{backingBeanScope.backing_DanhMucHinhThucThanhToan.b8}"/>
-                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
+                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel Change"
                                                disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b9"
                                                binding="#{backingBeanScope.backing_DanhMucHinhThucThanhToan.b9}">
                                         <af:resetActionListener/>

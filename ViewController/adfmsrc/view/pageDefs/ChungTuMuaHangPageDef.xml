@@ -274,14 +274,14 @@
         <Item Value="TienDaTraNCC"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="ChiTietChungTuMuaHangView1Iterator" StaticList="false" Uses="LOV_DonViTinhQuiDoiId"
+    <list IterBinding="ChiTietChungTuMuaHangView2Iterator" StaticList="false" Uses="LOV_DonViTinhQuiDoiId"
           id="DonViTinhQuiDoiId" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="ChiTietChungTuMuaHangView1Iterator" id="QuiDoi">
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView2Iterator" id="QuiDoi">
       <AttrNames>
         <Item Value="QuiDoi"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="ChiTietChungTuMuaHangView1Iterator" id="SoLuongSauQuiDoi">
+    <attributeValues IterBinding="ChiTietChungTuMuaHangView2Iterator" id="SoLuongSauQuiDoi">
       <AttrNames>
         <Item Value="SoLuongSauQuiDoi"/>
       </AttrNames>

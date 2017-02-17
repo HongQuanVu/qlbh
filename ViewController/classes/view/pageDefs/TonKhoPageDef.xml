@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="TonKhoPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ViewTonKhoHangHoa1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ViewTonKhoHangHoa1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ViewTonKhoHangHoa1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ViewTonKhoHangHoa1Iterator" id="ViewTonKhoHangHoa1">
+      <nodeDefinition DefName="model.ViewTonKhoHangHoa" Name="ViewTonKhoHangHoa10">
+        <AttrNames>
+          <Item Value="HangHoaId"/>
+          <Item Value="MaHang"/>
+          <Item Value="TenHang"/>
+          <Item Value="TenDonViTinh"/>
+          <Item Value="SoLuongMua"/>
+          <Item Value="SoLuongBan"/>
+          <Item Value="SoLuongTon"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

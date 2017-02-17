@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="TonKho" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:panelGroupLayout layout="vertical" id="pgl1">
+                    <af:panelHeader text="Ton Kho Hang Hoa" id="ph1">
+                        <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                                       value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                                       model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                       queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}">
+                            <f:facet name="end">
+                                <af:commandLink text="Advanced" rendered="false" id="cl1"/>
+                            </f:facet>
+                        </af:quickQuery>
+                    </af:panelHeader>
+                    <af:panelCollection id="pc1">
+                        <f:facet name="menus">
+                            <af:menu text="Export" id="m2">
+                                <af:commandMenuItem text="Export to Excel" id="cmi1">
+                                    <af:exportCollectionActionListener type="excelHTML" exportedId="t1"
+                                                                       filename="TonKhoHangHoa.xlsx"
+                                                                       title="Ton Kho Hang Hoa"/>
+                                </af:commandMenuItem>
+                            </af:menu>
+                        </f:facet>
+                        <f:facet name="toolbar"/>
+                        <f:facet name="statusbar"/>
+                        <af:table value="#{bindings.ViewTonKhoHangHoa1.collectionModel}" var="row"
+                                  rows="#{bindings.ViewTonKhoHangHoa1.rangeSize}"
+                                  emptyText="#{bindings.ViewTonKhoHangHoa1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.ViewTonKhoHangHoa1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.ViewTonKhoHangHoa1.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.ViewTonKhoHangHoa1.rangeSize}"
+                                  partialTriggers="::qryId1" id="t1">
+                            <af:column sortProperty="#{bindings.ViewTonKhoHangHoa1.hints.HangHoaId.name}"
+                                       sortable="true" headerText="#{bindings.ViewTonKhoHangHoa1.hints.HangHoaId.label}"
+                                       id="c1">
+                                <af:outputText value="#{row.HangHoaId}"
+                                               shortDesc="#{bindings.ViewTonKhoHangHoa1.hints.HangHoaId.tooltip}"
+                                               id="ot1">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.ViewTonKhoHangHoa1.hints.HangHoaId.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ViewTonKhoHangHoa1.hints.MaHang.name}" sortable="true"
+                                       headerText="#{bindings.ViewTonKhoHangHoa1.hints.MaHang.label}" id="c2">
+                                <af:outputText value="#{row.MaHang}"
+                                               shortDesc="#{bindings.ViewTonKhoHangHoa1.hints.MaHang.tooltip}"
+                                               id="ot2"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ViewTonKhoHangHoa1.hints.TenHang.name}" sortable="true"
+                                       headerText="#{bindings.ViewTonKhoHangHoa1.hints.TenHang.label}" id="c3">
+                                <af:outputText value="#{row.TenHang}"
+                                               shortDesc="#{bindings.ViewTonKhoHangHoa1.hints.TenHang.tooltip}"
+                                               id="ot3"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ViewTonKhoHangHoa1.hints.TenDonViTinh.name}"
+                                       sortable="true"
+                                       headerText="#{bindings.ViewTonKhoHangHoa1.hints.TenDonViTinh.label}" id="c4">
+                                <af:outputText value="#{row.TenDonViTinh}"
+                                               shortDesc="#{bindings.ViewTonKhoHangHoa1.hints.TenDonViTinh.tooltip}"
+                                               id="ot4"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ViewTonKhoHangHoa1.hints.SoLuongMua.name}"
+                                       sortable="true"
+                                       headerText="#{bindings.ViewTonKhoHangHoa1.hints.SoLuongMua.label}" id="c5">
+                                <af:outputText value="#{row.SoLuongMua}"
+                                               shortDesc="#{bindings.ViewTonKhoHangHoa1.hints.SoLuongMua.tooltip}"
+                                               id="ot5">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.ViewTonKhoHangHoa1.hints.SoLuongMua.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ViewTonKhoHangHoa1.hints.SoLuongBan.name}"
+                                       sortable="true"
+                                       headerText="#{bindings.ViewTonKhoHangHoa1.hints.SoLuongBan.label}" id="c6">
+                                <af:outputText value="#{row.SoLuongBan}"
+                                               shortDesc="#{bindings.ViewTonKhoHangHoa1.hints.SoLuongBan.tooltip}"
+                                               id="ot6">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.ViewTonKhoHangHoa1.hints.SoLuongBan.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ViewTonKhoHangHoa1.hints.SoLuongTon.name}"
+                                       sortable="true"
+                                       headerText="#{bindings.ViewTonKhoHangHoa1.hints.SoLuongTon.label}" id="c7">
+                                <af:outputText value="#{row.SoLuongTon}"
+                                               shortDesc="#{bindings.ViewTonKhoHangHoa1.hints.SoLuongTon.tooltip}"
+                                               id="ot7">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.ViewTonKhoHangHoa1.hints.SoLuongTon.format}"/>
+                                </af:outputText>
+                            </af:column>
+                        </af:table>
+                    </af:panelCollection>
+                </af:panelGroupLayout>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

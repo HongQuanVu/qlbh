@@ -226,11 +226,11 @@
                                             <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
                                                        disabled="#{!bindings.Delete.enabled}" id="b7"
                                                        binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b7}"/>
-                                            <af:button text="Commit"
+                                            <af:button text="Save Change"
                                                        disabled="#{!bindings.Commit.enabled}" id="b8"
                                                        binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b8}"
                                                        action="#{backingBeanScope.backing_DanhSachHoaDonBanHang.btnHoaDonCommit_action}"/>
-                                            <af:button text="Rollback"
+                                            <af:button text="Cancel Change"
                                                        disabled="#{!bindings.Rollback.enabled}" immediate="true"
                                                        id="b9"
                                                        binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b9}"
@@ -622,12 +622,12 @@
                                                    
                                                    <af:button text="Submit" id="b14"
                                                                binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b14}"/>
-                                                    <af:button text="Commit"
+                                                    <af:button text="Save Change"
                                                                disabled="#{!bindings.Commit.enabled}" id="b17"
                                                                binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b17}"
                                                                action="#{backingBeanScope.backing_DanhSachHoaDonBanHang.btnHoaDonChiTietCommit_action}"/>
                                                     <af:button
-                                                               text="Rollback" disabled="#{!bindings.Rollback.enabled}"
+                                                               text="Cancel Change" disabled="#{!bindings.Rollback.enabled}"
                                                                immediate="true" id="b18"
                                                                binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b18}"
                                                                action="#{backingBeanScope.backing_DanhSachHoaDonBanHang.btnChitetHangHoaRollback_action}">
@@ -892,11 +892,11 @@
                                                                        id="b24"
                                                                        binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b24}"/>
                                                             <af:button actionListener="#{bindings.Commit.execute}"
-                                                                       text="Commit"
+                                                                       text="Save Change"
                                                                        disabled="#{!bindings.Commit.enabled}" id="b25"
                                                                        binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b25}"/>
                                                             <af:button actionListener="#{bindings.Rollback.execute}"
-                                                                       text="Rollback"
+                                                                       text="Cancel Change"
                                                                        disabled="#{!bindings.Rollback.enabled}"
                                                                        immediate="true" id="b26"
                                                                        binding="#{backingBeanScope.backing_DanhSachHoaDonBanHang.b26}">

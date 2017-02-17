@@ -346,11 +346,11 @@
             <af:button actionListener="#{bindings.Last.execute}" text="Last" disabled="#{!bindings.Last.enabled}"
                        partialSubmit="true" id="b4"/>
                     <af:button text="Submit" id="b5"/>
-          <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
+          <af:button actionListener="#{bindings.CreateInsert.execute}" text="Create New"
                      disabled="#{!bindings.CreateInsert.enabled}" id="b6"/>
-          <af:button text="Commit" disabled="#{!bindings.Commit.enabled}"
+          <af:button text="Save Change" disabled="#{!bindings.Commit.enabled}"
                      id="b7" action="#{backingBeanScope.ChungTuMuaHangListBean.b7_action}"/>
-          <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
+          <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel Change"
                      disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b8">
             <af:resetActionListener/>
           </af:button>

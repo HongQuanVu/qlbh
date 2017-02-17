@@ -88,7 +88,7 @@
     ColumnType="NUMBER"
     TableName="HANG_HOA"/>
   <Attribute
-    Name="GiaMua"
+    Name="DonGia"
     ColumnName="DON_GIA"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
@@ -128,7 +128,9 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="HANG_HOA">
+    TableName="HANG_HOA"
+    IsUpdateable="while_insert"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -145,7 +147,9 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="HANG_HOA"/>
+    TableName="HANG_HOA"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="ModifiedBy"
     Precision="100"
@@ -153,7 +157,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="HANG_HOA">
+    TableName="HANG_HOA"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -170,7 +175,8 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="HANG_HOA"/>
+    TableName="HANG_HOA"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="DonViQuiDoiId"
     ColumnName="DON_VI_QUI_DOI_ID"

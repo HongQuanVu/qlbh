@@ -25,6 +25,7 @@
     <page path="/DanhMucHinhThucThanhToan.jspx" usageId="view_DanhMucHinhThucThanhToanPageDef"/>
     <page path="/DanhMucTrangThaiHoaDonBanHang.jspx" usageId="view_DanhMucTrangThaiHoaDonBanHangPageDef"/>
     <page path="/DanhMucXuatXu.jspx" usageId="view_DanhMucXuatXuPageDef"/>
+    <page path="/TonKho.jspx" usageId="view_TonKhoPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_DanhMucLoaiHangPageDef" path="view.pageDefs.DanhMucLoaiHangPageDef"/>
@@ -45,6 +46,7 @@
     <page id="view_DanhMucHinhThucThanhToanPageDef" path="view.pageDefs.DanhMucHinhThucThanhToanPageDef"/>
     <page id="view_DanhMucTrangThaiHoaDonBanHangPageDef" path="view.pageDefs.DanhMucTrangThaiHoaDonBanHangPageDef"/>
     <page id="view_DanhMucXuatXuPageDef" path="view.pageDefs.DanhMucXuatXuPageDef"/>
+    <page id="view_TonKhoPageDef" path="view.pageDefs.TonKhoPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"
