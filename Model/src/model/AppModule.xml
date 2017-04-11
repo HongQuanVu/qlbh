@@ -103,7 +103,7 @@
     Name="HoaDonBanHangView2"
     ViewObjectName="model.HoaDonBanHangView"/>
   <ViewUsage
-    Name="HoaDonBanHangView3"
+    Name="KhachHang_HoaDonBanHangView"
     ViewObjectName="model.HoaDonBanHangView"/>
   <ViewUsage
     Name="ChiTietHoaDonBanHangView2"
@@ -172,7 +172,7 @@
     Name="HoaDonBanHangFk2Link1"
     ViewLinkObjectName="model.HoaDonBanHangFk2Link"
     SrcViewUsageName="model.AppModule.KhachHangView1"
-    DstViewUsageName="model.AppModule.HoaDonBanHangView3"
+    DstViewUsageName="model.AppModule.KhachHang_HoaDonBanHangView"
     Reversed="false"/>
   <ViewLinkUsage
     Name="ChiTietCtBhFk2Link1"

@@ -7,6 +7,8 @@
     <iterator Binds="KhachHangView1" RangeSize="25" DataControl="AppModuleDataControl" id="KhachHangView1Iterator"/>
     <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="KhachHangView1Iterator" id="ImplicitViewCriteriaQuery"/>
+    <iterator Binds="KhachHang_HoaDonBanHangView" RangeSize="25" DataControl="AppModuleDataControl"
+              id="KhachHang_HoaDonBanHangViewIterator"/>
   </executables>
   <bindings>
     <tree IterBinding="KhachHangView1Iterator" id="KhachHangView1">
@@ -119,5 +121,29 @@
         <Item Value="DiaChiGiaoHang"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="KhachHang_HoaDonBanHangViewIterator" id="KhachHang_HoaDonBanHangView">
+      <nodeDefinition DefName="model.HoaDonBanHangView" Name="KhachHang_HoaDonBanHangView0">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="MaHoaDon"/>
+          <Item Value="TenHoaDon"/>
+          <Item Value="NgayLap"/>
+          <Item Value="HinhThucThanhToanId"/>
+          <Item Value="ThueVat"/>
+          <Item Value="CongTienHang"/>
+          <Item Value="ChietKhau"/>
+          <Item Value="TienSauChietKhau"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedAt"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="ModifiedAt"/>
+          <Item Value="TrangThaiId"/>
+          <Item Value="TienThueVAT"/>
+          <Item Value="TongCongTienThanhToan"/>
+          <Item Value="DiaChiGiaoHang"/>
+          <Item Value="GhiChu"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

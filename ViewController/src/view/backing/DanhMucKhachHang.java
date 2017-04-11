@@ -67,6 +67,8 @@ public class DanhMucKhachHang {
     private RichButton b8;
     private RichButton b9;
     private RichInputText it11;
+    private RichTable t2;
+    private RichPanelCollection pc2;
 
     public void setF1(RichForm f1) {
         this.f1 = f1;
@@ -450,5 +452,21 @@ public class DanhMucKhachHang {
 
     public RichInputText getIt11() {
         return it11;
+    }
+
+    public void setT2(RichTable t2) {
+        this.t2 = t2;
+    }
+
+    public RichTable getT2() {
+        return t2;
+    }
+
+    public void setPc2(RichPanelCollection pc2) {
+        this.pc2 = pc2;
+    }
+
+    public RichPanelCollection getPc2() {
+        return pc2;
     }
 }
